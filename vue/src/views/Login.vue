@@ -1,5 +1,9 @@
 <template>
   <div id="login" class="text-center">
+    <ul id="banner">
+      <li><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
+      <li>FAQ</li>
+    </ul>
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
