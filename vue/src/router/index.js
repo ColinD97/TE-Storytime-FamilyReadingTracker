@@ -6,7 +6,12 @@ import Logout from '../views/LogoutView.vue'
 import Register from '../views/RegisterView.vue'
 import store from '../store/index'
 import ParentDash from '../views/ParentDashboardView.vue'
+import ParentChildDash from '../views/ParentChildDashView.vue'
 import FamilyRegister from '../views/ChildRegisterView.vue'
+import BookShelf from '../views/BookshelfView.vue'
+import AddBook from '../views/AddBookView.vue'
+
+
 
 Vue.use(Router)
 
@@ -56,6 +61,14 @@ const router = new Router({
       }
     },
     {
+      path: "/register/family",
+      name: "register-family",
+      component: FamilyRegister,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: "/parent",
       name: "parent",
       component: ParentDash,
@@ -64,13 +77,24 @@ const router = new Router({
       }
     },
     {
-      path: "/register/family",
-      name: "register-family",
-      component: FamilyRegister,
+      path: "/parent/child-dash/:userID",
+      name: "parent-child-view",
+      component: ParentChildDash,
       meta: {
         requiresAuth: false
       }
     },
+    {
+      path: '/bookshelf/:userID',
+      name: 'bookshelf',
+      component: BookShelf,
+    },
+    {
+      path: '/bookshelf/:userID/book/:bookID',
+      name: 'add-book',
+      component: AddBook
+    },
+    
   ]
 })
 
