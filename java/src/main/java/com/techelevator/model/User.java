@@ -9,6 +9,11 @@ import java.util.Set;
 public class User {
 
    private Long id;
+   private Long family_id;
+   private boolean is_parent;
+   private String first_name;
+   private String last_name;
+   private String email;
    private String username;
    @JsonIgnore
    private String password;
@@ -20,6 +25,18 @@ public class User {
 
    public User(Long id, String username, String password, String authorities) {
       this.id = id;
+      this.username = username;
+      this.password = password;
+      this.activated = true;
+   }
+
+   public User(Long id, Long family_id, boolean is_parent, String first_name, String last_name, String email, String username, String password, String authorities) {
+      this.id = id;
+      this.family_id = family_id;
+      this.is_parent = is_parent;
+      this.first_name = first_name;
+      this.last_name = last_name;
+      this.email = email;
       this.username = username;
       this.password = password;
       this.activated = true;
@@ -71,6 +88,46 @@ public class User {
          String authority = role.contains("ROLE_") ? role : "ROLE_" + role;
          this.authorities.add(new Authority(authority));
       }
+   }
+
+   public Long getFamily_id() {
+      return family_id;
+   }
+
+   public void setFamily_id(Long family_id) {
+      this.family_id = family_id;
+   }
+
+   public boolean isIs_parent() {
+      return is_parent;
+   }
+
+   public void setIs_parent(boolean is_parent) {
+      this.is_parent = is_parent;
+   }
+
+   public String getFirst_name() {
+      return first_name;
+   }
+
+   public void setFirst_name(String first_name) {
+      this.first_name = first_name;
+   }
+
+   public String getLast_name() {
+      return last_name;
+   }
+
+   public void setLast_name(String last_name) {
+      this.last_name = last_name;
+   }
+
+   public String getEmail() {
+      return email;
+   }
+
+   public void setEmail(String email) {
+      this.email = email;
    }
 
    @Override
