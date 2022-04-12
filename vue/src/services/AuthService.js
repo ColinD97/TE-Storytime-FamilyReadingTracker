@@ -8,6 +8,14 @@ export default {
 
   register(user) {
     return axios.post('/register', user)
-  }
+  },
+/* Just throwing some random ideas out for now (KW) */
+  showBooks(user){
+    return axios.get('/books', user)
+  },
+
+  updateBook(book) {
+    return axios.put(`/books/${book.id}`, book);
+  },
 
 }
