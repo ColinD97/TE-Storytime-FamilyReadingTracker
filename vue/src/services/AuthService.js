@@ -9,13 +9,14 @@ export default {
   register(user) {
     return axios.post('/register', user)
   },
-/* Just throwing some random ideas out for now (KW) */
+// Let user see bookshelf of 'to-read', 'currently reading', 'read'
   showBooks(user){
     return axios.get('/books', user)
   },
 
-  updateBook(book) {
-    return axios.put(`/books/${book.id}`, book);
+//Move book from 'to-read' to 'currently reading, etc'
+  updateBook(userID,bookID) {
+    return axios.put(`/bookshelf/${userID}/book/${bookID}`);
   },
-
+  
 }

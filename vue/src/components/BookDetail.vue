@@ -10,7 +10,7 @@
       <select id="tag" class="form-control" v-model="book.author">
         <option value="Feature Request">Feature Request</option>
       </select>
-      <label for="status">Status::</label>
+      <label for="status">Status:</label>
       <select id="tag" class="form-control" v-model="book.status">
         <option value="Planned">Planned</option>
         <option value="In Progress">In Progress</option>
@@ -18,8 +18,8 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="description">Description:</label>
-      <textarea id="description" class="form-control" v-model="book.description"></textarea>
+      <label for="description">ISBN:</label>
+      <textarea id="description" class="form-control" v-model="book.isbn"></textarea>
     </div>
     <button class="btn btn-submit" type="submit">Submit</button>
     <button class="btn btn-cancel" v-on:click.prevent="cancelForm" type="cancel">Cancel</button>

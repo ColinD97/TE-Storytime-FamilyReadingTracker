@@ -61,7 +61,7 @@ const router = new Router({
       }
     },
     {
-      path: "/register/family",
+      path: "/register/family/:userID",
       name: "register-family",
       component: FamilyRegister,
       meta: {
@@ -69,7 +69,7 @@ const router = new Router({
       }
     },
     {
-      path: "/parent",
+      path: "/parent/:userID",
       name: "parent",
       component: ParentDash,
       meta: {
@@ -78,7 +78,7 @@ const router = new Router({
     },
     {
       path: "/parent/child-dash/:userID",
-      name: "parent-child-view",
+      name: "parent-child-dash",
       component: ParentChildDash,
       meta: {
         requiresAuth: false
