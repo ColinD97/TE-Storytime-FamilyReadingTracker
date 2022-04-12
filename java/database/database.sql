@@ -21,6 +21,7 @@ CREATE TABLE book_info (
 CREATE TABLE users (
 	user_id int DEFAULT nextval('seq_user_id'::regclass) NOT NULL,
 	family_id int NOT NULL,
+	is_parent boolean,
 	first_name varchar(50) NOT NULL,
 	last_name varchar(50) NOT NULL,
 	email varchar(255) NOT NULL,
@@ -37,6 +38,7 @@ CREATE TABLE users_books (
 	past_book boolean,
 	current_book boolean,
 	future_book boolean,
+	CONSTRAINT PK_users_books PRIMARY KEY(user_id, book_id),
     FOREIGN KEY(user_id) REFERENCES users(user_id),
     FOREIGN KEY(book_id) REFERENCES book_info(book_id)
 	

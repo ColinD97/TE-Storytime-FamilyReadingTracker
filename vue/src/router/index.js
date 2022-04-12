@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/Home.vue'
-import Login from '../views/Login.vue'
-import Logout from '../views/Logout.vue'
-import Register from '../views/Register.vue'
+import Home from '../views/HomeView.vue'
+import Login from '../views/LoginView.vue'
+import Logout from '../views/LogoutView.vue'
+import Register from '../views/RegisterView.vue'
 import store from '../store/index'
-import ParentDash from '../views/ParentDashboard.vue'
-import ChildRegister from '../views/ChildRegister.vue'
+import ParentDash from '../views/ParentDashboardView.vue'
+import ChildRegister from '../views/ChildRegisterView.vue'
 
 Vue.use(Router)
 

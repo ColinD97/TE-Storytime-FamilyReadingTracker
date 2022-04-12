@@ -1,14 +1,15 @@
-<template>
-  <div class="child-register">
-      <ul id="banner">
-      <li><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
-      <li>FAQ</li>
+<template class="home">
+
+<div class="register">
+    <ul class="container" id="banner">
+      <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
+      <li class="item">FAQ</li>
     </ul>
-    <h1 class="title">Create Child Account</h1>
+    <h1 class="title">Create Account</h1>
     <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
     
-    <form class="form-register" @submit.prevent="register">
-    <h1 class="form-header">Enter Child Information:</h1>
+  <form class="form-register" @submit.prevent="register">
+    <h1 class="form-header">Enter Parent Information:</h1>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
     </div>
@@ -17,7 +18,7 @@
             <!-- Firstname and Lastname -->
             <div class="horizontal-group">
                 <div class="form-group left">
-                    <label for="firstname" class="label-title">First Name *</label>
+                    <label for="firstname" class="label-title">First Name</label>
                     <input
                         type="text"
                         id="firstname"
@@ -29,7 +30,7 @@
                     />
                     </div>
                 <div class="form-group right">
-                    <label for="lastname" class="label-title">Last Name *</label>
+                    <label for="lastname" class="label-title">Last Name</label>
                     <input
                         type="text"
                         id="lastname"
@@ -45,7 +46,7 @@
             <div class="horizontal-group">
                 <div class="form-group">
                     <div class="form-group left">
-                        <label for="email" class="label-title">Email Address *</label>
+                        <label for="email" class="label-title">Email Address</label>
                         <input
                             type="text"
                             id="email"
@@ -57,7 +58,7 @@
                         />
                     </div>
                     <div class="form-group right">
-                        <label for="username" class="label-title">Username *</label>
+                        <label for="username" class="label-title">Username</label>
                         <input
                             type="text"
                             id="username"
@@ -72,7 +73,7 @@
             </div>
                 <div class="horizontal-group">
                         <div class="form-group left">
-                            <label for="password" class="label-title">Password *</label>
+                            <label for="password" class="label-title">Password</label>
                             <input
                                 type="password"
                                 id="password"
@@ -157,6 +158,4 @@ export default {
 </script>
 
 <style>
-
-
 </style>

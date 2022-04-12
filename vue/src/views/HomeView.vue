@@ -3,7 +3,6 @@
     <ul class="container" id="banner">
       <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
       <li class="item">FAQ</li>
-    
       <li class="item"><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
     </ul>
     <h1 class="title">Temp Reading Tracker</h1>
@@ -78,12 +77,13 @@ body{
     background-color: #e2ebf5;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    padding-left: 20px;
 }
 .form-header h1 {
     font-size: 30px;
     text-align: center;
     color: #666;
-    padding: 20px 0;
+    padding-left: 20px;
     border-bottom: 1px solid #cccccc;
 }
 /*---------------------------------------*/
@@ -142,7 +142,7 @@ body{
 }
 .btn-body {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: #1ca3dc;
     font-size: 17px;
     border: none;
@@ -155,14 +155,15 @@ body{
     color: white;
 }
 
+
 /*---------------------------------------*/
 /* Form Footer */
 /*---------------------------------------*/
 .form-footer {
-    background-color: #bebcbe;
+    background-color: #e2ebf5;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: 30px 40px;
+    padding: 40px 10px;
     text-align: right;
     border-top: 1px solid #cccccc;
 }
@@ -173,10 +174,10 @@ body{
     font-style: italic;
     font-weight: thin;
 }
-.btn {
+.form-footer .btn {
     border: 10px;
     float: right;
-    padding: 10px 30px;
+    padding: 10px;
     margin-left: 50px;
     margin-right:50px;
     background-color: #1ca3dc;
@@ -184,13 +185,11 @@ body{
     border: none;
     border-radius: 5px;
     color: #bcf5e7;
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
 .btn:hover {
     background-color: #1ca3dc;
     color: white;
 }
-
 
 </style>
