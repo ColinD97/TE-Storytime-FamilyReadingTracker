@@ -6,7 +6,7 @@ import Logout from '../views/LogoutView.vue'
 import Register from '../views/RegisterView.vue'
 import store from '../store/index'
 import ParentDash from '../views/ParentDashboardView.vue'
-import ChildRegister from '../views/ChildRegisterView.vue'
+import FamilyRegister from '../views/ChildRegisterView.vue'
 
 Vue.use(Router)
 
@@ -64,9 +64,9 @@ const router = new Router({
       }
     },
     {
-      path: "/register/child",
-      name: "register-child",
-      component: ChildRegister,
+      path: "/register/family",
+      name: "register-family",
+      component: FamilyRegister,
       meta: {
         requiresAuth: false
       }

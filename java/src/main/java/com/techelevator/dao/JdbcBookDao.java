@@ -14,8 +14,9 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public Book createBook(Book bookData) {
-        String sql ="INSERT INTO book_info (title, author) VALUES (?,?) RETURNING book_id;";
-        Integer id = jdbcTemplate.queryForObject(sql, Integer.class, bookData.getTitle(), bookData.getAuthor());
+        String sql ="INSERT INTO book_info (title, author, isbn) VALUES (?,?,?) RETURNING book_id;";
+        Integer id = jdbcTemplate.queryForObject(sql, Integer.class,
+                bookData.getTitle(), bookData.getAuthor(), bookData.getIsbn());
         return getBookById(id);
     }
 
@@ -35,6 +36,7 @@ public class JdbcBookDao implements BookDao{
         book.setBook_id(resultSet.getInt("book_id"));
         book.setTitle(resultSet.getString("title"));
         book.setAuthor(resultSet.getString("author"));
+        book.setIsbn(resultSet.getInt("isbn"));
         return book;
     }
 }
