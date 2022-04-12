@@ -11,33 +11,35 @@
     <h1 class="form-header">Add new book:</h1>
     <!-- <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }} -->
-    <!-- </div> -->
+
 
   <div class="form-body">
             <!-- Firstname and Lastname -->
             <div class="horizontal-group">
                 <div class="form-group left">
-                    <label for="firstname" class="label-title">First Name *</label>
+                    <label for="title" class="label-title">Book Title *</label>
                     <input
                         type="text"
-                        id="firstname"
+                        id="title"
                         class="form-input"
-                        placeholder="First Name"
-                        v-model="user.firstname"
+                        placeholder="Book Title"
+                        v-model="user.title"
                         required
                         autofocus
                     />
-                    </div>
+                </div>
                 <div class="form-group right">
-                    <label for="lastname" class="label-title">Last Name *</label>
+                    <label for="author" class="label-title">Author Name *</label>
                     <input
                         type="text"
-                        id="lastname"
+                        id="author"
                         class="form-input"
-                        placeholder="Last Name"
-                        v-model="user.lastname"
+                        placeholder="Author Name"
+                        v-model="user.author"
                         required
                         autofocus
                     />
                     </div>
             </div>
+    </div>
+    </div>
