@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users, book_info;
+DROP TABLE IF EXISTS book_info, users, users_books CASCADE;
 
 DROP SEQUENCE IF EXISTS seq_user_id;
 
@@ -44,8 +44,8 @@ CREATE TABLE users_books (
 	
 );
 
-INSERT INTO users (username,family_id, first_name, last_name, email, password_hash, role) VALUES ('user', 1, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (username,family_id, first_name, last_name, email, password_hash,role) VALUES ('admin', 1, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
+INSERT INTO users (username, family_id, is_parent, first_name, last_name, email, password_hash, role) VALUES ('user', 1, false, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (username, family_id, is_parent, first_name, last_name, email, password_hash,role) VALUES ('admin', 1, true, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 
 INSERT INTO book_info (title, author)
 VALUES
@@ -53,6 +53,13 @@ VALUES
     ('Book Title 2', 'Nolan Tsai'),
 	('Book Title 3', 'Reginald Arnedo'),
 	('Book Title 4', 'Kai Indigo Wolf');
+
+INSERT INTO users_books (user_id, book_id, times_read, past_book, current_book, future_book) 
+VALUES 
+	(1, 1, 1, true, false, false),
+	(1, 2, 0, false, false, true),
+	(2, 1, 3, true, true, false),
+	(2, 3, 0, false, false, true);
 
 --- USER SETUP (Do Not Modify)
 DROP USER IF EXISTS final_capstone_owner;
