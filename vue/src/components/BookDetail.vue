@@ -30,7 +30,7 @@
 import bookShelf from "../services/BookShelf";
 
 export default {
-  name: "book-shelf",
+  name: "BookShelf",
   props: {
     userID: {
       type: Number,
