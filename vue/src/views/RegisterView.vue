@@ -1,7 +1,5 @@
-
-
 <template>
-  <card-detail />
+  <RegistrationForm />
 </template>
 
 <script>
