@@ -14,5 +14,6 @@ public interface UserDao {
 
     int findIdByUsername(String username);
 
-    boolean create(String username, String password, String role);
+    boolean create(Long familyId, boolean is_parent, String firstName,
+                   String lastName, String email, String username, String password, String role);
 }

@@ -47,12 +47,12 @@ CREATE TABLE users_books (
 INSERT INTO users (username, family_id, is_parent, first_name, last_name, email, password_hash, role) VALUES ('user', 1, false, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username, family_id, is_parent, first_name, last_name, email, password_hash,role) VALUES ('admin', 1, true, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 
-INSERT INTO book_info (title, author)
+INSERT INTO book_info (title, author, isbn)
 VALUES
-    ('Book Title 1', 'Colin Davis'),
-    ('Book Title 2', 'Nolan Tsai'),
-	('Book Title 3', 'Reginald Arnedo'),
-	('Book Title 4', 'Kai Indigo Wolf');
+    ('Book Title 1', 'Colin Davis', 12345),
+    ('Book Title 2', 'Nolan Tsai', 23456),
+	('Book Title 3', 'Reginald Arnedo', 34567),
+	('Book Title 4', 'Kai Indigo Wolf', 45678);
 
 INSERT INTO users_books (user_id, book_id, times_read, past_book, current_book, future_book) 
 VALUES 
