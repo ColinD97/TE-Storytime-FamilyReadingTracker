@@ -20,8 +20,7 @@ CREATE TABLE book_info (
 
 CREATE TABLE users (
 	user_id int DEFAULT nextval('seq_user_id'::regclass) NOT NULL,
-	family_id int NOT NULL,
-	is_parent boolean,
+	family_id varchar(255) NOT NULL,
 	first_name varchar(50) NOT NULL,
 	last_name varchar(50) NOT NULL,
 	email varchar(255) NOT NULL,
@@ -44,8 +43,8 @@ CREATE TABLE users_books (
 	
 );
 
-INSERT INTO users (username, family_id, is_parent, first_name, last_name, email, password_hash, role) VALUES ('user', 1, false, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (username, family_id, is_parent, first_name, last_name, email, password_hash,role) VALUES ('admin', 1, true, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
+INSERT INTO users (username, family_id, first_name, last_name, email, password_hash, role) VALUES ('user', '1', 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (username, family_id, first_name, last_name, email, password_hash,role) VALUES ('admin', '1', 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 
 INSERT INTO book_info (title, author, isbn)
 VALUES

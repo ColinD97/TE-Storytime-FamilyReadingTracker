@@ -63,14 +63,16 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public boolean create(Long familyId, boolean is_parent, String firstName,
+    public boolean create(String family_id, String firstName,
                           String lastName, String email, String username, String password, String role) {
         boolean userCreated = false;
 
         // create user
-        String insertUser = "insert into users (family_id,is_parent,first_name,last_name,email,username,password_hash,role) values(?,?,?,?,?,?,?,?)";
+        String insertUser = "insert into users (username,password_hash,role,family_id,first_name,last_name,email) values(?,?,?,?,?,?,?)";
         String password_hash = new BCryptPasswordEncoder().encode(password);
         String ssRole = "ROLE_" + role.toUpperCase();
+        //String family_id = "1";
+
 
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
         String id_column = "user_id";
@@ -79,6 +81,10 @@ public class JdbcUserDao implements UserDao {
                     ps.setString(1, username);
                     ps.setString(2, password_hash);
                     ps.setString(3, ssRole);
+                    ps.setString(4, family_id);
+                    ps.setString(5, firstName);
+                    ps.setString(6, lastName);
+                    ps.setString(7, email);
                     return ps;
                 }
                 , keyHolder) == 1;
@@ -90,8 +96,7 @@ public class JdbcUserDao implements UserDao {
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
         user.setId(rs.getLong("user_id"));
-        user.setFamily_id(rs.getLong("family_id"));
-        user.setIs_parent(rs.getBoolean("is_parent"));
+        user.setFamily_id(rs.getString("family_id"));
         user.setFirst_name(rs.getString("first_name"));
         user.setLast_name(rs.getString("last_name"));
         user.setEmail(rs.getString("email"));

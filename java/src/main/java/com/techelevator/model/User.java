@@ -9,8 +9,7 @@ import java.util.Set;
 public class User {
 
    private Long id;
-   private Long family_id;
-   private boolean is_parent;
+   private String family_id;
    private String first_name;
    private String last_name;
    private String email;
@@ -30,10 +29,9 @@ public class User {
       this.activated = true;
    }
 
-   public User(Long id, Long family_id, boolean is_parent, String first_name, String last_name, String email, String username, String password, String authorities) {
+   public User(Long id, String family_id, String first_name, String last_name, String email, String username, String password, String authorities) {
       this.id = id;
       this.family_id = family_id;
-      this.is_parent = is_parent;
       this.first_name = first_name;
       this.last_name = last_name;
       this.email = email;
@@ -90,20 +88,12 @@ public class User {
       }
    }
 
-   public Long getFamily_id() {
+   public String getFamily_id() {
       return family_id;
    }
 
-   public void setFamily_id(Long family_id) {
+   public void setFamily_id(String family_id) {
       this.family_id = family_id;
-   }
-
-   public boolean isIs_parent() {
-      return is_parent;
-   }
-
-   public void setIs_parent(boolean is_parent) {
-      this.is_parent = is_parent;
    }
 
    public String getFirst_name() {

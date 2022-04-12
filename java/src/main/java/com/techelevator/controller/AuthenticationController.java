@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import javax.validation.Valid;
 
+import com.techelevator.model.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +15,12 @@ import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.techelevator.dao.UserDao;
-import com.techelevator.model.LoginDTO;
-import com.techelevator.model.RegisterUserDTO;
-import com.techelevator.model.User;
-import com.techelevator.model.UserAlreadyExistsException;
 import com.techelevator.security.jwt.JWTFilter;
 import com.techelevator.security.jwt.TokenProvider;
+
+import java.security.Principal;
+import java.util.Random;
+
 
 @RestController
 @CrossOrigin
@@ -59,7 +60,22 @@ public class AuthenticationController {
             User user = userDao.findByUsername(newUser.getUsername());
             throw new UserAlreadyExistsException();
         } catch (UsernameNotFoundException e) {
-            userDao.create(newUser.getUsername(), newUser.getPassword(), newUser.getRole());
+            Random random = new Random();
+            String family_id = String.valueOf(random.nextInt(100000000));
+            userDao.create(family_id, newUser.getFirst_name(), newUser.getLast_name(), newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getRole());
+        }
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(value = "/parent/{id}", method = RequestMethod.POST)
+    public void registerFamilyUser(@Valid @RequestBody RegisterFamilyUserDTO newUser, @PathVariable long id) {
+        try {
+            User user = userDao.findByUsername(newUser.getUsername());
+            throw new UserAlreadyExistsException();
+        } catch (UsernameNotFoundException e) {
+            User user = userDao.getUserById(id);
+            String family_id = user.getFamily_id();
+            userDao.create(family_id, newUser.getFirst_name(), newUser.getLast_name(), newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getRole());
         }
     }
 

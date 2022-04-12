@@ -2,7 +2,7 @@ package com.techelevator.model;
 
 import javax.validation.constraints.NotEmpty;
 
-public class RegisterUserDTO {
+public class RegisterFamilyUserDTO {
 
 
     private boolean is_parent;
@@ -53,7 +53,7 @@ public class RegisterUserDTO {
         this.role = role;
     }
 
-    public boolean getIs_parent() {
+    public boolean isIs_parent() {
         return is_parent;
     }
 
