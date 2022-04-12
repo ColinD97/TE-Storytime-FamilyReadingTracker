@@ -1,13 +1,13 @@
-<template>
-  <div class="home">
-    <ul id="banner">
-      <li><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
-      <li>FAQ</li>
-      <li><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
-    </ul>
-    <h1 id="title">Temp Reading Tracker</h1>
-    <h3 id= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
+<template class="homepage">
+  <div>
+    <ul class="container" id="banner">
+      <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
+      <li class="item">FAQ</li>
     
+      <li class="item"><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
+    </ul>
+    <h1 class="title">Temp Reading Tracker</h1>
+    <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3> 
   </div>
 </template>
 
@@ -17,31 +17,65 @@ export default {
 };
 </script>
 
-
-
 <style>
+
+/*---------------------------------------*/
+/* Web Font*/
+/*---------------------------------------*/
 @import url("httpss://fonts.googleapis.com/css?family=Roboto");
-#banner {
-  list-style: none;
+
+/*---------------------------------------*/
+/* Top Banner */
+/*---------------------------------------*/
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto;
+    padding: 30px;
+  
 }
-#title {
+#banner {
+    list-style: none;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 17px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+}
+/*---------------------------------------*/
+/* Title and Sub-text */
+/*---------------------------------------*/
+.title {
 text-align: center;
 }
-#subtext {
+.subtext {
   text-align: center;
 }
-.home {
-    background: linear-gradient(to right, #9dddf7 0%, #85eff5 50%, #ece5ba 99%);
+body{
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(to right, #96dfe9 0%, #fafafa 50%, #ffffff 99%);
 }
 .form-register{
   font-family: "Roboto", sans-serif;
-    width: 1050px;
+    width: 1200px;
+    margin: 30px auto;
+    background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
+    border-radius: 10px;
+}
+.form-login{
+  font-family: "Roboto", sans-serif;
+    width: 1200px;
     margin: 30px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
 }
 .form-header {
-    background-color: #eff0f1;
+    background-color: #e2ebf5;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -56,22 +90,39 @@ text-align: center;
 /* Form Body */
 /*---------------------------------------*/
 .form-body {
-    padding: 10px 40px;
-    color: #666;
+    padding: 20px 40px;
+    padding-bottom: 70px;
+    margin: 20px;
 }
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 .form-body .label-title {
     color: #1ca3dc;
-    font-size: 17px;
+    font-size: 22px;
     font-weight: bold;
+    padding-right: 20px;  
+
 }
 .form-body .form-input {
-    font-size: 17px;
+    font-size: 14px;
     box-sizing: border-box;
-    width: 100%;
-    height: 34px;
+    width: 60%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333333;
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+.form-body .form-password {
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 35%;
+    height: 30px;
     padding-left: 10px;
     padding-right: 10px;
     color: #333333;
@@ -103,49 +154,38 @@ text-align: center;
     background-color: #169c7b;
     color: white;
 }
-input[type="file"] {
-    outline: none;
-    cursor: pointer;
-    font-size: 17px;
-}
-#range-label {
-    width: 25%;
-    padding: 5px;
-    background-color: #1ca3dc;
-    color: white;
-    border-radius: 5px;
-    font-size: 17px;
-    position: relative;
-    top: -8px;
-}
 
 /*---------------------------------------*/
 /* Form Footer */
 /*---------------------------------------*/
-.signup-form .form-footer {
-    background-color: #e6d2f1;
+.form-footer {
+    background-color: #bebcbe;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: 10px 40px;
+    padding: 30px 40px;
     text-align: right;
     border-top: 1px solid #cccccc;
 }
 .form-footer span {
-    float: left;
+    float: right;
     margin-top: 10px;
-    color: #999;
+    color: rgb(204, 38, 38);
     font-style: italic;
     font-weight: thin;
 }
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
+    border: 10px;
+    float: right;
+    padding: 10px 30px;
+    margin-left: 50px;
+    margin-right:50px;
     background-color: #1ca3dc;
     font-size: 17px;
     border: none;
     border-radius: 5px;
     color: #bcf5e7;
     cursor: pointer;
+    
 }
 .btn:hover {
     background-color: #1ca3dc;

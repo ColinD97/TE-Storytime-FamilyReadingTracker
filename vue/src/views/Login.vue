@@ -1,11 +1,14 @@
 <template>
+            
   <div id="login" class="text-center">
-    <ul id="banner">
-      <li><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
-      <li>FAQ</li>
+    <ul class="container" id="banner">
+      <li class="item"><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
+      <li class="item">FAQ</li>
     </ul>
-    <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+
+
+    <form class="form-login" @submit.prevent="login">
+      <h1 class="form-header">Please Sign In</h1>
       <div
         class="alert alert-danger"
         role="alert"
@@ -16,27 +19,38 @@
         role="alert"
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
-      <input
-        type="text"
-        id="username"
-        class="form-control"
-        placeholder="Username"
-        v-model="user.username"
-        required
-        autofocus
-      />
-      <label for="password" class="sr-only">Password</label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Password"
-        v-model="user.password"
-        required
-      />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+
+      <div class="form-body">
+        <div class="horizontal-group">
+            <div class="form-group left">
+                  <label for="username" class="label-title">Username</label>
+                  <input
+                    type="text"
+                    id="username"
+                    class="form-input"
+                    placeholder="Username"
+                    v-model="user.username"
+                    required
+                    autofocus
+                  />
+            </div>       
+            <div class="form-group right">
+              <label for="password" class="label-title">Password</label>
+              <input
+              type="password"
+              id="password"
+              class="form-input"
+              placeholder="Password"
+              v-model="user.password"
+              required
+            />
+            </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <button class='btn' type="submit">Sign in</button>
+        <button class='btn' type="submit">Forgot Password?</button>
+      </div>
     </form>
   </div>
 </template>
@@ -64,7 +78,7 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/");
+            this.$router.push("home");
           }
         })
         .catch(error => {

@@ -1,19 +1,19 @@
 <template class="home">
 
 <div class="register">
-      <ul id="banner">
+    <ul id="banner">
       <li><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
       <li>FAQ</li>
     </ul>
-    <h1 id="title">Create Account</h1>
-    <h3 id= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
+    <h1 class="title">Create Account</h1>
+    <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
     
-    
-    <form class="form-register" @submit.prevent="register">
-      <h1 class="form-header">Parent Info:</h1>
-      <div class="alert alert-danger" role="alert" v-if="registrationErrors">
+  <form class="form-register" @submit.prevent="register">
+    <h1 class="form-header">Enter Parent Information:</h1>
+    <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
-      </div>
+    </div>
+
   <div class="form-body">
             <!-- Firstname and Lastname -->
             <div class="horizontal-group">
@@ -22,7 +22,7 @@
                     <input
                         type="text"
                         id="firstname"
-                        class="form-control"
+                        class="form-input"
                         placeholder="First Name"
                         v-model="user.firstname"
                         required
@@ -34,7 +34,7 @@
                     <input
                         type="text"
                         id="lastname"
-                        class="form-control"
+                        class="form-input"
                         placeholder="Last Name"
                         v-model="user.lastname"
                         required
@@ -50,7 +50,7 @@
                         <input
                             type="text"
                             id="email"
-                            class="form-control"
+                            class="form-input"
                             placeholder="Valid Email Address"
                             v-model="user.email"
                             required
@@ -62,7 +62,7 @@
                         <input
                             type="text"
                             id="username"
-                            class="form-control"
+                            class="form-input"
                             placeholder="Username"
                             v-model="user.username"
                             required
@@ -77,7 +77,7 @@
                             <input
                                 type="password"
                                 id="password"
-                                class="form-control"
+                                class="form-password"
                                 placeholder="Password"
                                 v-model="user.password"
                                 required
@@ -85,19 +85,23 @@
                             <input
                                 type="password"
                                 id="confirmPassword"
-                                class="form-control"
+                                class="form-password"
                                 placeholder="Confirm Password"
                                 v-model="user.confirmPassword"
                                 required
                             />
                         </div>
                 </div>
-        </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
-        Create Account
-      </button>
-    </form>
   </div>
+  
+        <div class="form-footer">
+            <span>* Required</span>
+              <button class="btn" type="submit">
+              Create Account
+              </button>
+        </div>
+    </form>
+</div>
 </template>
 
 <script>
