@@ -9,6 +9,9 @@ export default {
   register(user) {
     return axios.post('/register', user)
   },
+/* Working on connecting my ParentDashboard with what I want here -Reg
+
+
 /* Just throwing some random ideas out for now (KW) */
   showBooks(user){
     return axios.get('/books', user)

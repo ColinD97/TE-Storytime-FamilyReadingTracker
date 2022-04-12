@@ -7,13 +7,13 @@
     <h3 id= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
       <table class="Children List">
       <label for="Children">Children **TABLE OF CHILDREN ACCOUNTS**</label>
-        <tr>
+        <!-- <tr>
           <th>Name</th>
           <th>Books Finished</th>
           <th>Hours Read</th>
           <th>Last Active?</th>
-        </tr>
-      </table>
+        </tr>-->
+      </table> 
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create | Edit Child Account IN PROGRESS/WIP
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import authService from "@/services/AuthService";
+
 export default {
 
 }
