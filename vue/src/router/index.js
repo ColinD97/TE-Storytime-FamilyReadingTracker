@@ -5,7 +5,7 @@ import Login from '../views/LoginView.vue'
 import Logout from '../views/LogoutView.vue'
 import Register from '../views/RegisterView.vue'
 import store from '../store/index'
-import ParentDash from '../views/ParentDashboardView.vue'
+import ParentDashboard from '../views/ParentDashboardView.vue'
 import ParentChildDash from '../views/ParentChildDashView.vue'
 import FamilyRegister from '../views/ChildRegisterView.vue'
 import BookShelf from '../views/BookshelfView.vue'
@@ -69,9 +69,9 @@ const router = new Router({
       }
     },
     {//reg's page
-      path: "/parent/dashboard",
+      path: "/parent/dashboard/:userID",
       name: "parent",
-      component: ParentDash,
+      component: ParentDashboard,
       meta: {
         requiresAuth: false
       }
@@ -85,7 +85,7 @@ const router = new Router({
       }
     },
     {//add user id. changed just for presentation tomorrow. using as "add and view books page" combined?!
-      path: '/bookshelf/',
+      path: '/bookshelf/:userID',
       name: 'bookshelf',
       component: BookShelf,
     },
