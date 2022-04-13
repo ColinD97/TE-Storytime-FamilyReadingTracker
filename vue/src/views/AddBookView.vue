@@ -1,9 +1,6 @@
 <template>
   <div class="child-register">
-      <ul class="container" id="banner">
-      <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
-      <li class="item">FAQ</li>
-    </ul>
+    <AppHeader />
     <h1 class="title">Bookshelf</h1>
     <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
     
@@ -43,3 +40,15 @@
             </div>
     </div>
     </div>
+</template>
+
+<script>
+import AppHeader from "./components/Appheader.vue";
+
+export default {
+  components: {
+    BookDetail,
+    AppHeader
+  }
+};
+</script>

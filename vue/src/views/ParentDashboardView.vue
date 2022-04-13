@@ -1,8 +1,6 @@
 <template>
   <div class="parent-dashboard">
-      <ul id="banner">
-      <li>FAQ</li>
-    </ul>
+    <AppHeader />
     <h1 id="title">Parent Dashboard</h1>
     <h3 id= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
       <table class="Children List">
@@ -24,16 +22,19 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit">
         Logout
       </button>
-
+  
   </div>
 </template>
 
 <script>
+import AppHeader from "./components/Appheader.vue";
 // import authService from "@/services/AuthService";
 
 export default {
-
-}
+  components: {
+    AppHeader
+  }
+};
 </script>
 
 <style>

@@ -1,10 +1,7 @@
 <template>
             
   <div id="login" class="text-center">
-    <ul class="container" id="banner">
-      <li class="item"><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
-      <li class="item">FAQ</li>
-    </ul>
+    <AppHeader />
 
 
     <form class="form-login" @submit.prevent="login">
@@ -57,8 +54,10 @@
 
 <script>
 import authService from "../services/AuthService";
+import AppHeader from "./components/Appheader.vue";
 
 export default {
+  AppHeader,
   name: "login",
   components: {},
   data() {
