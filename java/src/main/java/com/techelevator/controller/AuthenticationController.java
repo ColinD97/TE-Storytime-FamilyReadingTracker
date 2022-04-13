@@ -58,9 +58,11 @@ public class AuthenticationController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(@Valid @RequestBody RegisterUserDTO newUser) {
         try {
+            System.out.println("try "+ newUser);
             User user = userDao.findByUsername(newUser.getUsername());
             throw new UserAlreadyExistsException();
         } catch (UsernameNotFoundException e) {
+            System.out.println("catch " + e + " newuser: "+ newUser);
             Random random = new Random();
             String family_id = String.valueOf(random.nextInt(100000000));
             userDao.create(family_id, newUser.getFirst_name(), newUser.getLast_name(), newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getRole());

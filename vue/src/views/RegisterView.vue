@@ -20,7 +20,7 @@
                         id="firstname"
                         class="form-input"
                         placeholder="First Name"
-                        v-model="user.firstname"
+                        v-model="user.first_name"
                         required
                         autofocus
                     />
@@ -32,7 +32,7 @@
                         id="lastname"
                         class="form-input"
                         placeholder="Last Name"
-                        v-model="user.lastname"
+                        v-model="user.last_name"
                         required
                         autofocus
                     />

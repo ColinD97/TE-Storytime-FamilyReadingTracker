@@ -73,7 +73,7 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/parent/dashboard");
+            this.$router.push("/parent/dashboard/"+response.data.user.id);
           }
         })
         .catch(error => {
