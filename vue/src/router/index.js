@@ -69,7 +69,7 @@ const router = new Router({
       }
     },
     {
-      path: "/parent/:userID",
+      path: "/parent/dashboard",
       name: "parent",
       component: ParentDash,
       meta: {
@@ -77,7 +77,7 @@ const router = new Router({
       }
     },
     {
-      path: "/parent/child-dash/:userID",
+      path: "/parent/child-dashboard/:userID",
       name: "parent-child-dash",
       component: ParentChildDash,
       meta: {
@@ -85,7 +85,7 @@ const router = new Router({
       }
     },
     {
-      path: '/bookshelf/:userID',
+      path: '/bookshelf/',
       name: 'bookshelf',
       component: BookShelf,
     },

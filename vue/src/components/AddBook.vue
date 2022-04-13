@@ -1,13 +1,14 @@
 <template>
-    <div class="parent-dashboard">
-      <ul class="container" id="banner">
-            <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
-            <li class="item"><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
+    <div class="add-book">
+      <ul id="banner">
+      <li>FAQ</li>
       </ul>
-    <h1 id="title">Parent Dashboard</h1>
+    <h1 id="title">BookShelf</h1>
     <h3 id="subtext">Keep track of your kid's reading. Build habits for life.</h3>
       <table class="Children List">
-      <label for="Children">Children **TABLE OF CHILDREN ACCOUNTS**</label>
+      <label for="Children">Current Books:</label>
+      <label for="Children">Books to-read:</label>
+      <label for="Children">Books Read:</label>
         <!-- <tr>
           <th>Name</th>
           <th>Books Finished</th>
@@ -17,10 +18,10 @@
       </table> 
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">
-        Create | Edit Child Account IN PROGRESS/WIP
+        Add New Book
       </button>
     <button class="btn btn-lg btn-primary btn-block" type="submit">
-        Create | Edit Parent Account
+        Move Book
       </button>
     <button class="btn btn-lg btn-primary btn-block" type="submit">
         Logout

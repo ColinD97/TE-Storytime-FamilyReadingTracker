@@ -1,7 +1,7 @@
 <template class="home">
 
 <div class="register">
-    <ul class="container" id="banner">
+    <!-- <ul class="container" id="banner">
       <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
       <li class="item">FAQ</li>
     </ul>
@@ -11,12 +11,12 @@
   <form class="form-register" @submit.prevent="register">
     <h1 class="form-header">Enter Parent Information:</h1>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
-        {{ registrationErrorMsg }}
+        {{ registrationErrorMsg }} -->
     </div>
 
-  <div class="form-body">
+  <!-- <div class="form-body"> -->
             <!-- Firstname and Lastname -->
-            <div class="horizontal-group">
+            <!-- <div class="horizontal-group">
                 <div class="form-group left">
                     <label for="firstname" class="label-title">First Name</label>
                     <input
@@ -41,9 +41,9 @@
                         autofocus
                     />
                     </div>
-            </div>
+            </div> -->
             <!-- Email -->
-            <div class="horizontal-group">
+            <!-- <div class="horizontal-group">
                 <div class="form-group">
                     <div class="form-group left">
                         <label for="email" class="label-title">Email Address</label>
@@ -158,4 +158,4 @@ export default {
 </script>
 
 <style>
-</style>
+</style> -->

@@ -2,7 +2,6 @@
   <div>
         <ul class="container" id="banner">
             <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
-            <li class="item">FAQ</li>
             <li class="item"><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
         </ul>
         <h1 class="title">Temp Reading Tracker</h1>
@@ -63,7 +62,7 @@ text-align: center;
 }
 body{
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(to right, #96dfe9 0%, #fafafa 50%, #ffffff 99%);
+    background: linear-gradient(to right, #e3e7ae 0%, #d7eef5 50%, #bbf2fc 99%);
 }
 .form-register{
   font-family: "Roboto", sans-serif;
