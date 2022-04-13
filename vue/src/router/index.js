@@ -68,7 +68,7 @@ const router = new Router({
       }
     },
     { // Router for ParentDashboard - MVP for Sprint 1
-      path: "/parent/dashboard/:userID",
+      path: "/parent/dashboard/:userId",
       name: "parent",
       component: ParentDashboard,
       meta: {
@@ -76,7 +76,7 @@ const router = new Router({
       }
     },
     {//where prizes will be located
-      path: "/parent/child-dashboard/:userID",
+      path: "/parent/child-dashboard/:userId",
       name: "parent-child-dash",
       component: ParentChildDash,
       meta: {
@@ -84,12 +84,12 @@ const router = new Router({
       }
     },
     {//add user id. changed just for presentation tomorrow. using as "add and view books page" combined?!
-      path: '/bookshelf/:userID',
+      path: '/bookshelf/:userId',
       name: 'bookshelf',
       component: BookShelf,
     },
     {
-      path: '/bookshelf/:userID/book/:bookID',
+      path: '/bookshelf/:userId/book/:bookId',
       name: 'add-book',
       component: BookShelf,
     },

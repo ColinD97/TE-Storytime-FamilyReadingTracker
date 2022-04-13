@@ -45,8 +45,8 @@
                 </div>
             </div>
             </div>
-    <button class="btn" type="submit" v-on:click="addBook()">
-        Add Book
+    <button class="btn" type="submit" v-on:click="addBook">
+        Submit Form
       </button>
     <button class="btn" type="submit">
         Move Book
@@ -75,7 +75,7 @@ export default {
         .create(this.book)
         .then(response => {
           if (response.status === 201) {
-            this.$router.push({name: 'bookshelf'});
+            this.$router.push({path: '/'});
           }
         })
 

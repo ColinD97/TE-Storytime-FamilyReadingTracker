@@ -30,7 +30,7 @@
   </tbody>
 </table>
 </div>
-<router-link c v-bind:to="{ name: 'add-book' }">
+<router-link v-bind:to="{ name: 'add-book' }">
   <button class="btn" type="submit"> 
     Add Book
   </button>
@@ -40,12 +40,24 @@
 </template>
 
 <script>
+import BookService from '@/services/BookService.js';
 import AddBook from '@/components/AddBook'
 
 export default {
+  data() {
+    return {
+      books: []
+
+    }
+  },
   components: {
     AddBook
   },  
+  created() {
+    BookService.getBooks(this.$route.params.userId).then( response => {
+      this.books = response.data;
+    })
+  }
 }
 </script>
 

@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export default {
     
-    getBooks(user){
-        return axios.get('/bookshelf', user)
+    getBooks(userId){
+        return axios.get(`/bookshelf/${userId}`)
     },
 
     addBooks(book) {
