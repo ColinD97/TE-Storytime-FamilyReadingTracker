@@ -7,17 +7,17 @@ export default {
     },
 
     addBooks(book) {
-        return axios.post(`/topics`, book)
+        return axios.post(`/bookshelf`, book)
     },
 
 //For later
     updateBook(user, book) {
-        return axios.put(`/topics/${user}`, book);
+        return axios.put(`/bookshelf/${user}`, book);
     },
 
 
     deleteBooks(user) {
-        return axios.delete(`/topics/${user}`)
+        return axios.delete(`/bookshelf/${user}`)
 
     }
 

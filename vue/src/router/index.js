@@ -9,7 +9,6 @@ import ParentDashboard from '../views/ParentDashboardView.vue'
 import ParentChildDash from '../views/ParentChildDashView.vue'
 import FamilyRegister from '../views/ChildRegisterView.vue'
 import BookShelf from '../views/BookshelfView.vue'
-import AddBook from '../views/AddBookView.vue'
 
 
 
@@ -92,7 +91,7 @@ const router = new Router({
     {
       path: '/bookshelf/:userID/book/:bookID',
       name: 'add-book',
-      component: AddBook
+      component: BookShelf,
     },
     
   ]
