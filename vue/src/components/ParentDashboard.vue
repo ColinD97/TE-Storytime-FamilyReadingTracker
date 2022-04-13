@@ -1,4 +1,4 @@
-<template>
+<template> 
     <div class="parent-dashboard">
     <h1 id="title">Parent Dashboard</h1>
     <h3 id="subtext">Keep track of your kid's reading. Build habits for life.</h3>
