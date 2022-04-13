@@ -4,9 +4,12 @@ package com.techelevator.controller;
 import com.techelevator.dao.BookDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.Book;
+import com.techelevator.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * REST API
@@ -43,12 +46,15 @@ public class BookController {
          */
     }
 
-    @RequestMapping(path="/book", method = RequestMethod.POST)
+    @RequestMapping(path="/bookshelf/{id}", method = RequestMethod.POST)
     public Book createBook(@RequestBody Book book){
         return bookDao.createBook(book);
     }
 
-
+    @RequestMapping(value = "/bookshelf/{id}", method = RequestMethod.GET)
+    public List<Book> getBooksByUser(@PathVariable long id) {
+        return bookDao.getBooksByUserId(id);
+    }
 
 
 }

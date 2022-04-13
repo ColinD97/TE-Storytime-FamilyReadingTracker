@@ -19,6 +19,7 @@ import com.techelevator.security.jwt.JWTFilter;
 import com.techelevator.security.jwt.TokenProvider;
 
 import java.security.Principal;
+import java.util.List;
 import java.util.Random;
 
 
@@ -67,7 +68,7 @@ public class AuthenticationController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "/parent/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/parent/dashboard/{id}", method = RequestMethod.POST)
     public void registerFamilyUser(@Valid @RequestBody RegisterFamilyUserDTO newUser, @PathVariable long id) {
         try {
             User user = userDao.findByUsername(newUser.getUsername());
@@ -78,6 +79,14 @@ public class AuthenticationController {
             userDao.create(family_id, newUser.getFirst_name(), newUser.getLast_name(), newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getRole());
         }
     }
+
+    @RequestMapping(value = "/parent/dashboard/{id}", method = RequestMethod.GET)
+    public List<User> getFamilyUsers(@PathVariable long id) {
+        User user = userDao.getUserById(id);
+        String family_id = user.getFamily_id();
+        return userDao.getUsersByFamilyId(family_id);
+    }
+
 
     /**
      * Object to return as body in JWT Authentication.

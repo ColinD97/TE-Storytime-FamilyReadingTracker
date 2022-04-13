@@ -93,6 +93,18 @@ public class JdbcUserDao implements UserDao {
         return userCreated;
     }
 
+    @Override
+    public List<User> getUsersByFamilyId(String familyId) {
+        String sql = "SELECT * FROM users WHERE family_id = ?;";
+        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
+        List <User> results = new ArrayList<>();
+        while (resultSet.next()) {
+            results.add(mapRowToUser(resultSet));
+        }
+        return results;
+    }
+
+
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
         user.setId(rs.getLong("user_id"));

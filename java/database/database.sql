@@ -43,8 +43,12 @@ CREATE TABLE users_books (
 	
 );
 
-INSERT INTO users (username, family_id, first_name, last_name, email, password_hash, role) VALUES ('user', '1', 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
-INSERT INTO users (username, family_id, first_name, last_name, email, password_hash,role) VALUES ('admin', '1', 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
+INSERT INTO users (username, family_id, first_name, last_name, email, password_hash, role) 
+VALUES 
+	('user', '1', 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER'),
+	('admin', '1', 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN'),
+	('username', '2', 'Reg', 'Arnedo', 'reg@hotmail.com', 'testpasshash', 'ROLE_USER'),
+	('username1', '2', 'Kai', 'Wolf', 'Kai@hotmail.com', 'passwordhash', 'ROLE_USER');
 
 INSERT INTO book_info (title, author, isbn)
 VALUES

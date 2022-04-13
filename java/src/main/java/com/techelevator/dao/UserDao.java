@@ -16,4 +16,6 @@ public interface UserDao {
 
     boolean create(String family_id, String firstName,
                    String lastName, String email, String username, String password, String role);
+
+    List<User> getUsersByFamilyId(String familyId);
 }
