@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import AuthService from "@/services/AuthService";
+
 export default {
 // create + data (empty group of users that I will fill with this return request)
   name: 'parent-dashboard-userID',          // Spot check this with the team. 
@@ -37,13 +39,15 @@ export default {
 
 //  Review this with team
 created() {
-    AuthService.getParentId(this.$route.params.id).then((response) => {
-      this.getParentId= response.data
-    });
+    AuthService
+      .create(this.user)
+      .then(response => {
+        if (response.status === 201) {
+          this.$router.push({name: 'home'});  // Note: This might be '/' instead
+        }
+      })
   }
 }
-
-
 
 </script>
 
