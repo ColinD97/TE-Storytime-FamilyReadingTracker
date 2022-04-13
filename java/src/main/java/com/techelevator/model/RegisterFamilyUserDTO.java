@@ -4,8 +4,6 @@ import javax.validation.constraints.NotEmpty;
 
 public class RegisterFamilyUserDTO {
 
-
-    private boolean is_parent;
     @NotEmpty
     private String first_name;
     @NotEmpty
@@ -52,15 +50,7 @@ public class RegisterFamilyUserDTO {
     public void setRole(String role) {
         this.role = role;
     }
-
-    public boolean isIs_parent() {
-        return is_parent;
-    }
-
-    public void setIs_parent(boolean is_parent) {
-        this.is_parent = is_parent;
-    }
-
+    
     public String getFirst_name() {
         return first_name;
     }
