@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Book;
+import com.techelevator.model.UserBook;
 
 import java.util.List;
 
@@ -10,5 +11,5 @@ public interface BookDao {
 
     Book getBookById(int id);
 
-    List<Book> getBooksByUserId(Long userId);
+    List<UserBook> getBooksByUserId(Long userId);
 }

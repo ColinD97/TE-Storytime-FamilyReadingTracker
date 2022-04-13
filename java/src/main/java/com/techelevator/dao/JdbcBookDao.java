@@ -2,6 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Book;
 import com.techelevator.model.User;
+import com.techelevator.model.UserBook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -36,13 +37,13 @@ public class JdbcBookDao implements BookDao{
     }
 
     @Override
-    public List<Book> getBooksByUserId(Long userId) {
-        String sql = "SELECT title, author, isbn, times_read, past_book, " +
+    public List<UserBook> getBooksByUserId(Long userId) {
+        String sql = "SELECT book_info.book_id, title, author, isbn, times_read, past_book, " +
                 "current_book, future_book FROM users JOIN users_books " +
                 "ON users.user_id = users_books.user_id JOIN book_info " +
                 "ON users_books.book_id = book_info.book_id WHERE users.user_id = ?;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, userId);
-        List <Book> results = new ArrayList<>();
+        List <UserBook> results = new ArrayList<>();
         while (resultSet.next()) {
             results.add(mapRowToUserBook(resultSet));
         }
@@ -58,12 +59,16 @@ public class JdbcBookDao implements BookDao{
         return book;
     }
 
-    private Book mapRowToUserBook(SqlRowSet resultSet) {
-        Book book = new Book();
+    private UserBook mapRowToUserBook(SqlRowSet resultSet) {
+        UserBook book = new UserBook();
         book.setBook_id(resultSet.getInt("book_id"));
         book.setTitle(resultSet.getString("title"));
         book.setAuthor(resultSet.getString("author"));
         book.setIsbn(resultSet.getInt("isbn"));
+        book.setTimesRead(resultSet.getInt("times_read"));
+        book.setPastBook(resultSet.getBoolean("past_book"));
+        book.setCurrentBook(resultSet.getBoolean("current_book"));
+        book.setFutureBook(resultSet.getBoolean("future_book"));
         return book;
     }
 }
