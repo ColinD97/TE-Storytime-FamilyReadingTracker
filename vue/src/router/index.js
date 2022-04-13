@@ -69,7 +69,7 @@ const router = new Router({
       }
     },
     {//reg's page
-      path: "/parent/dashboard",
+      path: "/parent/dashboard/:userID",
       name: "parent",
       component: ParentDash,
       meta: {

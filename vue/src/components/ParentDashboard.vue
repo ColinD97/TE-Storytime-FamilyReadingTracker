@@ -24,6 +24,8 @@
 
 <script>
 export default {
+// create + data (empty group of users that I will fill with this return request)
+
 
 }
 </script>
