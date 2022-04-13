@@ -1,6 +1,5 @@
 <template>
   <div class="child-register">
-    <AppHeader />
     <h1 class="title">Bookshelf</h1>
     <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
     
@@ -43,12 +42,12 @@
 </template>
 
 <script>
-import AppHeader from "./components/Appheader.vue";
+// import AppHeader from "./components/Appheader.vue";
 
 export default {
   components: {
-    BookDetail,
-    AppHeader
+    // BookDetail,
+    // AppHeader
   }
 };
 </script>

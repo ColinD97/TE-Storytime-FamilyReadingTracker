@@ -15,7 +15,7 @@
         {{ registrationErrorMsg }}
     </div>
     
-  <AppHeader />
+  
 
   <div class="form-body">
             <!-- Firstname and Lastname -->

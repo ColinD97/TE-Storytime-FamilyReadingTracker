@@ -1,15 +1,14 @@
 <template>
-  <AppHeader />
+<div></div>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader';
-import BookDetail from '@/components/BookDetail';
+// import AppHeader from '@/components/AppHeader';
+// import BookDetail from '@/components/BookDetail';
 
 export default {
   components: {
-    BookDetail,
-    AppHeader
+    
   }
 };
 </script>

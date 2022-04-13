@@ -1,9 +1,6 @@
 <template>
             
   <div id="login" class="text-center">
-    <AppHeader />
-
-
     <form class="form-login" @submit.prevent="login">
       <h1 class="form-header">Please Sign In</h1>
       <div
@@ -54,10 +51,9 @@
 
 <script>
 import authService from "../services/AuthService";
-import AppHeader from "./components/Appheader.vue";
+// import AppHeader from "./components/Appheader.vue";
 
 export default {
-  AppHeader,
   name: "login",
   components: {},
   data() {

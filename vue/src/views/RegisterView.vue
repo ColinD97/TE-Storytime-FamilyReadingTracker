@@ -1,18 +1,16 @@
 <template>
   <div>
-    <AppHeader />
-    <RegistrationForm />
   </div>
 </template>
 
 <script>
-import AppHeader from "./components/Appheader.vue";
-import RegistrationForm from '@/components/RegistrationForm';
+// import AppHeader from "./components/Appheader.vue";
+// import RegistrationForm from '@/components/RegistrationForm';
 
 export default {
   components: {
-    RegistrationForm,
-    AppHeader
+    // RegistrationForm,
+    // AppHeader
   }
 };
 </script>

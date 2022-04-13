@@ -1,15 +1,14 @@
 <template>
-  <div>
-      <AppHeader />
+  <div>  
   </div>
 </template>
 
 <script>
-import AppHeader from "./components/Appheader.vue";
+// import AppHeader from "./components/Appheader.vue";
 
 
 export default {
-    AppHeader
+    // AppHeader
 
 }
 </script>
