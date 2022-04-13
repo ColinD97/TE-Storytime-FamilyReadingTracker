@@ -1,14 +1,15 @@
 <template>
-  <router-view />
+  <AppHeader />
 </template>
 
 <script>
-export default {};
-</script>
+import AppHeader from '@/components/AppHeader';
+import BookDetail from '@/components/BookDetail';
 
-<style>
-h1 {
-  font-family: "Oswald", sans-serif;
-  font-weight: 500;
-}
-</style>
+export default {
+  components: {
+    BookDetail,
+    AppHeader
+  }
+};
+</script>

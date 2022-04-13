@@ -1,9 +1,14 @@
 <template>
-  <h1>Logout</h1>
+  <div>
+    <AppHeader />
+  </div>
 </template>
 
 <script>
+import AppHeader from "./components/Appheader.vue";
+
 export default {
+  AppHeader,
   created() {
     this.$store.commit("LOGOUT");
     this.$router.push("home");

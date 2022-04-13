@@ -1,4 +1,6 @@
 <template>
+  
+
   <div class="child-register">
       <ul class="container" id="banner">
       <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
@@ -12,6 +14,8 @@
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
     </div>
+    
+  <AppHeader />
 
   <div class="form-body">
             <!-- Firstname and Lastname -->
