@@ -2,12 +2,26 @@ import axios from 'axios';
 
 export default {
     
-    showBooks(user){
-    return axios.get('/books', user)
-  },
+    getBooks(user){
+        return axios.get('/bookshelf', user)
+    },
 
-//Move book from 'to-read' to 'currently reading, etc'
-  updateBook(userID,bookID) {
-    return axios.put(`/bookshelf/${userID}/book/${bookID}`);
-  },
+    addBooks(book) {
+        return axios.post(`/topics`, book)
+    },
+
+//For later
+    updateBook(user, book) {
+        return axios.put(`/topics/${user}`, book);
+    },
+
+
+    deleteBooks(user) {
+        return axios.delete(`/topics/${user}`)
+
+    }
+
+
+
+
 }

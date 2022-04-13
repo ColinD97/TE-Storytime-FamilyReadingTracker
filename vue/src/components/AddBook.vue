@@ -1,50 +1,44 @@
 <template>
-    <div class="add-book">
-    <h1 class="title">BookShelf</h1>
-    <h3 class="subtext">Let's go on a reading adventure!</h3>
-<table class="bookshelf" >
-    <thead class='table-header'>
-    <tr class='header-row'>
-        <th>Current Books</th>
-        <th>Books To-read</th>
-        <th>Books Read</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class='table-row'>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr class='table-row'>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr class='table-row'>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-  </tbody>
-</table>
-      
+    
 <div class='buttons'>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" v-on:click="addBook()">
         Add New Book
       </button>
     <button class="btn btn-lg btn-primary btn-block" type="submit">
         Move Book
       </button>
 </div>
-
-  </div>
 </template>
 
 <script>
-export default {
 
-}
+import BookService from '@/services/BookService.js';
+
+export default {
+  name: 'add-book',
+  data() {
+    return {
+      book: {
+        title: "",
+        author: "",
+        isbn: "",
+      }
+    };
+  },
+  methods: {
+    addBook() {
+      BookService
+        .create(this.book)
+        .then(response => {
+          if (response.status === 201) {
+            this.$router.push({name: 'bookshelf'});
+          }
+        })
+
+    }
+  }
+};
+
 </script>
 
 <style>
