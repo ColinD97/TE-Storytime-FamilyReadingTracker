@@ -8,6 +8,13 @@ export default {
 
   register(user) {
     return axios.post('/register', user)
-  }
+  },
+
+  getParentId(user) {
+    return http.get(`/parent/$( user )`); 
+  },
+
+  
+
 
 }

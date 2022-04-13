@@ -68,7 +68,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {//reg's page
+    { // Router for ParentDashboard - MVP for Sprint 1
       path: "/parent/dashboard/:userID",
       name: "parent",
       component: ParentDashboard,
