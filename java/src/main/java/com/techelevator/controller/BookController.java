@@ -5,6 +5,7 @@ import com.techelevator.dao.BookDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.Book;
 import com.techelevator.model.User;
+import com.techelevator.model.UserBook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -52,7 +53,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/bookshelf/{id}", method = RequestMethod.GET)
-    public List<Book> getBooksByUser(@PathVariable long id) {
+    public List<UserBook> getBooksByUser(@PathVariable long id) {
         return bookDao.getBooksByUserId(id);
     }
 
