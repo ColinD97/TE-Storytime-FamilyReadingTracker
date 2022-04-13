@@ -17,7 +17,7 @@
                     />
                     </div>
                 <div class="form-group right">
-                    <label for="authro" class="label-title">Author</label>
+                    <label for="author" class="label-title">Author</label>
                     <input
                         type="text"
                         id="author"
@@ -42,25 +42,13 @@
                             autofocus
                         />
                     </div>
-                    <div class="form-group right">
-                        <label for="username" class="label-title">Username</label>
-                        <input
-                            type="text"
-                            id="username"
-                            class="form-input"
-                            placeholder="Username"
-                            v-model="user.username"
-                            required
-                            autofocus
-                        />
-                    </div>
                 </div>
             </div>
             </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" v-on:click="addBook()">
-        Add New Book
+    <button class="btn" type="submit" v-on:click="addBook()">
+        Add Book
       </button>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">
+    <button class="btn" type="submit">
         Move Book
       </button>
 </div>
@@ -109,6 +97,20 @@ export default {
 }
 table, th, td {
   border: 1px solid black;
+}
+.btn-body {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #1ca3dc;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    color: #bcf5e7;
+    cursor: pointer;
+}
+.btn-body:hover {
+    background-color: #169c7b;
+    color: white;
 }
 
 </style>

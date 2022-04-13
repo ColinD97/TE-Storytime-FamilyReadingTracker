@@ -30,6 +30,11 @@
   </tbody>
 </table>
 </div>
+<router-link c v-bind:to="{ name: 'add-book' }">
+  <button class="btn" type="submit"> 
+    Add Book
+  </button>
+</router-link> 
   <add-book />
 </div>
 </template>
