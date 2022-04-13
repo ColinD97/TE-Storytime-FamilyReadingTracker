@@ -52,7 +52,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {
+    {//reg for first parent of family to use
       path: "/register",
       name: "register",
       component: Register,
@@ -60,15 +60,15 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {
-      path: "/register/family/:userID",
-      name: "register-family",
+    {//are we doing separate child and adult registrations still? 
+      path: "/register/child",
+      name: "register/child",
       component: FamilyRegister,
       meta: {
         requiresAuth: false
       }
     },
-    {
+    {//reg's page
       path: "/parent/dashboard",
       name: "parent",
       component: ParentDash,
@@ -76,7 +76,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {
+    {//where prizes will be located
       path: "/parent/child-dashboard/:userID",
       name: "parent-child-dash",
       component: ParentChildDash,
@@ -84,7 +84,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {
+    {//add user id. changed just for presentation tomorrow. using as "add and view books page" combined?!
       path: '/bookshelf/',
       name: 'bookshelf',
       component: BookShelf,

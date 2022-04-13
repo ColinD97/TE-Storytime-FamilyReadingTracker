@@ -1,9 +1,5 @@
 <template>
     <div class="parent-dashboard">
-      <ul class="container" id="banner">
-            <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
-            <li class="item"><router-link v-bind:to="{ name: 'register' }">Register</router-link></li>
-      </ul>
     <h1 id="title">Parent Dashboard</h1>
     <h3 id="subtext">Keep track of your kid's reading. Build habits for life.</h3>
       <table class="Children List">
@@ -17,13 +13,10 @@
       </table> 
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">
-        Create | Edit Child Account IN PROGRESS/WIP
+        Create | Edit Child Account
       </button>
     <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create | Edit Parent Account
-      </button>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">
-        Logout
       </button>
 
   </div>
