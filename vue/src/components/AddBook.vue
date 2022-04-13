@@ -56,6 +56,7 @@
                     </div>
                 </div>
             </div>
+            </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit" v-on:click="addBook()">
         Add New Book
       </button>

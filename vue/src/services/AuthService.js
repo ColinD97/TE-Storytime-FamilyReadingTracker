@@ -13,5 +13,4 @@ export default {
   getParentId(user) {
     return axios.get(`/parent/${user}`); 
   },
-
 }
