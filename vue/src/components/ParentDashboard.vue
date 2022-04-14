@@ -42,8 +42,12 @@ export default {
       },
       familyUsers: [],
       // currentUserId: this.$route.params.userId
-      currentUserId: this.$store.state.user.id
 
+    }
+  },
+    computed: {
+    currentUserId: function(){
+      return this.$store.state.user.id
     }
   },
   methods: {

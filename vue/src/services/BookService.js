@@ -6,6 +6,10 @@ export default {
         return axios.get(`/bookshelf/${userId}`)
     },
 
+    getAllBooks(){
+        return axios.get('/bookshelf')
+    },
+
     addBook(userId, book) {
         return axios.post(`/bookshelf/${userId}`, book)
     },

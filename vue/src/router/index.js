@@ -9,6 +9,7 @@ import ParentDashboard from '../views/ParentDashboardView.vue'
 import ParentChildDash from '../views/ParentChildDashView.vue'
 import FamilyRegister from '../views/ChildRegisterView.vue'
 import BookShelf from '../views/BookshelfView.vue'
+import CatalogueView from '../views/CatalogueView'
 
 
 
@@ -78,9 +79,9 @@ const router = new Router({
 
     {
       // Working on hook for new version of BookshelfView
-      path: "/bookshelf",
+      path: "/catalogue",
       name: "bookshelf-catalogue",
-      component: ParentDashboard,
+      component: CatalogueView,
       meta: {
         requiresAuth: false
       }

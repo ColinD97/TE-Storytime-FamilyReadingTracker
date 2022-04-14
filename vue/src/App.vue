@@ -6,8 +6,10 @@
       <!-- <router-link class='container' v-bind:to="{ name: 'logout' }">Logout</router-link>  -->
       <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link> 
       <router-link class='container' v-bind:to="{ name: 'register' }">Register</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'parent', params: {id: this.currentUserId} }">Parent Dashboard</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {id: this.currentUserId}}">Bookshelf</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'parent', params: {userId: currentUserId}}">Parent Dashboard</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">Bookshelf</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">Catalogue</router-link> 
+
       <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4>
     </div>
     <router-view />

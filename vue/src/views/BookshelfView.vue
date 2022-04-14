@@ -6,32 +6,23 @@
 <table class="bookshelf" >
     <thead class='table-header'>
     <tr class='header-row'>
-        <th>Current Books</th>
-<!--        <th>Books To-read</th>
-        <th>Books Read</th> -->
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Difficulty</th>
     </tr>
   </thead>
   <tbody>
-    <tr class='table-row'>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr v-for="book in books" v-bind:key="book.book_id" class='table-row'>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.isbn}}</td>
+        <td>0000</td>
     </tr>
-    <tr class='table-row'>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr class='table-row'>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+
   </tbody>
 </table>
-<div v-for="book in books" v-bind:key="book.book_id">
-  <h4>{{book.title}}</h4>
-</div>
+
 </div>
 <!-- <router-link v-bind:to="{ name: 'add-book' }">
   <button class="btn" type="submit"> 

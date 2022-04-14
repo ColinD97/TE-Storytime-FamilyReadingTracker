@@ -21,7 +21,7 @@ export default {
 /*---------------------------------------*/
 /* Web Font*/
 /*---------------------------------------*/
-@import url("httpss://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 /*---------------------------------------*/
 /* Top Banner */
