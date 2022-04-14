@@ -57,9 +57,9 @@ public class BookController {
         return bookDao.getBooksByUserId(id);
     }
 
-    @RequestMapping(value="/bookshelf/", method = RequestMethod.GET)
+    @RequestMapping(value="/bookshelf", method = RequestMethod.GET)
     public List<Book> getAllBooks() {
-        return bookDao.get
+        return bookDao.getAllBooks();
     }
 
 }

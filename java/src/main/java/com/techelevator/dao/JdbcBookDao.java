@@ -52,7 +52,7 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public List <Book> getAllBooks() {
-        String sql = "";
+        String sql = "SELECT * FROM book_info; ";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql);
         List <Book> results = new ArrayList<>();
         while (resultSet.next()) {
