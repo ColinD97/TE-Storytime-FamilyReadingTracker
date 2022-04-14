@@ -75,6 +75,19 @@ const router = new Router({
         requiresAuth: false
       }
     },
+
+    {
+      // Working on hook for new version of BookshelfView
+      path: "/bookshelf",
+      name: "bookshelf-catalogue",
+      component: ParentDashboard,
+      meta: {
+        requiresAuth: false
+      }
+    },
+
+
+
     {//where prizes will be located
       path: "/parent/child-dashboard/:userId",
       name: "parent-child-dash",

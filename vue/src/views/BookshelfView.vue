@@ -7,8 +7,8 @@
     <thead class='table-header'>
     <tr class='header-row'>
         <th>Current Books</th>
-        <th>Books To-read</th>
-        <th>Books Read</th>
+<!--        <th>Books To-read</th>
+        <th>Books Read</th> -->
     </tr>
   </thead>
   <tbody>
