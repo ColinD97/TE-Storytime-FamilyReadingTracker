@@ -3,13 +3,35 @@
     <div id="nav">
       <router-link class='container' v-bind:to="{ name: 'home' }">Home </router-link>
       <router-link class='container' v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'logout' }">Logout</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'login' }">Login</router-link> 
+      <!-- <router-link class='container' v-bind:to="{ name: 'logout' }">Logout</router-link>  -->
+      <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link> 
       <router-link class='container' v-bind:to="{ name: 'register' }">Register</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'parent' }">Parent Dashboard</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {id: this.currentUserId}}">Bookshelf</router-link> 
+      <h4>current user id: {{this.currentUserId}}</h4>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+// import { defineComponent } from '@vue/composition-api'
+
+export default {
+  name: 'app',
+  data() {
+    return {
+      currentUserId: this.$store.state.user.id
+    }
+  },
+  computed: {
+    
+  }
+
+}
+</script>
+
+
 
 <style scoped>
 .container {

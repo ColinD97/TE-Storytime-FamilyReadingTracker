@@ -83,7 +83,7 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/parent/dashboard/{id}", method = RequestMethod.GET)
-    public List<User> getFamilyUsers(@PathVariable long id) {
+    public List<User> getFamilyUsers(@PathVariable Long id) {
         User user = userDao.getUserById(id);
         String family_id = user.getFamily_id();
         return userDao.getUsersByFamilyId(family_id);

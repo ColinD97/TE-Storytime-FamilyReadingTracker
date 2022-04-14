@@ -61,7 +61,7 @@ const router = new Router({
     },
     {//are we doing separate child and adult registrations still? 
       path: "/register/child",
-      name: "register/child",
+      name: "register-child",
       component: FamilyRegister,
       meta: {
         requiresAuth: false

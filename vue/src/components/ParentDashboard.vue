@@ -4,27 +4,32 @@
     <h3 id="subtext">Keep track of your kid's reading. Build habits for life.</h3>
       <table class="Children List">
       <label for="Children">Children **TABLE OF CHILDREN ACCOUNTS**</label>
-        <!-- <tr>
+        <tr>
           <th>Name</th>
           <th>Books Finished</th>
           <th>Hours Read</th>
           <th>Last Active?</th>
-        </tr>-->
+        </tr>
+        <tr v-for="user in familyUsers" :key="user.id">
+          <td>{{user.first_name}}</td>
+          <td>5</td>
+          <td>30</td>
+          <td>4/14/2022</td>
+        </tr>
       </table> 
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" @click="goToRegisterChild">
         Create | Edit Child Account
       </button>
     <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create | Edit Parent Account
       </button>
-      <router-link class='container' v-bind:to="{ name: 'bookshelf' }">Bookshelf </router-link>
 
   </div>
 </template>
 
 <script>
-// import AuthService from "@/services/AuthService";
+import AuthService from "@/services/AuthService";
 
 export default {
 // create + data (empty group of users that I will fill with this return request)
@@ -35,19 +40,25 @@ export default {
       user: {         // Spot check this with the team.  
         id: '',              
       },
+      familyUsers: [],
+      // currentUserId: this.$route.params.userId
+      currentUserId: this.$store.state.user.id
+
+    }
+  },
+  methods: {
+    goToRegisterChild(){
+      this.$router.push({name: 'register-child'})
     }
   },
 
-//  Review this with team
-// created() {
-//     AuthService
-//       .create(this.user)
-//       .then(response => {
-//         if (response.status === 201) {
-//           this.$router.push({name: 'home'});  // Note: This might be '/' instead
-//         }
-//       })
-//   }
+created() {
+    AuthService
+      .getFamilyByUserId(this.currentUserId)
+      .then(response => {
+          this.familyUsers = response.data;
+      })
+  }
 }
 
 </script>

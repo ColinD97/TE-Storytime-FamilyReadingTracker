@@ -50,7 +50,7 @@ export default {
   name: 'Bookshelf',
   data() {
     return {
-      currentUserId: this.$route.params.userId,
+      currentUserId: this.$store.state.user.id,
       books: []
 
     }
@@ -59,7 +59,7 @@ export default {
     AddBook
   },  
   created() {
-    BookService.getBooks(this.$route.params.userId).then( response => {
+    BookService.getBooks(this.currentUserId).then( response => {
       this.books = response.data;
     })
   }
