@@ -8,7 +8,7 @@
       <router-link class='container' v-bind:to="{ name: 'register' }">Register</router-link> 
       <router-link class='container' v-bind:to="{ name: 'parent', params: {id: this.currentUserId} }">Parent Dashboard</router-link> 
       <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {id: this.currentUserId}}">Bookshelf</router-link> 
-      <h4>current user id: {{this.currentUserId}}</h4>
+      <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4>
     </div>
     <router-view />
   </div>

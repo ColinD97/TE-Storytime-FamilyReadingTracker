@@ -10,6 +10,11 @@ export default {
     return axios.post('/register', user)
   },
 
+  registerFamilyUser(user, userId) {
+    console.log('axios userId: ' + userId)
+    return axios.post(`/parent/dashboard/${userId}`, user)
+  },
+
   getParentId(user) {
     return axios.get(`/parent/${user}`); 
   },

@@ -72,15 +72,16 @@ public class AuthenticationController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/parent/dashboard/{id}", method = RequestMethod.POST)
     public void registerFamilyUser(@Valid @RequestBody RegisterFamilyUserDTO newUser, @PathVariable long id) {
-        try {
-            User user = userDao.findByUsername(newUser.getUsername());
-            throw new UserAlreadyExistsException();
-        } catch (UsernameNotFoundException e) {
+//        try {
+//            User user = userDao.findByUsername(newUser.getUsername());
+//            throw new UserAlreadyExistsException();
+//        } catch (UsernameNotFoundException e) {
+        System.out.println(newUser + "  "+ id);
             User user = userDao.getUserById(id);
             String family_id = user.getFamily_id();
             userDao.create(family_id, newUser.getFirst_name(), newUser.getLast_name(), newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getRole());
         }
-    }
+//    }
 
     @RequestMapping(value = "/parent/dashboard/{id}", method = RequestMethod.GET)
     public List<User> getFamilyUsers(@PathVariable Long id) {

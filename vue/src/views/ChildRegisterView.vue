@@ -106,7 +106,7 @@
 import authService from '../services/AuthService';
 
 export default {
-  name: 'register',
+  name: 'register-child',
   data() {
     return {
       user: {
@@ -122,23 +122,31 @@ export default {
       registrationErrorMsg: 'There were problems registering this user.',
     };
   },
+  computed: {
+    currentUserId: function(){
+      return this.$store.state.user.id
+    }
+  },
   methods: {
     register() {
       if (this.user.password != this.user.confirmPassword) {
         this.registrationErrors = true;
         this.registrationErrorMsg = 'Password & Confirm Password do not match.';
       } else {
+        console.log('regFamUser: '+this.user)
+        console.log('regCurrentUserId: '+this.currentUserId)
         authService
-          .register(this.user)
+          .registerFamilyUser(this.user, this.currentUserId)
           .then((response) => {
             if (response.status == 201) {
               this.$router.push({
-                path: '/login',
-                query: { registration: 'success' },
+                name: 'parent', params: {id: this.currentUserId}
+                //query: { registration: 'success' },
               });
             }
           })
           .catch((error) => {
+            console.log('regFamUser error: '+error)
             const response = error.response;
             this.registrationErrors = true;
             if (response.status === 400) {
