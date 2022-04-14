@@ -1,22 +1,18 @@
-<template class="home">
-
-<div class="register">
-    <!-- <ul class="container" id="banner">
-      <li class="item"><router-link v-bind:to="{ name: 'login' }">Login</router-link></li>
-      <li class="item">FAQ</li>
-    </ul>
+<template>
+  <div>
+    <div class="register">
     <h1 class="title">Create Account</h1>
     <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
     
   <form class="form-register" @submit.prevent="register">
     <h1 class="form-header">Enter Parent Information:</h1>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
-        {{ registrationErrorMsg }} -->
+        {{ registrationErrorMsg }}
     </div>
 
-  <!-- <div class="form-body"> -->
+  <div class="form-body">
             <!-- Firstname and Lastname -->
-            <!-- <div class="horizontal-group">
+            <div class="horizontal-group">
                 <div class="form-group left">
                     <label for="firstname" class="label-title">First Name</label>
                     <input
@@ -24,7 +20,7 @@
                         id="firstname"
                         class="form-input"
                         placeholder="First Name"
-                        v-model="user.firstname"
+                        v-model="user.first_name"
                         required
                         autofocus
                     />
@@ -36,14 +32,14 @@
                         id="lastname"
                         class="form-input"
                         placeholder="Last Name"
-                        v-model="user.lastname"
+                        v-model="user.last_name"
                         required
                         autofocus
                     />
                     </div>
-            </div> -->
+            </div>
             <!-- Email -->
-            <!-- <div class="horizontal-group">
+            <div class="horizontal-group">
                 <div class="form-group">
                     <div class="form-group left">
                         <label for="email" class="label-title">Email Address</label>
@@ -102,6 +98,7 @@
         </div>
     </form>
 </div>
+  </div>
 </template>
 
 <script>
@@ -112,13 +109,13 @@ export default {
   data() {
     return {
       user: {
-        firstname: '',
-        lastname: '',
+        first_name: '',
+        last_name: '',
         email: '',
         username: '',
         password: '',
         confirmPassword: '',
-        role: 'user',
+        role: 'parent',
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
@@ -156,6 +153,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style> -->

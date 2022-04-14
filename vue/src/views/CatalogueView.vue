@@ -1,12 +1,13 @@
 <template>
   <div>
-      <catalogue />
+    <catalogue />
   </div>
 </template>
 
 <script>
 import Catalogue from '../components/Catalogue.vue'
 export default {
+  
   components: { Catalogue },
 
 }

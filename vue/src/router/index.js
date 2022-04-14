@@ -7,7 +7,7 @@ import Register from '../views/RegisterView.vue'
 import store from '../store/index'
 import ParentDashboard from '../views/ParentDashboardView.vue'
 import ParentChildDash from '../views/ParentChildDashView.vue'
-import FamilyRegister from '../views/ChildRegisterView.vue'
+import RegisterChildView from '../views/RegisterChildView.vue'
 import BookShelf from '../views/BookshelfView.vue'
 import CatalogueView from '../views/CatalogueView'
 
@@ -63,7 +63,7 @@ const router = new Router({
     {//are we doing separate child and adult registrations still? 
       path: "/register/child",
       name: "register-child",
-      component: FamilyRegister,
+      component: RegisterChildView,
       meta: {
         requiresAuth: false
       }
@@ -87,8 +87,6 @@ const router = new Router({
       }
     },
 
-
-
     {//where prizes will be located
       path: "/parent/child-dashboard/:userId",
       name: "parent-child-dash",
@@ -102,11 +100,7 @@ const router = new Router({
       name: 'bookshelf',
       component: BookShelf,
     },
-    {
-      path: '/bookshelf/:userId/book/:bookId',
-      name: 'add-book',
-      component: BookShelf,
-    },
+
     
   ]
 })
