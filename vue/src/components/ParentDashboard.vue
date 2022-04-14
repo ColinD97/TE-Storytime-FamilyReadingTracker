@@ -18,12 +18,13 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create | Edit Parent Account
       </button>
+      <router-link class='container' v-bind:to="{ name: 'bookshelf' }">Bookshelf </router-link>
 
   </div>
 </template>
 
 <script>
-import AuthService from "@/services/AuthService";
+// import AuthService from "@/services/AuthService";
 
 export default {
 // create + data (empty group of users that I will fill with this return request)
@@ -38,15 +39,15 @@ export default {
   },
 
 //  Review this with team
-created() {
-    AuthService
-      .create(this.user)
-      .then(response => {
-        if (response.status === 201) {
-          this.$router.push({name: 'home'});  // Note: This might be '/' instead
-        }
-      })
-  }
+// created() {
+//     AuthService
+//       .create(this.user)
+//       .then(response => {
+//         if (response.status === 201) {
+//           this.$router.push({name: 'home'});  // Note: This might be '/' instead
+//         }
+//       })
+//   }
 }
 
 </script>

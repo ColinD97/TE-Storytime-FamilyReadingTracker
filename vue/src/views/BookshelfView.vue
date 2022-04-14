@@ -29,13 +29,16 @@
     </tr>
   </tbody>
 </table>
+<div v-for="book in books" v-bind:key="book.book_id">
+  <h4>{{book.title}}</h4>
 </div>
-<router-link v-bind:to="{ name: 'add-book' }">
+</div>
+<!-- <router-link v-bind:to="{ name: 'add-book' }">
   <button class="btn" type="submit"> 
     Add Book
   </button>
-</router-link> 
-  <add-book />
+</router-link>  -->
+  <add-book v-bind:userId=" currentUserId"/>
 </div>
 </template>
 
@@ -44,8 +47,10 @@ import BookService from '@/services/BookService.js';
 import AddBook from '@/components/AddBook'
 
 export default {
+  name: 'Bookshelf',
   data() {
     return {
+      currentUserId: this.$route.params.userId,
       books: []
 
     }

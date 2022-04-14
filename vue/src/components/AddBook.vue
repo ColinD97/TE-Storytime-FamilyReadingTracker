@@ -60,6 +60,7 @@ import BookService from '@/services/BookService.js';
 
 export default {
   name: 'add-book',
+  props: ['userId'],
   data() {
     return {
       book: {
@@ -71,8 +72,9 @@ export default {
   },
   methods: {
     addBook() {
+      console.log('add book'+ this.book)
       BookService
-        .create(this.book)
+        .addBook(this.userId, this.book)
         .then(response => {
           if (response.status === 201) {
             this.$router.push({path: '/'});

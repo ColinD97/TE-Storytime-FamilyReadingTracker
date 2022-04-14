@@ -6,8 +6,8 @@ export default {
         return axios.get(`/bookshelf/${userId}`)
     },
 
-    addBooks(book) {
-        return axios.post(`/bookshelf`, book)
+    addBook(userId, book) {
+        return axios.post(`/bookshelf/${userId}`, book)
     },
 
 //For later
