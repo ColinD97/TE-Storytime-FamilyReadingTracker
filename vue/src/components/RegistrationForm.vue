@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="register">
-    <h1 class="title">Create Account</h1>
-    <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
-    
+      <div class="title">
+        <h1>Create Account<span>Keep track of your kid's reading. Build habits for life.</span></h1>
+      </div>
   <form class="form-register" @submit.prevent="register">
     <h1 class="form-header">Enter Parent Information:</h1>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">

@@ -1,10 +1,7 @@
-<template class="homepage">
-  <div>
-        <div class='homepage-text'>
-        <h1 class="title">Family Reading Tracker</h1>
-        <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3> 
-        </div>
-  </div>
+<template>
+    <div class="title">
+    <h1>Family Reading Tracker <span>Keep track of your kid's reading. Build habits for life.</span></h1>
+    </div>
 </template>
 
 <script>
@@ -52,16 +49,31 @@ export default {
 /*---------------------------------------*/
 /* Title and Sub-text */
 /*---------------------------------------*/
-.homepage-text{
+.title h1{
+  text-align:center; font-size:50px; text-transform:uppercase; color:#222; letter-spacing:1px;
+  font-family:"Roboto", serif; font-weight:400;
+}
+.title h1 span {
+  margin-top: 5px;
+    font-size:15px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
+    text-transform: uppercase; font-family:"Roboto", sans-serif; font-weight:500;
 
-   
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
 }
-.title {
-text-align: center;
+
+.title h1 span:after,.title h1 span:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 5px;
+  background-color:#f8f8f8;
 }
-.subtext {
-  text-align: center;
-}
+
 body{
     font-family: "Roboto", sans-serif;
     background: linear-gradient(to right, #e3e7ae 0%, #d7eef5 50%, #bbf2fc 99%);

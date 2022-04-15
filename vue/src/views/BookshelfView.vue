@@ -1,7 +1,8 @@
 <template>
 <div class="add-book">
-      <h1 class="title">BookShelf</h1>
-      <h3 class="subtext">Let's go on a reading adventure!</h3>
+  <div class="title">
+    <h1>BookShelf<span>Let's go on a reading adventure!</span></h1>
+    </div>
   <div class="book-container">
     <bookshelf v-for = "book in $store.state.books" v-bind:key="book.id" v-bind:book="book">
     </bookshelf>

@@ -1,8 +1,9 @@
 <template>
   <div class="add-book">
-    <h1 class="title">Catalogue</h1>
-    <h3 class="subtext">Welcome to your library</h3>
-    <table class="bookshelf">
+    <div class="title">
+    <h1>Catalogue <span>Welcome to your library</span></h1>
+    </div>
+    <table class="catalogue">
       <thead class="table-header">
         <tr class="header-row">
           <th>Title</th>
@@ -44,4 +45,25 @@ export default {
 </script>
 
 <style>
+.catalogue {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  justify-content: center;
+}
+.catalogue td, .catalogue th {
+  border: 1px solid #bbf2fc;
+  padding: 8px;
+}
+.catalogue tr:nth-child(even){background-color: #f2f2f2;}
+
+.catalogue tr:hover {background-color: #ddd;}
+
+.catalogue th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #126c7c;
+  color: white;
+}
 </style>
