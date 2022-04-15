@@ -1,7 +1,9 @@
 <template>
     
 <div>
-  <div class="form-body">
+  <form class="form-add-book" @submit.prevent="register">
+    <h1 class="form-header">Add Book Details:</h1>
+    <div class="form-body">
             <!-- Title and Author -->
             <div class="horizontal-group">
                 <div class="form-group left">
@@ -52,14 +54,24 @@
                         autofocus
                     />
                     </div>
+                </div>
             </div>
-            </div>
-    <button class="btn" type="submit" v-on:click="addBook" >
-        Submit Form
-      </button>
-    <button class="btn" type="submit">
-        Move Book
-      </button>
+              <div class="form-footer">
+                <button class="btn" type="submit" v-on:click="addBook" >
+                Add Book
+                </button>
+                <button class="btn" type="submit">
+                Move Book
+                </button>
+                <label for="assign">Assign book to:</label>
+                <select name="assign" id="assign">
+                <option value="user1">Colin</option>
+                <option value="user2">Kai</option>
+                <option value="user3">Reg</option>
+                <option value="user4">Nolan</option>
+                </select>
+              </div>           
+  </form>
 </div>
 </template>
 
@@ -100,15 +112,6 @@ export default {
 .bookshelf{
     width:100%
 }
-.table-header{
-    color:darkblue;
-}
-.header-row{
-    height:30px;
-}
-table, th, td {
-  border: 1px solid white;
-}
 .btn-body {
     display: inline-block;
     padding: 10px 10px;
@@ -122,6 +125,25 @@ table, th, td {
 .btn-body:hover {
     background-color: #157788;
     color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 </style>

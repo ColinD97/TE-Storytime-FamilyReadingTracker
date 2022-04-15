@@ -5,16 +5,15 @@
     </div>
   <div class="book-container">
     <bookshelf />
-    <add-book/>
   </div>
 </div>
 </template>
 
 <script>
 import Bookshelf from '../components/Bookshelf.vue'
-import AddBook from '../components/AddBook.vue'
+
 export default {
-  components: { Bookshelf, AddBook },
+  components: { Bookshelf },
     name: 'bookshelf-view',
     
 }

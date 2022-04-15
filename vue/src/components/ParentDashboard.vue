@@ -14,10 +14,10 @@
         </tr>
         <tr v-for="user in familyUsers" :key="user.id">
           <td>{{user.first_name}}</td>
-          <td>{{}}</td>
-          <td>{{}}</td>
-          <td>{{}}</td>
-          <td>{{}}</td>
+          <td>!</td>
+          <td>!</td>
+          <td>!</td>
+          <td>!</td>
         </tr>
       </table> 
 
