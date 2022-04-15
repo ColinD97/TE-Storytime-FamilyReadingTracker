@@ -14,26 +14,19 @@
         </tr>
         <tr v-for="user in familyUsers" :key="user.id">
           <td>{{user.first_name}}</td>
-          <td>!</td>
-          <td>!</td>
-          <td>!</td>
-          <td>!</td>
+          <td>still need</td>
+          <td>{{user.totalMinutes}}</td>
+          <td>still need</td>
+          <td>{{user.pointsBalance}}</td>
         </tr>
       </table> 
-
-    <button class="btn" type="submit" @click="goToRegisterChild">
-        Create | Edit Child Account
-      </button>
-    <button class="btn" type="submit">
-        Create | Edit Parent Account
-      </button>
       <add-book />
       <registration-form-child />
-      <button>Log Reading </button>
-      <button>Prize Dashboard </button>
-      <button>Bookshelf </button>
-
-
+      <div id="nav">
+        <button class='btn'>Log Reading </button>
+        <button class='btn'>Prize Dashboard </button>
+        <button class='btn'>Bookshelf </button>
+      </div>
   </div>
 </template>
 

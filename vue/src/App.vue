@@ -9,8 +9,7 @@
       <router-link class='container' v-bind:to="{ name: 'parent', params: {userId: currentUserId}}">Parent Dashboard</router-link> 
       <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">Bookshelf</router-link> 
       <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">Catalogue</router-link> 
-
-      <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4>
+      <!-- <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4> -->
     </div>
     <router-view />
   </div>
@@ -36,13 +35,12 @@ export default {
 </script>
 
 
-
 <style >
 
 /*---------------------------------------*/
 /* Web Font*/
 /*---------------------------------------*/
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Futura");
 
 /*---------------------------------------*/
 /* Top Banner */
@@ -52,7 +50,6 @@ export default {
     justify-content: space-around;
     margin: 30px auto;
     padding: 30px;
-  
 }
 #banner {
     list-style: none;
@@ -86,7 +83,6 @@ export default {
     grid-gap: 20px;
     align-items: center;
 }
-
 .title h1 span:after,.title h1 span:before {
     content: " ";
     display: block;
@@ -95,9 +91,8 @@ export default {
     height: 5px;
   background-color:#f8f8f8;
 }
-
 body{
-    font-family: "Roboto", sans-serif;
+    font-family: "Futura", sans-serif;
     background: linear-gradient(to right, #8ab9bc 0%, #b0dde0 50%, #8ab9bc 99%);
 }
 
@@ -105,26 +100,25 @@ body{
 /* Forms */
 /*---------------------------------------*/
 .form-register{
-  font-family: "Roboto", sans-serif;
+  font-family: "Futura", sans-serif;
     width: 50%;
     margin: 30px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
 }
 .form-login{
-  font-family: "Roboto", sans-serif;
+  font-family: "Futura", sans-serif;
     width: 1200px;
     margin: 30px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
 }
 .form-add-book{
-    font-family: "Roboto", sans-serif;
+    font-family: "Futura", sans-serif;
     width: 50%;
     margin: 50px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
-
 }
 .form-header {
     height: 50px;
@@ -135,7 +129,7 @@ body{
     padding-top: 10px
 }
 .form-header h1 {
-    font-size: 25px;
+    font-size: 10px;
     text-align: center;
     color: #666;
     padding-left: 20px;

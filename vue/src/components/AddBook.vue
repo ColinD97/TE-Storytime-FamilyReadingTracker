@@ -60,17 +60,16 @@
                 <button class="btn" type="submit" v-on:click="addBook" >
                 Add Book
                 </button>
-                <button class="btn" type="submit">
-                Move Book
-                </button>
-                <label for="assign">Assign book to:</label>
-                <select name="assign" id="assign">
-                <option value="user1">Colin</option>
-                <option value="user2">Kai</option>
-                <option value="user3">Reg</option>
-                <option value="user4">Nolan</option>
-                </select>
-              </div>           
+                  <div class="custom-select" style="width:200px;">
+                    <label for="custom-select">Assign book to:</label>
+                    <select>
+                    <option value="0">Colin</option>
+                    <option value="1">Kai</option>
+                    <option value="2">Reg</option>
+                    <option value="3">Nolan</option>
+                    </select>
+                  </div>  
+                </div>         
   </form>
 </div>
 </template>
@@ -89,6 +88,7 @@ export default {
         author: "",
         isbn: "",
         difficulty: "",
+        userId: "",
       }
     };
   },
@@ -108,10 +108,13 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .bookshelf{
     width:100%
 }
+/*---------------------------------------*/
+/* Buttons */
+/*---------------------------------------*/
 .btn-body {
     display: inline-block;
     padding: 10px 10px;
@@ -126,24 +129,58 @@ export default {
     background-color: #157788;
     color: white;
 }
+/*---------------------------------------*/
+/* Drop-Down Menu */
+/*---------------------------------------*/
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+/* Will mess with this later and get it up and running */
+
+.form-footer .custom-select {
+  width: 200px;
 }
-
-.dropdown-content {
-  display: none;
+.form-footer .select-selected:after {
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+/* Point the arrow upwards when the select box is open (active): */
+.form-footer .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.form-footer .select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.form-footer .select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.form-footer .select-hide {
+  display: none;
+}
+
+.form-footer .select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 </style>

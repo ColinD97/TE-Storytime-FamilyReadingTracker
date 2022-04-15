@@ -5,7 +5,7 @@
       <h1>Create Account<span>Keep track of your kid's reading. Build habits for life.</span></h1>
     </div>
   <form class="form-register" @submit.prevent="register">
-    <h1 class="form-header">New Family Member Registration:</h1>
+    <h1 class="form-header">New Member Registration:</h1>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
       {{ registrationErrorMsg }}
     </div>
@@ -87,10 +87,7 @@
                           required
                       />
                   </div>
-                  <div class="form-group right">
-                    <input type="checkbox" id="isParent" name="isParent" value="isParent">
-                    <label for="isParent">Add as additional parent? </label>
-                  </div>
+                  
           </div>
   </div>
         <div class="form-footer">
@@ -157,13 +154,5 @@ export default {
 };
 </script>
 <style>
-#isParent{
-  margin: 10px;
-  margin-left: 30%;
-  color: #157788;
-  font-size: 22px;
-  font-weight: bold;
-  padding-right: 20px; 
-  
-}
+
 </style>
