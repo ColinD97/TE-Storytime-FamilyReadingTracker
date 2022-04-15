@@ -1,6 +1,7 @@
 <template>
     <div class="title">
     <h1>Family Reading Tracker <span>Keep track of your kid's reading. Build habits for life.</span></h1>
+    <img class="home" src="src\assets\mellowAsset19.jpg" alt="reading animal family" style="width:128px;height:128px;">
     </div>
 </template>
 
@@ -50,13 +51,13 @@ export default {
 /* Title and Sub-text */
 /*---------------------------------------*/
 .title h1{
-  text-align:center; font-size:50px; text-transform:uppercase; color:#222; letter-spacing:1px;
-  font-family:"Roboto", serif; font-weight:400;
+  text-align:center; font-size:70px; text-transform:uppercase; color:#222; letter-spacing:1px;
+  font-family: 'Bubblegum Sans', cursive;
 }
 .title h1 span {
   margin-top: 5px;
-    font-size:15px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
-    text-transform: uppercase; font-family:"Roboto", sans-serif; font-weight:500;
+    font-size:25px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
+    text-transform: uppercase; font-family: 'Bubblegum Sans', cursive;
 
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
@@ -76,8 +77,12 @@ export default {
 
 body{
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(to right, #e3e7ae 0%, #d7eef5 50%, #bbf2fc 99%);
+    background: linear-gradient(to right, #8ab9bc 0%, #b0dde0 50%, #8ab9bc 99%);
 }
+
+/*---------------------------------------*/
+/* Forms */
+/*---------------------------------------*/
 .form-register{
   font-family: "Roboto", sans-serif;
     width: 1200px;
@@ -119,7 +124,7 @@ body{
     margin-bottom: 35px;
 }
 .form-body .label-title {
-    color: #1ca3dc;
+    color: #157788;
     font-size: 22px;
     font-weight: bold;
     padding-right: 20px;  
@@ -164,7 +169,7 @@ body{
 .btn-body {
     display: inline-block;
     padding: 10px 10px;
-    background-color: #1ca3dc;
+    background-color: #157788;
     font-size: 17px;
     border: none;
     border-radius: 10px;
@@ -173,7 +178,7 @@ body{
     
 }
 .btn-body:hover {
-    background-color: #5db6f1;
+    background-color: #1fc1dd;
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -206,7 +211,7 @@ body{
     margin-left: 50px;
     margin-right:50px;
     margin-bottom: 20px;
-    background-color: #1ca3dc;
+    background-color: #1791a7;
     font-size: 17px;
     border: none;
     border-radius: 10px;
@@ -214,7 +219,7 @@ body{
     cursor: pointer;  
 }
 .btn:hover {
-    background-color: #1ca3dc;
+    background-color: #21c4e0;
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -225,7 +230,7 @@ body{
     padding-right: 25px;
     margin-left: 50px;
     margin-right:50px;
-    background-color: #1ca3dc;
+    background-color: #157788;
     font-size: 17px;
     border: none;
     border-radius: 10px;

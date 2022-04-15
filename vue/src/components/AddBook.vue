@@ -107,7 +107,7 @@ export default {
     height:30px;
 }
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid white;
 }
 .btn-body {
     display: inline-block;
@@ -120,7 +120,7 @@ table, th, td {
     cursor: pointer;
 }
 .btn-body:hover {
-    background-color: #169c7b;
+    background-color: #157788;
     color: white;
 }
 
