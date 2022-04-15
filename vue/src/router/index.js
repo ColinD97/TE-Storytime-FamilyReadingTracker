@@ -10,6 +10,7 @@ import ParentChildDash from '../views/ParentChildDashView.vue'
 import RegisterChildView from '../views/RegisterChildView.vue'
 import BookShelf from '../views/BookshelfView.vue'
 import CatalogueView from '../views/CatalogueView'
+import ReadingLog from '../components/ReadingLog'
 
 
 
@@ -100,6 +101,16 @@ const router = new Router({
       name: 'bookshelf',
       component: BookShelf,
     },
+
+    {
+      path: "/readinglog",
+      name: "reading-log",
+      component: ReadingLog,
+      meta: {
+        requiresAuth: false
+      }
+
+    }
 
     
   ]
