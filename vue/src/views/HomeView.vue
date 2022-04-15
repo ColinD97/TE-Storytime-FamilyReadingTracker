@@ -1,7 +1,9 @@
 <template class="homepage">
   <div>
+        <div class='homepage-text'>
         <h1 class="title">Family Reading Tracker</h1>
         <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3> 
+        </div>
   </div>
 </template>
 
@@ -50,6 +52,10 @@ export default {
 /*---------------------------------------*/
 /* Title and Sub-text */
 /*---------------------------------------*/
+.homepage-text{
+
+   
+}
 .title {
 text-align: center;
 }
@@ -75,10 +81,12 @@ body{
     border-radius: 10px;
 }
 .form-header {
+    height: 50px;
     background-color: #e2ebf5;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 20px;
+    padding-top: 10px
 }
 .form-header h1 {
     font-size: 30px;
@@ -108,14 +116,14 @@ body{
 .form-body .form-input {
     font-size: 14px;
     box-sizing: border-box;
-    width: 60%;
+    width: 55%;
     height: 30px;
     padding-left: 10px;
     padding-right: 10px;
     color: #333333;
     text-align: left;
     border: 1px solid #d6d6d6;
-    border-radius: 4px;
+    border-radius: 6px;
     background: white;
     outline: none;
 }
@@ -147,24 +155,28 @@ body{
     background-color: #1ca3dc;
     font-size: 17px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #bcf5e7;
     cursor: pointer;
+    
 }
 .btn-body:hover {
-    background-color: #169c7b;
+    background-color: #5db6f1;
     color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 /*---------------------------------------*/
 /* Form Footer */
 /*---------------------------------------*/
 .form-footer {
+    height: 30px;
     background-color: #e2ebf5;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: 40px 10px;
     text-align: right;
+    padding: 20px;
     border-top: 1px solid #cccccc;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .form-footer span {
     float: right;
@@ -176,19 +188,40 @@ body{
 .form-footer .btn {
     border: 10px;
     float: right;
-    padding: 10px;
+    padding: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
     margin-left: 50px;
     margin-right:50px;
+    margin-bottom: 20px;
     background-color: #1ca3dc;
     font-size: 17px;
     border: none;
-    border-radius: 5px;
-    color: #bcf5e7;
+    border-radius: 10px;
+    color: #ffffff;
     cursor: pointer;  
 }
 .btn:hover {
     background-color: #1ca3dc;
     color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+.btn {border: 10px;
+    float: left;
+    padding: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 50px;
+    margin-right:50px;
+    background-color: #1ca3dc;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;  
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+}
+
+
 
 </style>

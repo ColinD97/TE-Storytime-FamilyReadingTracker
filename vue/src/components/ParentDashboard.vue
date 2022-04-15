@@ -18,10 +18,10 @@
         </tr>
       </table> 
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit" @click="goToRegisterChild">
+    <button class="btn" type="submit" @click="goToRegisterChild">
         Create | Edit Child Account
       </button>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">
+    <button class="btn" type="submit">
         Create | Edit Parent Account
       </button>
 

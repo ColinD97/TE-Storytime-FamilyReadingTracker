@@ -43,7 +43,6 @@
       </div>
       <div class="form-footer">
         <button class='btn' type="submit">Sign in</button>
-        <button class='btn' type="submit">Forgot Password?</button>
       </div>
     </form>
   </div>
