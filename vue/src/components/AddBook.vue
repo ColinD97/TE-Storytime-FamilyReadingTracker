@@ -63,10 +63,10 @@
                   <div class="custom-select" style="width:200px;">
                     <label for="custom-select">Assign book to:</label>
                     <select>
-                    <option value="0">Colin</option>
-                    <option value="1">Kai</option>
-                    <option value="2">Reg</option>
-                    <option value="3">Nolan</option>
+                    <option value="0">{{user.name}}</option>
+                    <option value="1">{{user.name}}</option>
+                    <option value="2">{{user.name}}</option>
+                    <option value="3">{{user.name}}</option>
                     </select>
                   </div>  
                 </div>         
@@ -108,7 +108,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
 .bookshelf{
     width:100%
 }

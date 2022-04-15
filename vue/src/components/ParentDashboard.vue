@@ -20,8 +20,10 @@
           <td>{{user.pointsBalance}}</td>
         </tr>
       </table> 
+
       <add-book />
       <registration-form-child />
+      
       <div id="nav">
         <button class='btn'>Log Reading </button>
         <button class='btn'>Prize Dashboard </button>
