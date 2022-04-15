@@ -1,7 +1,9 @@
 <template>
     
 <div>
-  <div class="form-body">
+  <form class="form-add-book" @submit.prevent="register">
+    <h1 class="form-header">Add Book Details:</h1>
+    <div class="form-body">
             <!-- Title and Author -->
             <div class="horizontal-group">
                 <div class="form-group left">
@@ -52,14 +54,23 @@
                         autofocus
                     />
                     </div>
+                </div>
             </div>
-            </div>
-    <button class="btn" type="submit" v-on:click="addBook" >
-        Submit Form
-      </button>
-    <button class="btn" type="submit">
-        Move Book
-      </button>
+              <div class="form-footer">
+                <button class="btn" type="submit" v-on:click="addBook" >
+                Add Book
+                </button>
+                  <div class="custom-select" style="width:200px;">
+                    <label for="custom-select">Assign book to:</label>
+                    <select>
+                    <option value="0">{{user.name}}</option>
+                    <option value="1">{{user.name}}</option>
+                    <option value="2">{{user.name}}</option>
+                    <option value="3">{{user.name}}</option>
+                    </select>
+                  </div>  
+                </div>         
+  </form>
 </div>
 </template>
 
@@ -77,6 +88,7 @@ export default {
         author: "",
         isbn: "",
         difficulty: "",
+        userId: "",
       }
     };
   },
@@ -100,15 +112,9 @@ export default {
 .bookshelf{
     width:100%
 }
-.table-header{
-    color:darkblue;
-}
-.header-row{
-    height:30px;
-}
-table, th, td {
-  border: 1px solid white;
-}
+/*---------------------------------------*/
+/* Buttons */
+/*---------------------------------------*/
 .btn-body {
     display: inline-block;
     padding: 10px 10px;
@@ -122,6 +128,59 @@ table, th, td {
 .btn-body:hover {
     background-color: #157788;
     color: white;
+}
+/*---------------------------------------*/
+/* Drop-Down Menu */
+/*---------------------------------------*/
+
+/* Will mess with this later and get it up and running */
+
+.form-footer .custom-select {
+  width: 200px;
+}
+.form-footer .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.form-footer .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.form-footer .select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.form-footer .select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.form-footer .select-hide {
+  display: none;
+}
+
+.form-footer .select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 </style>

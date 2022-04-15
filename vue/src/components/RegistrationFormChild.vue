@@ -1,12 +1,9 @@
 <template>
   
 
-  <div class="child-register">
-    <h1 class="title">Create Child Account</h1>
-    <h3 class= "subtext">Keep track of your kid's reading. Build habits for life.</h3>
-    
+  <div class="child-register">    
     <form class="form-register" @submit.prevent="register">
-    <h1 class="form-header">Enter Child Information:</h1>
+    <h1 class="form-header">New Family Member Registration:</h1>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
     </div>
@@ -45,7 +42,7 @@
             <div class="horizontal-group">
                 <div class="form-group">
                     <div class="form-group left">
-                        <label for="email" class="label-title">Email Address *</label>
+                        <label for="email" class="label-title">Email Address </label>
                         <input
                             type="text"
                             id="email"
@@ -89,6 +86,10 @@
                                 v-model="user.confirmPassword"
                                 required
                             />
+                        </div>
+                        <div class="form-group right">
+                          <input type="checkbox" id="isParent" name="isParent" value="isParent">
+                          <label for="isParent">Add as additional parent? </label>
                         </div>
                 </div>
   </div>
@@ -164,6 +165,15 @@ export default {
 </script>
 
 <style>
+#isParent{
+  margin: 10px;
+  margin-left: 30%;
+  color: #157788;
+  font-size: 22px;
+  font-weight: bold;
+  padding-right: 20px; 
+  
+}
 
 
 </style>

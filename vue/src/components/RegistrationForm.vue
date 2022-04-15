@@ -1,95 +1,95 @@
 <template>
-  <div>
-    <div class="register">
-      <div class="title">
-        <h1>Create Account<span>Keep track of your kid's reading. Build habits for life.</span></h1>
-      </div>
+<div>
+  <div class="register">
+    <div class="title">
+      <h1>Create Account<span>Keep track of your kid's reading. Build habits for life.</span></h1>
+    </div>
   <form class="form-register" @submit.prevent="register">
-    <h1 class="form-header">Enter Parent Information:</h1>
+    <h1 class="form-header">New Member Registration:</h1>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
-        {{ registrationErrorMsg }}
+      {{ registrationErrorMsg }}
     </div>
 
   <div class="form-body">
             <!-- Firstname and Lastname -->
-            <div class="horizontal-group">
-                <div class="form-group left">
-                    <label for="firstname" class="label-title">First Name</label>
-                    <input
-                        type="text"
-                        id="firstname"
-                        class="form-input"
-                        placeholder="First Name"
-                        v-model="user.first_name"
-                        required
-                        autofocus
-                    />
-                    </div>
-                <div class="form-group right">
-                    <label for="lastname" class="label-title">Last Name</label>
-                    <input
-                        type="text"
-                        id="lastname"
-                        class="form-input"
-                        placeholder="Last Name"
-                        v-model="user.last_name"
-                        required
-                        autofocus
-                    />
-                    </div>
-            </div>
-            <!-- Email -->
-            <div class="horizontal-group">
-                <div class="form-group">
-                    <div class="form-group left">
-                        <label for="email" class="label-title">Email Address</label>
-                        <input
-                            type="text"
-                            id="email"
-                            class="form-input"
-                            placeholder="Valid Email Address"
-                            v-model="user.email"
-                            required
-                            autofocus
-                        />
-                    </div>
-                    <div class="form-group right">
-                        <label for="username" class="label-title">Username</label>
-                        <input
-                            type="text"
-                            id="username"
-                            class="form-input"
-                            placeholder="Username"
-                            v-model="user.username"
-                            required
-                            autofocus
-                        />
-                    </div>
-                </div>
-            </div>
-                <div class="horizontal-group">
-                        <div class="form-group left">
-                            <label for="password" class="label-title">Password</label>
-                            <input
-                                type="password"
-                                id="password"
-                                class="form-password"
-                                placeholder="Password"
-                                v-model="user.password"
-                                required
-                            />
-                            <input
-                                type="password"
-                                id="confirmPassword"
-                                class="form-password"
-                                placeholder="Confirm Password"
-                                v-model="user.confirmPassword"
-                                required
-                            />
-                        </div>
-                </div>
+      <div class="horizontal-group">
+          <div class="form-group left">
+              <label for="firstname" class="label-title">First Name *</label>
+              <input
+                  type="text"
+                  id="firstname"
+                  class="form-input"
+                  placeholder="First Name"
+                  v-model="user.first_name"
+                  required
+                  autofocus
+              />
+              </div>
+          <div class="form-group right">
+              <label for="lastname" class="label-title">Last Name *</label>
+              <input
+                  type="text"
+                  id="lastname"
+                  class="form-input"
+                  placeholder="Last Name"
+                  v-model="user.last_name"
+                  required
+                  autofocus
+              />
+              </div>
+      </div>
+      <!-- Email -->
+      <div class="horizontal-group">
+          <div class="form-group">
+              <div class="form-group left">
+                  <label for="email" class="label-title">Email Address *</label>
+                  <input
+                      type="text"
+                      id="email"
+                      class="form-input"
+                      placeholder="Valid Email Address"
+                      v-model="user.email"
+                      required
+                      autofocus
+                  />
+              </div>
+              <div class="form-group right">
+                  <label for="username" class="label-title">Username *</label>
+                  <input
+                      type="text"
+                      id="username"
+                      class="form-input"
+                      placeholder="Username"
+                      v-model="user.username"
+                      required
+                      autofocus
+                  />
+              </div>
+          </div>
+      </div>
+          <div class="horizontal-group">
+                  <div class="form-group left">
+                      <label for="password" class="label-title">Password *</label>
+                      <input
+                          type="password"
+                          id="password"
+                          class="form-password"
+                          placeholder="Password"
+                          v-model="user.password"
+                          required
+                      />
+                      <input
+                          type="password"
+                          id="confirmPassword"
+                          class="form-password"
+                          placeholder="Confirm Password"
+                          v-model="user.confirmPassword"
+                          required
+                      />
+                  </div>
+                  
+          </div>
   </div>
-  
         <div class="form-footer">
             <span>* Required</span>
               <button class="btn" type="submit">
@@ -153,3 +153,6 @@ export default {
   },
 };
 </script>
+<style>
+
+</style>

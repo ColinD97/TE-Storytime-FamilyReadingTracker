@@ -17,7 +17,7 @@
           <td>{{ book.title }}</td>
           <td>{{ book.author }}</td>
           <td>{{ book.isbn }}</td>
-          <td>0000</td>
+          <td>{{ book.difficulty}}</td>
         </tr>
       </tbody>
     </table>

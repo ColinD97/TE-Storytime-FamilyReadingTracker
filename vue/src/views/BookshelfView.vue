@@ -4,20 +4,18 @@
     <h1>BookShelf<span>Let's go on a reading adventure!</span></h1>
     </div>
   <div class="book-container">
-    <bookshelf v-for = "book in $store.state.books" v-bind:key="book.id" v-bind:book="book">
-    </bookshelf>
-    <add-book/>
+    <bookshelf />
   </div>
 </div>
 </template>
 
 <script>
 import Bookshelf from '../components/Bookshelf.vue'
-import AddBook from '../components/AddBook.vue'
+
 export default {
-  components: { Bookshelf, AddBook },
+  components: { Bookshelf },
     name: 'bookshelf-view',
-    component: {Bookshelf}
+    
 }
 </script>
 

@@ -19,9 +19,9 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public Book createBook(Book bookData) {
-        String sql ="INSERT INTO book_info (title, author, isbn) VALUES (?,?,?) RETURNING book_id;";
+        String sql ="INSERT INTO book_info (title, author, isbn, difficulty) VALUES (?,?,?,?) RETURNING book_id;";
         Integer id = jdbcTemplate.queryForObject(sql, Integer.class,
-                bookData.getTitle(), bookData.getAuthor(), bookData.getIsbn());
+                bookData.getTitle(), bookData.getAuthor(), bookData.getIsbn(), bookData.getDifficulty());
         return getBookById(id);
     }
 
@@ -38,7 +38,7 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public List<UserBook> getBooksByUserId(Long userId) {
-        String sql = "SELECT book_info.book_id, title, author, isbn, times_read, past_book, " +
+        String sql = "SELECT book_info.book_id, title, author, isbn,difficulty, times_read, past_book, " +
                 "current_book, future_book FROM users JOIN users_books " +
                 "ON users.user_id = users_books.user_id JOIN book_info " +
                 "ON users_books.book_id = book_info.book_id WHERE users.user_id = ?;";
@@ -66,7 +66,8 @@ public class JdbcBookDao implements BookDao{
         book.setBook_id(resultSet.getInt("book_id"));
         book.setTitle(resultSet.getString("title"));
         book.setAuthor(resultSet.getString("author"));
-        book.setIsbn(resultSet.getInt("isbn"));
+        book.setIsbn(resultSet.getLong("isbn"));
+        book.setDifficulty(resultSet.getInt("difficulty"));
         return book;
     }
 
@@ -75,7 +76,8 @@ public class JdbcBookDao implements BookDao{
         book.setBook_id(resultSet.getInt("book_id"));
         book.setTitle(resultSet.getString("title"));
         book.setAuthor(resultSet.getString("author"));
-        book.setIsbn(resultSet.getInt("isbn"));
+        book.setIsbn(resultSet.getLong("isbn"));
+        book.setDifficulty(resultSet.getInt("difficulty"));
         book.setTimesRead(resultSet.getInt("times_read"));
         book.setPastBook(resultSet.getBoolean("past_book"));
         book.setCurrentBook(resultSet.getBoolean("current_book"));
