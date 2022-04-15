@@ -27,14 +27,23 @@
     <button class="btn" type="submit">
         Create | Edit Parent Account
       </button>
+      <add-book />
+      <registration-form-child />
+      <button>Log Reading </button>
+      <button>Prize Dashboard </button>
+      <button>Bookshelf </button>
+
 
   </div>
 </template>
 
 <script>
 import AuthService from "@/services/AuthService";
+import AddBook from './AddBook.vue';
+import RegistrationFormChild from './RegistrationFormChild.vue'
 
 export default {
+  components: { AddBook, RegistrationFormChild },
 // create + data (empty group of users that I will fill with this return request)
   name: 'parent-dashboard-userID',          // Spot check this with the team. 
   // Reg Note:  If I need to do a PROP, it's here
