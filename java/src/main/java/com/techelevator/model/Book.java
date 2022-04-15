@@ -6,16 +6,18 @@ public class Book {
     private int book_id;
     private String title;
     private String author;
-    private int isbn;
+    private long isbn;
+    private int difficulty;
 
     public Book(){
     }
 
-    public Book(int book_id, String title, String author, int isbn) {
+    public Book(int book_id, String title, String author, long isbn, int difficulty) {
         this.book_id = book_id;
         this.title = title;
         this.author = author;
         this.isbn = isbn;
+        this.difficulty = difficulty;
     }
 
     public int getBook_id() {
@@ -42,11 +44,19 @@ public class Book {
         this.author = author;
     }
 
-    public int getIsbn() {
+    public long getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(long isbn) {
         this.isbn = isbn;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
     }
 }
