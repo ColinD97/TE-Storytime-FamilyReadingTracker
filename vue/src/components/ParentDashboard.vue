@@ -4,18 +4,20 @@
         <h1>Parent Dashboard<span>Keep track of your kid's reading. Build habits for life.</span></h1>
       </div>
       <table class="parent">
-      <label for="Children">Children **TABLE OF CHILDREN ACCOUNTS**</label>
+      <label for="Children"></label>
         <tr>
-          <th>Name</th>
-          <th>Books Finished</th>
-          <th>Hours Read</th>
-          <th>Last Active?</th>
+          <th>Child</th>
+          <th>Number of Books Completed</th>
+          <th>Minutes Read</th>
+          <th>Current Book</th>
+          <th>Points Balance</th>
         </tr>
         <tr v-for="user in familyUsers" :key="user.id">
           <td>{{user.first_name}}</td>
-          <td>5</td>
-          <td>30</td>
-          <td>4/14/2022</td>
+          <td>{{}}</td>
+          <td>{{}}</td>
+          <td>{{}}</td>
+          <td>{{}}</td>
         </tr>
       </table> 
 

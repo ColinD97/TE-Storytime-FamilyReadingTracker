@@ -56,16 +56,12 @@ VALUES
 
 INSERT INTO book_info (title, author, isbn, difficulty)
 VALUES
-    ('The Super Cool Life of a Tech Lead', 'Colin Davis', 123435, 4 ),
-    ('What is For Dinner?', 'Nolan Tsai', 2341156, 3),
-	('Project Managing, Like a Boss', 'Reginald Arnedo', 345867, 5),
-	('Just Let me Make it Pretty', 'Kai Indigo Wolf', 456178, 2),
-	('How to Play Your Best Golf All the Time', 'Tommy Armour', 1632164, 5),
-	('The Rainbow Fish', 'J Alison James', 1379022, 1),
-	('Just Me and My Dad', 'Mercer Mayer', 1196711, 2),
-	('If You Give a Mouse a Cookie', 'Felicia Bond', 99017539, 2),
-	('Where the Wild Things Are', 'Maurice Sendak', 29015404, 2),
-	('Brown Bear, Brown Bear, What Do You See?', 'Brown Bear', 3987572, 1),
+	('How to Play Your Best Golf All the Time', 'Tommy Armour', 9780684813790, 5),
+	('The Rainbow Fish', 'J Alison James', 1558580093, 1),
+	('Just Me and My Dad', 'Mercer Mayer', 0307118398, 2),
+	('If You Give a Mouse a Cookie', 'Felicia Bond', 9780064434096, 2),
+	('Where the Wild Things Are', 'Maurice Sendak', 9780064431781, 2),
+	('Brown Bear, Brown Bear, What Do You See?', 'Brown Bear', 0805017445, 1),
 	('The Very Hungry Caterpillar', 'Reginald Arnedo', 90098927, 1),
 	('Strictly No Elephants', 'Taeeun Yoo', 31164306, 2);
 
