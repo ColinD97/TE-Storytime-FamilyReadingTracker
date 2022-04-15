@@ -58,12 +58,19 @@ INSERT INTO book_info (title, author, isbn, difficulty)
 VALUES
 	('How to Play Your Best Golf All the Time', 'Tommy Armour', 9780684813790, 5),
 	('The Rainbow Fish', 'J Alison James', 1558580093, 1),
+	('1984', 'George Orwell', 9781785996313, 5),
 	('Just Me and My Dad', 'Mercer Mayer', 0307118398, 2),
+	('Macbeth', 'William Shakespeare', 9780333419991, 5),
 	('If You Give a Mouse a Cookie', 'Felicia Bond', 9780064434096, 2),
+	('Inside Out & Back Again', 'Thanhha Lai', 9780545508971, 3),
 	('Where the Wild Things Are', 'Maurice Sendak', 9780064431781, 2),
+	('The Giver', 'Louis Lowry', 0395645662, 4),
+	('Charlotte''s Web', 'Jennifer Frantz', 9780060882846, 3 ),
 	('Brown Bear, Brown Bear, What Do You See?', 'Brown Bear', 0805017445, 1),
-	('The Very Hungry Caterpillar', 'Reginald Arnedo', 90098927, 1),
-	('Strictly No Elephants', 'Taeeun Yoo', 31164306, 2);
+	('The Very Hungry Caterpillar', 'Reginald Arnedo', 0399227539, 1),
+	('Strictly No Elephants', 'Taeeun Yoo', 9781481416474, 2),
+	('Harry Potter and the Deathly Hollows', 'J. K. Rowling', 9780545139700, 5);
+
 
 INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, past_book, current_book, future_book, notes)
 VALUES
