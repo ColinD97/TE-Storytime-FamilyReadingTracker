@@ -1,13 +1,6 @@
 <template>
-  <div>
-    //Like book card from homework 13
-    <div class="card" v-bind:class="{read: book.read}">
-      <h2 class="title"> {{book.title}} </h2>
-      <img v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'" />
-      <h3 class="book-author"> {{book.author}} </h3>
-      <h3 class="book-isbn">{{ book.isbn}} </h3>
-      <h3 class="book-difficulty">{{book.difficulty}} </h3>
-    </div>
+<div>
+  <book-card v-for="book in this.books" v-bind:key="book.id" v-bind:book="book"/>
 </div>
     <!-- <div class="add-book">
       <h1 class="title">BookShelf</h1>
@@ -34,6 +27,7 @@
 
 <script>
 import BookService from "@/services/BookService.js";
+import BookCard from './BookCard.vue';
 
 
 export default {
@@ -45,6 +39,7 @@ export default {
     };
   },
   components: {
+    BookCard
     
   },
   created() {

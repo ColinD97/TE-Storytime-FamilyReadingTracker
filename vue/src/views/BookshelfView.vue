@@ -4,8 +4,7 @@
     <h1>BookShelf<span>Let's go on a reading adventure!</span></h1>
     </div>
   <div class="book-container">
-    <bookshelf v-for = "book in $store.state.books" v-bind:key="book.id" v-bind:book="book">
-    </bookshelf>
+    <bookshelf />
     <add-book/>
   </div>
 </div>
@@ -17,7 +16,7 @@ import AddBook from '../components/AddBook.vue'
 export default {
   components: { Bookshelf, AddBook },
     name: 'bookshelf-view',
-    component: {Bookshelf}
+    
 }
 </script>
 
