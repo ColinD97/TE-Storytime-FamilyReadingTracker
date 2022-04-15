@@ -4,7 +4,6 @@ package com.techelevator.controller;
 import com.techelevator.dao.BookDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.Book;
-import com.techelevator.model.User;
 import com.techelevator.model.UserBook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -48,9 +47,16 @@ public class BookController {
     }
 
     @RequestMapping(path="/bookshelf/{id}", method = RequestMethod.POST)
-    public Book createBook(@RequestBody Book book){
-        return bookDao.createBook(book);
+    public Book createBook(@RequestBody Book book, @PathVariable String id){
+        long readerId = Long.parseLong(id);
+        return bookDao.createBook(book, readerId);
     }
+//    public void createBook(@RequestBody BookDTO newBook){
+//        Book book = bookDao.getBookById(newBook.getBook_id());
+//        System.out.println(book);
+//        //only tries to create book, need to also assign it to a user
+//        bookDao.createBook(book);
+//    }
 
     @RequestMapping(value = "/bookshelf/{id}", method = RequestMethod.GET)
     public List<UserBook> getBooksByUser(@PathVariable long id) {

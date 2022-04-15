@@ -7,11 +7,13 @@ import java.util.List;
 
 public interface BookDao {
 
-    Book createBook(Book book);
+    Book createBook(Book book, Long readerId);
 
     Book getBookById(int id);
 
     List <UserBook> getBooksByUserId(Long userId);
 
     List <Book> getAllBooks();
+
+
 }
