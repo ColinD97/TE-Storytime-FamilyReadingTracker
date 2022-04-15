@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div>
     <!-- Like book card from homework 13 -->
     <!-- flexbox -->
     <div class="card" v-bind:class="{read: book.read}">
@@ -11,7 +11,7 @@
       <h3 class="book-isbn">ISBN: {{ book.isbn}} </h3>
       <h3 class="book-difficulty">Difficulty: {{book.difficulty}} </h3>
     </div>
-</div>
+  </div>
 </template>
 
 <script>

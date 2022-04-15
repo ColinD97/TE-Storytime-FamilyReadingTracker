@@ -52,10 +52,11 @@ export default {
 
 <style>
 .card {
-    border: 2px solid black;
+    text-align: center;
+    border: 4px solid white;
     border-radius: 10px;
     width: 250px;
-    height: 3500px;
+    height: 520px;
     margin: 20px;
 }
 
@@ -64,7 +65,7 @@ export default {
 }
 
 .card .book-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .card .book-author {
