@@ -19,6 +19,8 @@ public class User {
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
+   private Integer totalMinutes;
+   private Integer pointsBalance;
 
    public User() { }
 
@@ -29,7 +31,7 @@ public class User {
       this.activated = true;
    }
 
-   public User(Long id, String family_id, String first_name, String last_name, String email, String username, String password, String authorities) {
+   public User(Long id, String family_id, String first_name, String last_name, String email, String username, String password, String authorities, Integer totalMinutes, Integer pointsBalance) {
       this.id = id;
       this.family_id = family_id;
       this.first_name = first_name;
@@ -38,6 +40,8 @@ public class User {
       this.username = username;
       this.password = password;
       this.activated = true;
+      this.totalMinutes = totalMinutes;
+      this.pointsBalance = pointsBalance;
    }
 
    public Long getId() {
@@ -118,6 +122,22 @@ public class User {
 
    public void setEmail(String email) {
       this.email = email;
+   }
+
+   public Integer getTotalMinutes() {
+      return totalMinutes;
+   }
+
+   public void setTotalMinutes(Integer totalMinutes) {
+      this.totalMinutes = totalMinutes;
+   }
+
+   public Integer getPointsBalance() {
+      return pointsBalance;
+   }
+
+   public void setPointsBalance(Integer pointsBalance) {
+      this.pointsBalance = pointsBalance;
    }
 
    @Override
