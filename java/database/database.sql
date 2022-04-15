@@ -56,18 +56,18 @@ VALUES
 
 INSERT INTO book_info (title, author, isbn, difficulty)
 VALUES
-    ('The Super Cool Life of a Tech Lead', 'Colin Davis', 1234216543535, 4 ),
-    ('What is For Dinner?', 'Nolan Tsai', 2348734681156, 3),
-	('Project Managing, Like a Boss', 'Reginald Arnedo', 3458130428567, 5),
-	('Just Let me Make it Pretty', 'Kai Indigo Wolf', 4568142953178, 2),
-	('How to Play Your Best Golf All the Time', 'Tommy Armour', 1640569132164, 5),
-	('The Rainbow Fish', 'J Alison James', 1379158253022, 1),
-	('Just Me and My Dad', 'Mercer Mayer', 1191739256711, 2),
-	('If You Give a Mouse a Cookie', 'Felicia Bond', 99017989234539, 2),
-	('Where the Wild Things Are', 'Maurice Sendak', 2901623865404, 2),
-	('Brown Bear, Brown Bear, What Do You See?', 'Brown Bear', 3987123096572, 1),
-	('The Very Hungry Caterpillar', 'Reginald Arnedo', 9009890674127, 1),
-	('Strictly No Elephants', 'Taeeun Yoo', 3116237654306, 2);
+    ('The Super Cool Life of a Tech Lead', 'Colin Davis', 123435, 4 ),
+    ('What is For Dinner?', 'Nolan Tsai', 2341156, 3),
+	('Project Managing, Like a Boss', 'Reginald Arnedo', 345867, 5),
+	('Just Let me Make it Pretty', 'Kai Indigo Wolf', 456178, 2),
+	('How to Play Your Best Golf All the Time', 'Tommy Armour', 1632164, 5),
+	('The Rainbow Fish', 'J Alison James', 1379022, 1),
+	('Just Me and My Dad', 'Mercer Mayer', 1196711, 2),
+	('If You Give a Mouse a Cookie', 'Felicia Bond', 99017539, 2),
+	('Where the Wild Things Are', 'Maurice Sendak', 29015404, 2),
+	('Brown Bear, Brown Bear, What Do You See?', 'Brown Bear', 3987572, 1),
+	('The Very Hungry Caterpillar', 'Reginald Arnedo', 90098927, 1),
+	('Strictly No Elephants', 'Taeeun Yoo', 31164306, 2);
 
 INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, past_book, current_book, future_book, notes)
 VALUES

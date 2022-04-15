@@ -1,62 +1,30 @@
 <template>
-<div>
-  <div class="add-book">
-    <h1 class="title">BookShelf</h1>
-    <h3 class="subtext">Let's go on a reading adventure!</h3>
-<table class="bookshelf" >
-    <thead class='table-header'>
-    <tr class='header-row'>
-        <th>Title</th>
-        <th>Author</th>
-        <th>ISBN</th>
-        <th>Difficulty</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="book in books" v-bind:key="book.book_id" class='table-row'>
-        <td>{{book.title}}</td>
-        <td>{{book.author}}</td>
-        <td>{{book.isbn}}</td>
-        <td>0000</td>
-    </tr>
-
-  </tbody>
-</table>
-
-</div>
-<!-- <router-link v-bind:to="{ name: 'add-book' }">
-  <button class="btn" type="submit"> 
-    Add Book
-  </button>
-</router-link>  -->
-  <add-book v-bind:userId=" currentUserId"/>
+<div class="add-book">
+  <div class="title">
+    <h1>BookShelf<span>Let's go on a reading adventure!</span></h1>
+    </div>
+  <div class="book-container">
+    <bookshelf v-for = "book in $store.state.books" v-bind:key="book.id" v-bind:book="book">
+    </bookshelf>
+    <add-book/>
+  </div>
 </div>
 </template>
 
 <script>
-import BookService from '@/services/BookService.js';
-import AddBook from '@/components/AddBook'
-
+import Bookshelf from '../components/Bookshelf.vue'
+import AddBook from '../components/AddBook.vue'
 export default {
-  name: 'Bookshelf',
-  data() {
-    return {
-      currentUserId: this.$store.state.user.id,
-      books: []
-
-    }
-  },
-  components: {
-    AddBook
-  },  
-  created() {
-    BookService.getBooks(this.currentUserId).then( response => {
-      this.books = response.data;
-    })
-  }
+  components: { Bookshelf, AddBook },
+    name: 'bookshelf-view',
+    component: {Bookshelf}
 }
 </script>
 
 <style>
-
+.book-container {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 </style>

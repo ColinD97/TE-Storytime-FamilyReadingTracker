@@ -10,7 +10,7 @@
                         type="text"
                         id="title"
                         class="form-input"
-                        placeholder="Book Title"
+                        placeholder=""
                         v-model="book.title"
                         required
                         autofocus
@@ -22,7 +22,7 @@
                         type="text"
                         id="author"
                         class="form-input"
-                        placeholder="Author"
+                        placeholder=""
                         v-model="book.author"
                         autofocus
                     />
@@ -30,22 +30,31 @@
             </div>
             <!-- ISBN -->
             <div class="horizontal-group">
-                <div class="form-group">
                     <div class="form-group left">
                         <label for="email" class="label-title">ISBN</label>
                         <input
                             type="text"
                             id="isbn"
                             class="form-input"
-                            placeholder="ISBN"
+                            placeholder=""
                             v-model="book.isbn"
                             autofocus
                         />
                     </div>
-                </div>
+                    <div class="form-group right">
+                    <label for="difficulty" class="label-title">Difficulty</label>
+                    <input
+                        type="text"
+                        id="difficulty"
+                        class="form-input"
+                        placeholder="1 through 5"
+                        v-model="book.difficulty"
+                        autofocus
+                    />
+                    </div>
             </div>
             </div>
-    <button class="btn" type="submit" v-on:click="addBook">
+    <button class="btn" type="submit" v-on:click="addBook" >
         Submit Form
       </button>
     <button class="btn" type="submit">
@@ -67,6 +76,7 @@ export default {
         title: "",
         author: "",
         isbn: "",
+        difficulty: "",
       }
     };
   },
@@ -80,7 +90,6 @@ export default {
             this.$router.push({path: '/'});
           }
         })
-
     }
   }
 };
@@ -98,7 +107,7 @@ export default {
     height:30px;
 }
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid white;
 }
 .btn-body {
     display: inline-block;
@@ -111,7 +120,7 @@ table, th, td {
     cursor: pointer;
 }
 .btn-body:hover {
-    background-color: #169c7b;
+    background-color: #157788;
     color: white;
 }
 

@@ -1,8 +1,9 @@
 <template> 
     <div class="parent-dashboard">
-    <h1 id="title">Parent Dashboard</h1>
-    <h3 id="subtext">Keep track of your kid's reading. Build habits for life.</h3>
-      <table class="Children List">
+      <div class="title">
+        <h1>Parent Dashboard<span>Keep track of your kid's reading. Build habits for life.</span></h1>
+      </div>
+      <table class="parent">
       <label for="Children">Children **TABLE OF CHILDREN ACCOUNTS**</label>
         <tr>
           <th>Name</th>
@@ -18,10 +19,10 @@
         </tr>
       </table> 
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit" @click="goToRegisterChild">
+    <button class="btn" type="submit" @click="goToRegisterChild">
         Create | Edit Child Account
       </button>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">
+    <button class="btn" type="submit">
         Create | Edit Parent Account
       </button>
 
@@ -68,5 +69,26 @@ created() {
 </script>
 
 <style>
+.parent {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  justify-content: center;
+}
+.parent td, .parent th {
+  border: 1px solid #bbf2fc;
+  padding: 8px;
+}
+.parent tr:nth-child(even){background-color: #f2f2f2;}
+
+.parent tr:hover {background-color: #ddd;}
+
+.parent th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #126c7c;
+  color: white;
+}
 
 </style>
