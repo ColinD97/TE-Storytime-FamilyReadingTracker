@@ -49,9 +49,9 @@ export default {
   // Reg Note:  If I need to do a PROP, it's here
   data() {
     return {
-      user: {         // Spot check this with the team.  
-        id: '',              
-      },
+      // user: {         // Spot check this with the team.  
+      //   id: '',              
+      // },
       familyUsers: [],
       // currentUserId: this.$route.params.userId
 
