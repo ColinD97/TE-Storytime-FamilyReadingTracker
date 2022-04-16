@@ -58,8 +58,7 @@
 </template>
 
 <script>
-// Reg Note: I dont think I need the following import until the METHOD is established.
-// import BookService from '@/services/BookService.js'; 
+import BookService from '@/services/BookService.js'; 
 
 
 export default {
@@ -78,7 +77,17 @@ export default {
           notes:"",
         }       
       }; 
-    }      
+    },
+  methods: {
+    LogReading() {              // Reg Note:  I know this name sucks.  Will think of a best practice name once I sort this out
+      console.log('Log Reading Testing' + this.usersBooks)
+        BookService
+          .LogReading(this.userId, this.bookId, this.minutesRead, this.readingFormat, this.timesRead, this.pastBook, this.currentBook, this.futureBook, this.notes)
+          // Reg Note:  I don't THINK I need to do an if 
+
+    }
+
+  }      
 }
 </script>
 

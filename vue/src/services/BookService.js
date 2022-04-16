@@ -27,9 +27,9 @@ export default {
 
 // Reg Note:  Start of implementation of ReadingLog.vue code.  
 
-    getUsersBooks() {
-        return axios.get(`/`)
-    },
+//     getUsersBooks(LogReading) {
+//        return axios.get(`/`)
+//    },
 
 
 
