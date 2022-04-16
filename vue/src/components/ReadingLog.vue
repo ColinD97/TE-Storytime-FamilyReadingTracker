@@ -1,4 +1,9 @@
 <template>
+<div class="reading-log">
+    <div class="title">
+    <h1>Reading Log <span>What are we reading together today?</span></h1>
+    </div>
+
 <!-- 
   READER: Visual implementation pass working.  Temp data in just to show.  Doing Javascript and hooks next
     --NOTE:  Changed from BUTTONS to SELECT LIST per Mary HIGHLY,HIGHLY recommending this instead of buttons
@@ -53,6 +58,7 @@
           <textarea id="ChildReadingNotes" name="ChildReadingNotes" rows="4" cols="50" v-model="userBook.notes" /><br>
           <button class="btn" type="submit" v-on:click="SubmitNote">Submit Note</button>                                 
     </form>
+</div>
 </div>
 
 </template>

@@ -114,7 +114,7 @@ const router = new Router({
       }
     },
     {
-      path: "/readinglog",
+      path: "/readinglog/:userId",
       name: "reading-log",
       component: ReadingLog,
       meta: {

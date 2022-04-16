@@ -7,23 +7,20 @@
       <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link> 
     <div class="dropdown">
       <button class="dropbtn">Go to:
-      <i class="fa fa-caret-down"></i>
+        <i class="fa fa-caret-down"></i>
       </button>
         <div class="dropdown-content">
           <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">Dashboard</router-link> 
           <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">Bookshelf</router-link> 
+          <router-link class='container' v-bind:to="{ name: 'reading-log'}">Reading Log</router-link> 
           <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">Catalogue</router-link> 
         </div>
     </div>
     </div>
-    
-      
       <!-- <router-link class='container' v-bind:to="{ name: goToDashboard(), params: {userId: currentUserId}}">DashboardTest</router-link> 
       <router-link class='container' v-bind:to= "goToDashMethod" >DashboardTest2</router-link>  -->
-
       <!-- <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4> -->
       <!-- <h4>*TEMPORARY* current role: {{currentRole}}</h4> -->
-  
     <router-view />
   </div>
 </template>
@@ -190,19 +187,19 @@ body{
 }
 .form-header {
     height: 50px;
-    background-color: #e2ebf5;
+    background-color: #d3e0e0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 20px;
     padding-top: 10px
 }
-.form-header h1 {
+/* .form-header h1 {
     font-size: 10px;
     text-align: center;
     color: #666;
     padding-left: 20px;
     border-bottom: 1px solid #cccccc;
-}
+} */
 /*---------------------------------------*/
 /* Form Body */
 /*---------------------------------------*/
@@ -285,7 +282,7 @@ body{
 /*---------------------------------------*/
 .form-footer {
     height: 30px;
-    background-color: #e2ebf5;
+    background-color: #d3e0e0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     text-align: right;

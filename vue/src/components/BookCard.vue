@@ -5,9 +5,9 @@
     <div class="card">
       <h2 class="title"> {{book.title}} </h2>
       <img class='cover' v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'" />
-      <h3 class="book-author">Author: {{book.author}} </h3>
-      <h3 class="book-isbn">ISBN: {{ book.isbn}} </h3>
-      <h3 class="book-difficulty">Difficulty: {{book.difficulty}} </h3>
+      <p class="book-author">Author: {{book.author}} </p>
+      <p class="book-isbn">ISBN: {{ book.isbn}} </p>
+      <p class="book-difficulty">Difficulty: {{book.difficulty}} </p>
     </div>
   </div>
 </template>
@@ -23,17 +23,16 @@ export default {
 <style>
 
 .card {
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
+    font-family: "Arial Black", Gadget, sans-serif;
     padding: 2px;
     border: 4px solid white;
     border-radius: 10px;
-    width: 250px;
+    width: 270px;
     height: 520px;
     margin: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    text-align: center;
+    align-content: center;
 }
 .card .card.read {
     background-color: rgb(208, 245, 245);
@@ -41,15 +40,15 @@ export default {
 .card .book-title {
     text-align: center;
     color:157788;
-    font-size: 1rem;
+    font-size: 14px;
 }
 .card .book-author {
     text-align: center;
-    font-size: 1rem;
+    font-size: 14px;
 }
 .card .cover{
   border-radius: 5px 5px 0 0;
-  flex-grow: 1;
+  
 }
 
 </style>
