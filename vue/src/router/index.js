@@ -10,6 +10,7 @@ import ParentChildDash from '../views/ParentChildDashView.vue'
 import RegisterChildView from '../views/RegisterChildView.vue'
 import BookShelf from '../views/BookshelfView.vue'
 import CatalogueView from '../views/CatalogueView'
+import ReadingLog from '../components/ReadingLog'
 
 
 
@@ -76,12 +77,15 @@ const router = new Router({
         requiresAuth: false
       }
     },
-
-    {
-      // Working on hook for new version of BookshelfView
-      path: "/catalogue",
-      name: "bookshelf-catalogue",
-      component: CatalogueView,
+    { // Router for ParentDashboard - MVP for Sprint 1
+      path: "/dashboard/:userId",
+      name: "dashboard",
+      component: ParentDashboard,
+      // beforeEnter: (to,from,next) => {
+      //   if (this.$store.state.user.authorities[0].name == 'ROLE_PARENT') {
+      //     next()
+      //   }
+      // },
       meta: {
         requiresAuth: false
       }
@@ -100,6 +104,24 @@ const router = new Router({
       name: 'bookshelf',
       component: BookShelf,
     },
+    {
+      // Working on hook for new version of BookshelfView
+      path: "/catalogue",
+      name: "bookshelf-catalogue",
+      component: CatalogueView,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/readinglog",
+      name: "reading-log",
+      component: ReadingLog,
+      meta: {
+        requiresAuth: false
+      }
+
+    }
 
     
   ]

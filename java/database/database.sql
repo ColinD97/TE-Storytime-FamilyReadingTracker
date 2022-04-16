@@ -48,10 +48,10 @@ CREATE TABLE users_books (
 
 );
 
-INSERT INTO users (username, family_id, first_name, last_name, email, password_hash, role, total_minutes)
+INSERT INTO users (username, family_id, first_name, last_name, email, password_hash, role, total_minutes, points_balance)
 VALUES
-	('user', 1, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','parent', 0),
-	('admin', 1, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','child', 2450);
+	('user', 1, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_PARENT', 90,100),
+	('admin', 1, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_CHILD', 2450,200);
 
 
 INSERT INTO book_info (title, author, isbn, difficulty)

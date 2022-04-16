@@ -20,15 +20,17 @@
           <td>{{user.pointsBalance}}</td>
         </tr>
       </table> 
+      <div class="dash-buttons">
+        <button class='btn' @click="$router.push('reading-log')">Log Reading </button>
+        <button class='btn' @click="$router.push('')">Prize Dashboard </button>
+        <button class='btn' @click="$router.push('bookshelf')">Bookshelf </button>
+      </div>
+       
 
       <add-book />
       <registration-form-child />
-      
-      <div id="nav">
-        <button class='btn'>Log Reading </button>
-        <button class='btn'>Prize Dashboard </button>
-        <button class='btn'>Bookshelf </button>
-      </div>
+
+     
   </div>
 </template>
 
@@ -75,6 +77,12 @@ created() {
 </script>
 
 <style>
+.dash-buttons{
+  padding:10px;
+  display:flex;
+  justify-content: space-around;
+
+}
 .parent {
   margin-left: auto;
   margin-right: auto;

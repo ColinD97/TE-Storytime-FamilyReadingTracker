@@ -63,10 +63,10 @@
                   <div class="custom-select" style="width:200px;">
                     <label for="custom-select">Assign book to:</label>
                     <select>
-                    <option value="0">{{user.name}}</option>
-                    <option value="1">{{user.name}}</option>
-                    <option value="2">{{user.name}}</option>
-                    <option value="3">{{user.name}}</option>
+                    <option value="0">Massage</option>
+                    <option value="1">The</option>
+                    <option value="2">Data</option>
+                    <option value="3">Here</option>
                     </select>
                   </div>  
                 </div>         

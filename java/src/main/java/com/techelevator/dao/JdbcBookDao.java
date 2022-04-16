@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Book;
+import com.techelevator.model.LogReadingDTO;
 import com.techelevator.model.User;
 import com.techelevator.model.UserBook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,6 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public Book createBook(Book bookData, Long readerId) {
-//        String sql ="INSERT INTO book_info (title, author, isbn, difficulty) VALUES (?,?,?,?) RETURNING book_id;";
-//        Integer id = jdbcTemplate.queryForObject(sql, Integer.class,
-//                bookData.getTitle(), bookData.getAuthor(), bookData.getIsbn(), bookData.getDifficulty());
-//        return getBookById(id);
         String sql ="INSERT INTO book_info (title, author, isbn, difficulty) VALUES (?,?,?,?) RETURNING book_id;";
         Integer id = jdbcTemplate.queryForObject(sql, Integer.class,
                 bookData.getTitle(), bookData.getAuthor(), bookData.getIsbn(), bookData.getDifficulty());
@@ -44,8 +41,8 @@ public class JdbcBookDao implements BookDao{
     }
 
     @Override
-    public List<UserBook> getBooksByUserId(Long userId) {
-        String sql = "SELECT book_info.book_id, title, author, isbn,difficulty, times_read, past_book, " +
+    public List <UserBook> getBooksByUserId(Long userId) {
+        String sql = "SELECT book_info.book_id, title, author, isbn, difficulty, times_read, past_book, " +
                 "current_book, future_book FROM users JOIN users_books " +
                 "ON users.user_id = users_books.user_id JOIN book_info " +
                 "ON users_books.book_id = book_info.book_id WHERE users.user_id = ?;";
@@ -66,6 +63,18 @@ public class JdbcBookDao implements BookDao{
             results.add(mapRowToBook(resultSet));
         }
         return results;
+    }
+
+    @Override
+    public boolean createLogEntry(LogReadingDTO entry) {
+        String sql = "INSERT INTO users_books (user_id, book_id, minutes_read, " +
+                "reading_format, times_read, past_book, current_book, future_book, " +
+                "notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        int value = jdbcTemplate.update(sql, entry.getUser_id(),
+                entry.getBook_id(), entry.getMinutes_read(), entry.getReading_format(),
+                entry.getTimes_read(), entry.isPast_book(), entry.isCurrent_book(),
+                entry.isFuture_book(), entry.getNotes());
+        return (value == 1);
     }
 
     private Book mapRowToBook(SqlRowSet resultSet) {
