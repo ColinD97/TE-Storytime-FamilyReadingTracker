@@ -13,7 +13,7 @@
 <div>
     <form>
         <label for="Reader">Reader:</label>      
-          <select name="readers" id="readers" v-model="usersBooks.userId" required autofocus >     <!-- Reg Discussion Note:  Need for required and autofocus properties?  Confirm -->
+          <select name="readers" id="readers" v-model="userBook.userId" required autofocus >     <!-- Reg Discussion Note:  Need for required and autofocus properties?  Confirm -->
           <!-- Test options for SELECT LIST.  DELETE after JS+ Hooks implementation is complete
             <option value="Child 1">Child 1</option>        
             <option value="Child 2">Child 2</option>        
@@ -23,18 +23,18 @@
           
         
         <label for="Assigned Books">Book:</label>
-          <select name="book" id="assignedBooks" v-model="userBooks.bookId" autofocus />
+          <select name="book" id="assignedBooks" v-model="userBook.bookId" autofocus >
 
            <!-- Test options for SELECT LIST.  DELETE after JS+ Hooks implementation is complete
             <option value="Book 1">Book 1</option>        
             <option value="Book 2">Book 2</option>        
             <option value="Book 3">Book 3</option>        
             -->
-            <br>
+            </select><br>
           
 
         <label for="Book Format">Format:</label>
-          <select name="BookFormat" id="BookFormat" v-model="userBooks.BookFormat" autofocus />
+          <select name="BookFormat" id="BookFormat" v-model="userBook.BookFormat" autofocus />
             <option value="Paper">Paper</option>
             <option value="Digital">Digital</option>
             <option value="Audiobook">Audiobook</option>
@@ -44,14 +44,14 @@
           <br>
 
         <label for="Minutes Read">Minutes Read:</label><br>
-          <input type="text" id="MinutesRead" name="MinutesRead" v-model="userBooks.minutesRead"><br>     
+          <input type="text" id="MinutesRead" name="MinutesRead" v-model="userBook.minutesRead"><br>     
             
         <label for="Finished Book">Finished Book?</label>
           <input type="Checkbox" id="FinishedBookCheckbox" v-model="FinishedBookChecked" /><br>
 
         <label for="ChildReadingNotes">Notes:</label><br>
-          <textarea id="ChildReadingNotes" name="ChildReadingNotes" rows="4" cols="50" v-model="userBooks.notes" /><br>
-          <button type="submit" class="btn btn-success" >Submit</button>           
+          <textarea id="ChildReadingNotes" name="ChildReadingNotes" rows="4" cols="50" v-model="userBook.notes" /><br>
+          <button class="btn" type="submit" v-on:click="SubmitNote">Submit Note</button>                                 
     </form>
 </div>
 
@@ -60,12 +60,11 @@
 <script>
 import BookService from '@/services/BookService.js'; 
 
-
 export default {
-    name: 'users_books',
+    name: 'user_book',
     data() {
       return {
-        usersBooks: {
+        userBook: {
           userId: "",
           bookId: "",
           minutesRead: "",
@@ -79,12 +78,11 @@ export default {
       }; 
     },
   methods: {
-    LogReading() {              // Reg Note:  I know this name sucks.  Will think of a best practice name once I sort this out
-      console.log('Log Reading Testing' + this.usersBooks)
+    LogReading() {                                                // Reg Note:  I know this name sucks.  Will think of a best practice name once I sort this out
+      console.log('Log Reading Testing' + this.userBook)          // Console log for testing - DELETE on clean up pass
         BookService
-          .LogReading(this.userId, this.bookId, this.minutesRead, this.readingFormat, this.timesRead, this.pastBook, this.currentBook, this.futureBook, this.notes)
-          // Reg Note:  I don't THINK I need to do an if 
-
+          .LogReading(this.userBook)
+          // Reg Note:  I don't THINK I need to do an if statement
     }
 
   }      

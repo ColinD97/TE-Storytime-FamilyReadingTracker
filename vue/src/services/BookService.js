@@ -19,7 +19,6 @@ export default {
         return axios.put(`/bookshelf/${user}`, book);
     },
 
-
     deleteBooks(user) {
         return axios.delete(`/bookshelf/${user}`)
 
@@ -27,8 +26,8 @@ export default {
 
 // Reg Note:  Start of implementation of ReadingLog.vue code.  
 
-//     getUsersBooks(LogReading) {
-//        return axios.get(`/`)
+//     getUserBooks(userBooks) {
+//        return axios.get(`/home/$()`)
 //    },
 
 
