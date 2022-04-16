@@ -21,8 +21,8 @@
         </tr>
       </table> 
       <div class="dash-buttons">
-        <button class='btn' @click="$router.push('about')">Log Reading </button>
-        <button class='btn' @click="$router.push('about')">Prize Dashboard </button>
+        <button class='btn' @click="$router.push('reading-log')">Log Reading </button>
+        <button class='btn' @click="$router.push('')">Prize Dashboard </button>
         <button class='btn' @click="$router.push('bookshelf')">Bookshelf </button>
       </div>
        
