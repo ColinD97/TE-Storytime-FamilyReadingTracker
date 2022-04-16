@@ -2,78 +2,78 @@ package com.techelevator.model;
 
 public class LogReadingDTO {
 
-    private Long userId;
-    private int bookId;
-    private int minutesRead;
-    private String readingFormat;
-    private int timesRead;
-    private boolean pastBook;
-    private boolean currentBook;
-    private boolean futureBook;
+    private Long user_id;
+    private int book_id;
+    private int minutes_read;
+    private String reading_format;
+    private int times_read;
+    private boolean past_book;
+    private boolean current_book;
+    private boolean future_book;
     private String notes;
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
-    public int getBookId() {
-        return bookId;
+    public int getBook_id() {
+        return book_id;
     }
 
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
+    public void setBook_id(int book_id) {
+        this.book_id = book_id;
     }
 
-    public int getMinutesRead() {
-        return minutesRead;
+    public int getMinutes_read() {
+        return minutes_read;
     }
 
-    public void setMinutesRead(int minutesRead) {
-        this.minutesRead = minutesRead;
+    public void setMinutes_read(int minutes_read) {
+        this.minutes_read = minutes_read;
     }
 
-    public String getReadingFormat() {
-        return readingFormat;
+    public String getReading_format() {
+        return reading_format;
     }
 
-    public void setReadingFormat(String readingFormat) {
-        this.readingFormat = readingFormat;
+    public void setReading_format(String reading_format) {
+        this.reading_format = reading_format;
     }
 
-    public int getTimesRead() {
-        return timesRead;
+    public int getTimes_read() {
+        return times_read;
     }
 
-    public void setTimesRead(int timesRead) {
-        this.timesRead = timesRead;
+    public void setTimes_read(int times_read) {
+        this.times_read = times_read;
     }
 
-    public boolean isPastBook() {
-        return pastBook;
+    public boolean isPast_book() {
+        return past_book;
     }
 
-    public void setPastBook(boolean pastBook) {
-        this.pastBook = pastBook;
+    public void setPast_book(boolean past_book) {
+        this.past_book = past_book;
     }
 
-    public boolean isCurrentBook() {
-        return currentBook;
+    public boolean isCurrent_book() {
+        return current_book;
     }
 
-    public void setCurrentBook(boolean currentBook) {
-        this.currentBook = currentBook;
+    public void setCurrent_book(boolean current_book) {
+        this.current_book = current_book;
     }
 
-    public boolean isFutureBook() {
-        return futureBook;
+    public boolean isFuture_book() {
+        return future_book;
     }
 
-    public void setFutureBook(boolean futureBook) {
-        this.futureBook = futureBook;
+    public void setFuture_book(boolean future_book) {
+        this.future_book = future_book;
     }
 
     public String getNotes() {
@@ -83,4 +83,5 @@ public class LogReadingDTO {
     public void setNotes(String notes) {
         this.notes = notes;
     }
+
 }

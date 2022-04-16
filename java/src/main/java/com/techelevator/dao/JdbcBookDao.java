@@ -70,11 +70,11 @@ public class JdbcBookDao implements BookDao{
         String sql = "INSERT INTO users_books (user_id, book_id, minutes_read, " +
                 "reading_format, times_read, past_book, current_book, future_book, " +
                 "notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
-        int result = jdbcTemplate.update(sql, Boolean.class, entry.getUserId(),
-                entry.getBookId(), entry.getMinutesRead(), entry.getReadingFormat(),
-                entry.getTimesRead(), entry.isPastBook(), entry.isCurrentBook(),
-                entry.isFutureBook(), entry.getNotes());
-        return result == 1;
+        int value = jdbcTemplate.update(sql, entry.getUser_id(),
+                entry.getBook_id(), entry.getMinutes_read(), entry.getReading_format(),
+                entry.getTimes_read(), entry.isPast_book(), entry.isCurrent_book(),
+                entry.isFuture_book(), entry.getNotes());
+        return (value == 1);
     }
 
     private Book mapRowToBook(SqlRowSet resultSet) {
