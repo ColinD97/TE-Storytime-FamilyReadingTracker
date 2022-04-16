@@ -27,7 +27,7 @@
       </div>
        
 
-      <add-book/>
+      <add-book v-bind:familyUsers="familyUsers"/>
       <!-- v-for="name in this.familyUsers" v-bind:key="name.id" v-bind:familyUsers="name"/>/ -->
       <!-- I'm positive I'm not getting this right. Spent 45 mins trying to research what goes where and moving on to CSS just for a bit -->
       <registration-form-child />
@@ -51,7 +51,7 @@ export default {
       // user: {         // Spot check this with the team.  
       //   id: '',              
       // },
-      familyUsers: ['name'],
+      familyUsers: [],
       // currentUserId: this.$route.params.userId    
 
 

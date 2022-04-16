@@ -58,20 +58,18 @@
                     </div>
                 </div>
             </div>
-              <!-- <div class="form-footer">
+              <div class="form-footer">
                 <button class="btn" type="submit" v-on:click="addBook" >
                 Add Book
                 </button>
                   <div class="custom-select" style="width:200px;" id='dropdown'>
                     <label for="custom-select">Assign book to:</label>
-                    <select v-model="selected" v-bind:id="user.name" v-bind:value="user.name">
-                    <option disabled value="0">Children:</option>
-                    <option id="user.name">{{user.name}}</option>
-                    <option id="user.name">{{user.name}}</option>
-                    <option id="user.name">{{user.name}}</option>
+                    <select v-model= "book.userId">
+                      <option disabled value="0">Children:</option>
+                      <option v-for="user in familyUsers" v-bind:key="user.id" :value="user">{{user.name}}</option>
                     </select>
                   </div>  
-                </div>          -->
+                </div>         
   </form>
 </div>
 </template>
@@ -82,7 +80,7 @@ import BookService from '@/services/BookService.js';
 
 export default {
   name: 'add-book',
-  props: ['family-users'],  
+  props: ['familyUsers'],  
   // 1. this.book.userID not from here, get from property entering into the form
   data() {
     return {
