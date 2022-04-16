@@ -1,12 +1,11 @@
 <template>
-    <div class="title">
-    <h1>Family Reading Tracker <span>Keep track of your kid's reading. Build habits for life.</span></h1>
-    <div class="photo">
-      <img src="@/assets/Homepagephoto.png" />
+<div class="title">
+      <h1>Family Reading Tracker <span>Keep track of your kid's reading. Build habits for life.</span></h1>
+        <div class="photo">
+          <img src="@/assets/Homepagephoto.png" />
+        </div>
     <ReadingLog />  <!-- REG'S TEMP CODE TO RENDER READINGLOG.  THIS NEEDS TO BE DELETED -->
-    </div>
-    </div>
-
+</div>
 
 
 
@@ -34,14 +33,6 @@ export default {
 </script>
 
 <style>
-.photo{
-  border-radius: 8px;
-  padding: 5px;
-  width: 150px;
-}
-
-
-
 
 
 </style>
