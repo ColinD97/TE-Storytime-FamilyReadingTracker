@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Book;
+import com.techelevator.model.LogReadingDTO;
 import com.techelevator.model.UserBook;
 
 import java.util.List;
@@ -15,5 +16,5 @@ public interface BookDao {
 
     List <Book> getAllBooks();
 
-
+    boolean createLogEntry(LogReadingDTO entry);
 }
