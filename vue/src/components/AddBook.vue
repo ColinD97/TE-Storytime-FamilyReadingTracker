@@ -1,6 +1,8 @@
 <template>
     
 <div>
+
+  <button class="btn" v-on:click="showForm= true" v-show="showForm === false">Add New Book</button>
   <form class="form-add-book" @submit.prevent="register">
     <h1 class="form-header">Add Book Details:</h1>
     <div class="form-body">
@@ -56,20 +58,20 @@
                     </div>
                 </div>
             </div>
-              <div class="form-footer">
+              <!-- <div class="form-footer">
                 <button class="btn" type="submit" v-on:click="addBook" >
                 Add Book
                 </button>
-                  <div class="custom-select" style="width:200px;">
+                  <div class="custom-select" style="width:200px;" id='dropdown'>
                     <label for="custom-select">Assign book to:</label>
-                    <select>
-                    <option value="0">Massage</option>
-                    <option value="1">The</option>
-                    <option value="2">Data</option>
-                    <option value="3">Here</option>
+                    <select v-model="selected" v-bind:id="user.name" v-bind:value="user.name">
+                    <option disabled value="0">Children:</option>
+                    <option id="user.name">{{user.name}}</option>
+                    <option id="user.name">{{user.name}}</option>
+                    <option id="user.name">{{user.name}}</option>
                     </select>
                   </div>  
-                </div>         
+                </div>          -->
   </form>
 </div>
 </template>
@@ -80,7 +82,8 @@ import BookService from '@/services/BookService.js';
 
 export default {
   name: 'add-book',
-  props: ['userId'],
+  props: ['family-users'],  
+  // 1. this.book.userID not from here, get from property entering into the form
   data() {
     return {
       book: {
@@ -89,7 +92,8 @@ export default {
         isbn: "",
         difficulty: "",
         userId: "",
-      }
+      },
+      selected: ''
     };
   },
   methods: {

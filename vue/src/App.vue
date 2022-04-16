@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div class="topnav" id="myTopnav">
       <router-link class='container' v-bind:to="{ name: 'home' }">Home </router-link>
       <router-link class='container' v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link> 
       <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link> 
@@ -60,29 +60,42 @@ export default {
 /*---------------------------------------*/
 /* Top Banner */
 /*---------------------------------------*/
-.container {
-    display: flex;
-    justify-content: space-around;
-    margin: 30px auto;
-    padding: 30px;
+
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
 }
-#banner {
-    list-style: none;
-    font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 17px;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    color: #000000;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: small-caps;
-    text-transform: none;
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  color: #222222;
+  float: left;
+  display: block;
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
 }
 
 /*---------------------------------------*/
 /* Title and Sub-text */
 /*---------------------------------------*/
+
+
+
 .title h1{
   text-align:center; font-size:70px; text-transform:uppercase; color:#222; letter-spacing:1px;
   font-family: 'Bubblegum Sans', cursive;

@@ -1,6 +1,7 @@
 <template>
 <div class="book-shelf">
-  <book-card v-for="book in this.books" v-bind:key="book.id" v-bind:book="book"/>
+  <book-card v-for="book in this.books" v-bind:key="book.id" v-bind:book="book"/>  
+  <!-- book after the colon has to match the name of the property inside the nested component. to the right of = is the thing you're passing in. inside the book card, 19  -->
 </div>
 </template>
 

@@ -16,8 +16,9 @@
 
 <script>
 export default {
-    props: ['book'],
-
+    props: ['book'],  
+    // using this book to refer to use similar idea to use on parent dashboard when adding book to vbind: family-users and pass that in that data, and on the add book side make prop and i can use it!
+    // parent dashboard view an parent dashboard component: DONT MOVE COMPONENT INTO VIEW colin understands child vs parent with one dashboard view
 }
 </script>
 
