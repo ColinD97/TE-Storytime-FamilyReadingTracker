@@ -3,13 +3,17 @@
     <div id="nav">
       <router-link class='container' v-bind:to="{ name: 'home' }">Home </router-link>
       <router-link class='container' v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link> 
-      <!-- <router-link class='container' v-bind:to="{ name: 'logout' }">Logout</router-link>  -->
       <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link> 
       <router-link class='container' v-bind:to="{ name: 'register' }">Register</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'parent', params: {userId: currentUserId}}">Parent Dashboard</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">Dashboard</router-link> 
       <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">Bookshelf</router-link> 
       <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">Catalogue</router-link> 
+      <!-- <router-link class='container' v-bind:to="{ name: goToDashboard(), params: {userId: currentUserId}}">DashboardTest</router-link> 
+      <router-link class='container' v-bind:to= "goToDashMethod" >DashboardTest2</router-link>  -->
+
       <!-- <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4> -->
+      <!-- <h4>*TEMPORARY* current role: {{currentRole}}</h4> -->
+      
     </div>
     <router-view />
   </div>
@@ -28,7 +32,18 @@ export default {
   computed: {
     currentUserId: function(){
       return this.$store.state.user.id
+    },
+    currentRole: function(){
+      return this.$store.state.user.authorities[0].name
     }
+  },
+  methods: {
+    // goToDashboard(){
+    //   return "parent-child-dash"
+    // },
+    // goToDashMethod(){
+    //   return '/parent/child-dashboard/2'
+    // }
   }
 
 }
