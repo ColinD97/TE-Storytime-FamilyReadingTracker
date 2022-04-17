@@ -1,20 +1,26 @@
 <template>
-  <div id="app">
-    <div class="topnav" id="myTopnav">
+<div id="app">
+     <div class="topnav" id="myTopnav">
       <router-link class='container' v-bind:to="{ name: 'home' }">Home </router-link>
+      <router-link class='container' v-bind:to="{ name: 'register' }">Register</router-link>  
       <router-link class='container' v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link> 
       <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'register' }">Register</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">Dashboard</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">Bookshelf</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">Catalogue</router-link> 
+    <div class="dropdown">
+      <button class="dropbtn">Go to:
+        <i class="fa fa-caret-down"></i>
+      </button>
+        <div class="dropdown-content">
+          <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">Dashboard</router-link> 
+          <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">Bookshelf</router-link> 
+          <router-link class='container' v-bind:to="{ name: 'reading-log'}">Reading Log</router-link> 
+          <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">Catalogue</router-link> 
+        </div>
+    </div>
+    </div>
       <!-- <router-link class='container' v-bind:to="{ name: goToDashboard(), params: {userId: currentUserId}}">DashboardTest</router-link> 
       <router-link class='container' v-bind:to= "goToDashMethod" >DashboardTest2</router-link>  -->
-
       <!-- <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4> -->
       <!-- <h4>*TEMPORARY* current role: {{currentRole}}</h4> -->
-      
-    </div>
     <router-view />
   </div>
 </template>
@@ -38,12 +44,7 @@ export default {
     }
   },
   methods: {
-    // goToDashboard(){
-    //   return "parent-child-dash"
-    // },
-    // goToDashMethod(){
-    //   return '/parent/child-dashboard/2'
-    // }
+   
   }
 
 }
@@ -60,8 +61,6 @@ export default {
 /*---------------------------------------*/
 /* Top Banner */
 /*---------------------------------------*/
-
-/* Add a black background color to the top navigation */
 .topnav {
   overflow: hidden;
 }
@@ -70,31 +69,70 @@ export default {
 .topnav a {
   color: #222222;
   float: left;
-  display: block;
   font-family: "Arial Black", Gadget, sans-serif;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 19px;
 }
-
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
+.topnav .dropdown {
+  float: left;
+  overflow: hidden;
+}
 
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+/* Dropdown button */
+.topnav .dropdown .dropbtn {
+  border: none;
+  background: inherit;
+  outline: none;
+  color: #222222;
+  float: left;
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+/* Dropdown content (hidden by default) */
+.topnav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.topnav .dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.topnav .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.topnav .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /*---------------------------------------*/
 /* Title and Sub-text */
 /*---------------------------------------*/
-
-
 
 .title h1{
   text-align:center; font-size:70px; text-transform:uppercase; color:#222; letter-spacing:1px;
@@ -104,7 +142,6 @@ export default {
   margin-top: 5px;
     font-size:25px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
     text-transform: uppercase; font-family: 'Bubblegum Sans', cursive;
-
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     grid-template-rows: 27px 0;
@@ -150,19 +187,19 @@ body{
 }
 .form-header {
     height: 50px;
-    background-color: #e2ebf5;
+    background-color: #d3e0e0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 20px;
     padding-top: 10px
 }
-.form-header h1 {
+/* .form-header h1 {
     font-size: 10px;
     text-align: center;
     color: #666;
     padding-left: 20px;
     border-bottom: 1px solid #cccccc;
-}
+} */
 /*---------------------------------------*/
 /* Form Body */
 /*---------------------------------------*/
@@ -234,7 +271,6 @@ body{
     border-radius: 10px;
     color: #bcf5e7;
     cursor: pointer;
-    
 }
 .btn-body:hover {
     background-color: #1fc1dd;
@@ -246,7 +282,7 @@ body{
 /*---------------------------------------*/
 .form-footer {
     height: 30px;
-    background-color: #e2ebf5;
+    background-color: #d3e0e0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     text-align: right;
@@ -297,7 +333,6 @@ body{
     cursor: pointer;  
     box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
 }
-
 .container {
     display: inline-flex;
     margin: 10px auto;

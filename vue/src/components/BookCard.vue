@@ -1,15 +1,13 @@
 <template>
-  <div>
+  <div class='card-container'>
     <!-- Like book card from homework 13 -->
     <!-- flexbox -->
     <div class="card">
       <h2 class="title"> {{book.title}} </h2>
-      <img v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'" />
-      <!-- <img v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/9780064430555-M.jpg'" /> -->
-      
-      <h3 class="book-author">Author: {{book.author}} </h3>
-      <h3 class="book-isbn">ISBN: {{ book.isbn}} </h3>
-      <h3 class="book-difficulty">Difficulty: {{book.difficulty}} </h3>
+      <img class='cover' v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'" />
+      <p class="book-author">Author: {{book.author}} </p>
+      <p class="book-isbn">ISBN: {{ book.isbn}} </p>
+      <p class="book-difficulty">Difficulty: {{book.difficulty}} </p>
     </div>
   </div>
 </template>
@@ -23,27 +21,34 @@ export default {
 </script>
 
 <style>
+
 .card {
-    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
     padding: 2px;
     border: 4px solid white;
     border-radius: 10px;
-    width: 250px;
+    width: 270px;
     height: 520px;
     margin: 20px;
+    transition: 0.3s;
+    text-align: center;
+    align-content: center;
 }
-
-.card.read {
+.card .card.read {
     background-color: rgb(208, 245, 245);
 }
-
 .card .book-title {
+    text-align: center;
     color:157788;
-    font-size: 1rem;
+    font-size: 14px;
 }
-
 .card .book-author {
-    font-size: 1rem;
+    text-align: center;
+    font-size: 14px;
+}
+.card .cover{
+  border-radius: 5px 5px 0 0;
+  
 }
 
 </style>

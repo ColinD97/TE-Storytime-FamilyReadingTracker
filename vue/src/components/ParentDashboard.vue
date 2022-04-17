@@ -3,6 +3,7 @@
       <div class="title">
         <h1>Parent Dashboard<span>Keep track of your kid's reading. Build habits for life.</span></h1>
       </div>
+      
       <table class="parent">
       <label for="Children"></label>
         <tr>
@@ -21,13 +22,13 @@
         </tr>
       </table> 
       <div class="dash-buttons">
-        <button class='btn' @click="$router.push('reading-log')">Log Reading </button>
+        <button class='btn' @click="$router.push('/reading-log/user')">Log Reading </button>
         <button class='btn' @click="$router.push('')">Prize Dashboard </button>
-        <button class='btn' @click="$router.push('bookshelf')">Bookshelf </button>
+        <button class='btn' @click="$router.push('/bookshelf/{{user.id}}')">Bookshelf </button>
       </div>
        
 
-      <add-book/>
+      <add-book v-bind:familyUsers="familyUsers"/>
       <!-- v-for="name in this.familyUsers" v-bind:key="name.id" v-bind:familyUsers="name"/>/ -->
       <!-- I'm positive I'm not getting this right. Spent 45 mins trying to research what goes where and moving on to CSS just for a bit -->
       <registration-form-child />
@@ -51,7 +52,7 @@ export default {
       // user: {         // Spot check this with the team.  
       //   id: '',              
       // },
-      familyUsers: ['name'],
+      familyUsers: [],
       // currentUserId: this.$route.params.userId    
 
 
