@@ -136,7 +136,7 @@ export default {
   text-align:center; font-size:70px; text-transform:uppercase; color:#222; letter-spacing:1px;
   font-family: 'Bubblegum Sans', cursive;
     /* Shadows are visible under slightly transparent text color */
-    color: rgba(3, 93, 109, 0.8);
+    color: rgba(3, 63, 71, 0.8);
     text-shadow: 1px 4px 6px #b0dde0, 0 0 0 #000, 1px 4px 6px #b0dde0;
 }
 .title h1 span {
