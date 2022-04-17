@@ -74,4 +74,10 @@ public class BookController {
         long readerId = userIdDto.getUser_id();
         return bookDao.getUserBooks(readerId);
     }
+
+    @RequestMapping(value="/readinglog/family/{id}", method = RequestMethod.GET)
+    public List<LogReadingDTO> getFamilyUserBook(@PathVariable int id){
+        return bookDao.getFamilyUserBooks(id);
+    }
+
 }

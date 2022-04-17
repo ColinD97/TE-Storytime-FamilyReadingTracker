@@ -19,4 +19,7 @@ public interface BookDao {
     boolean createLogEntry(LogReadingDTO entry);
 
     List <LogReadingDTO> getUserBooks(long id);
+
+    List <LogReadingDTO> getFamilyUserBooks(int id);
+
 }

@@ -30,6 +30,10 @@ export default {
         return axios.post(`/readinglog/`, userBook)
     },
 
+    getReadingLog(userId) {
+        return axios.get('/readinglog/', userId)
+    }
+
     
 
 

@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.User;
+import com.techelevator.model.UserDashInfo;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface UserDao {
                    String lastName, String email, String username, String password, String role);
 
     List<User> getUsersByFamilyId(String familyId);
+
+    List<UserDashInfo> getUserDashboardInfoByFamilyId(int familyId);
 }
