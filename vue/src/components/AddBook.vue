@@ -2,12 +2,7 @@
     
 <div>
 
-      <button
-      class="btn"
-      href="#"
-      v-if="showForm === false"
-      v-on:click.prevent="showForm = true">
-      Add New Book</button>
+
   <form class="form-add-book" @submit.prevent="register">
     <h1 class="form-header">Add Book Details:</h1>
     <div class="form-body">
@@ -72,7 +67,7 @@
                     <label for="custom-select">Assign book to:</label>
                     <select v-model= "book.userId">
                       <option disabled value="0">Children:</option>
-                      <option v-for="user in familyUsers" v-bind:key="user.id" :value="user">{{user.name}}</option>
+                      <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.id">{{user.first_name}}</option>
                     </select>
                   </div>  
                 </div> 
@@ -97,7 +92,7 @@ export default {
         difficulty: "",
         userId: "",
       },
-      selected: ''
+      
     };
   },
   methods: {
