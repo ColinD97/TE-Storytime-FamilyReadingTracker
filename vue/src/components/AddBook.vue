@@ -2,14 +2,14 @@
     
 <div>
 
-      <button
+      <!-- <button
       class="btn"
       href="#"
       v-if="showForm === false"
       v-on:click.prevent="showForm = true">
-      Add New Book</button>
+      Add New Book</button> -->
   <form class="form-add-book" @submit.prevent="register">
-    <h1 class="form-header">Add Book Details:</h1>
+    <h1 class="form-header">Add A Book</h1>
     <div class="form-body">
             <!-- Title and Author -->
             <div class="horizontal-group">
@@ -67,10 +67,9 @@
                 <button class="btn" type="submit" v-on:click="addBook" >
                 Add Book
                 </button>
-
-                  <div class="custom-select" style="width:200px;" id='dropdown'>
+                  <div class="custom-select" style="width:350px;" id='dropdown'>
                     <label for="custom-select">Assign book to:</label>
-                    <select v-model= "book.userId">
+                    <select v-model= "book.userId" style="width:150px;" class="box">
                       <option disabled value="0">Children:</option>
                       <option v-for="user in familyUsers" v-bind:key="user.id" :value="user">{{user.name}}</option>
                     </select>
@@ -117,9 +116,6 @@ export default {
 </script>
 
 <style>
-.bookshelf{
-    width:100%
-}
 /*---------------------------------------*/
 /* Buttons */
 /*---------------------------------------*/
@@ -140,10 +136,12 @@ export default {
 /*---------------------------------------*/
 /* Drop-Down Menu */
 /*---------------------------------------*/
-
-/* Will mess with this later and get it up and running */
-
-.form-footer .custom-select {
+/* .form-header{
+  font-size: 30px;
+} */
+.box{
+  margin-left: 10px;
+}.form-footer .custom-select {
   width: 200px;
 }
 .form-footer .select-selected:after {

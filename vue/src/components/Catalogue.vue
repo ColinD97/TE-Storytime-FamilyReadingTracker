@@ -6,18 +6,18 @@
     <table class="catalogue">
       <thead class="table-header">
         <tr class="header-row">
-          <th>Title</th>
-          <th>Author</th>
-          <th>ISBN</th>
-          <th>Difficulty</th>
+          <th class='left-end-top'>Title</th>
+          <th class='middle'>Author</th>
+          <th class='middle'>ISBN</th>
+          <th class='right-end-top'>Difficulty</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="book in books" v-bind:key="book.book_id" class="table-row">
-          <td>{{ book.title }}</td>
-          <td>{{ book.author }}</td>
-          <td>{{ book.isbn }}</td>
-          <td>{{ book.difficulty}}</td>
+          <td class='left-end'>{{ book.title }}</td>
+          <td class='middle'>{{ book.author }}</td>
+          <td class='middle'>{{ book.isbn }}</td>
+          <td class='right-end'>{{ book.difficulty}}</td>
         </tr>
       </tbody>
     </table>
@@ -48,12 +48,14 @@ export default {
 .catalogue {
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 70%;
   justify-content: center;
+  font-weight: 100;
 }
 .catalogue td, .catalogue th {
   border: 1px solid #bbf2fc;
-  padding: 8px;
+  padding: 10px;
+  
 }
 .catalogue tr:nth-child(even){background-color: #f2f2f2;}
 
@@ -65,5 +67,21 @@ export default {
   text-align: left;
   background-color: #126c7c;
   color: white;
+  
+}
+.left-end{
+border-radius: 8px 3px 3px 8px;
+}
+.middle {
+border-radius: 3px 3px 3px 3px;
+}
+.right-end{
+border-radius: 3px 8px 8px 3px;
+}
+.right-end-top{
+border-radius: 3px 8px 5px 3px;
+}
+.left-end-top {
+border-radius: 8px 3px 3px 5px;
 }
 </style>

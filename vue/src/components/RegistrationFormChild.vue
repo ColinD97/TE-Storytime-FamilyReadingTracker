@@ -167,7 +167,7 @@ export default {
 <style>
 #isParent{
   margin: 10px;
-  margin-left: 30%;
+  margin-left: 20%;
   color: #157788;
   font-size: 22px;
   font-weight: bold;

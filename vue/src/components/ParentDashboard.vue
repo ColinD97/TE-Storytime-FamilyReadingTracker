@@ -3,35 +3,33 @@
       <div class="title">
         <h1>Parent Dashboard<span>Keep track of your kid's reading. Build habits for life.</span></h1>
       </div>
-      
-      <table class="parent">
-      <label for="Children"></label>
-        <tr>
-          <th>Child</th>
-          <th>Number of Books Completed</th>
-          <th>Minutes Read</th>
-          <th>Current Book</th>
-          <th>Points Balance</th>
-        </tr>
-        <tr v-for="user in familyUsers" :key="user.id">
-          <td>{{user.first_name}}</td>
-          <td>still need</td>
-          <td>{{user.totalMinutes}}</td>
-          <td>still need</td>
-          <td>{{user.pointsBalance}}</td>
-        </tr>
-      </table> 
-      <div class="dash-buttons">
-        <button class='btn' @click="$router.push('/reading-log/user')">Log Reading </button>
-        <button class='btn' @click="$router.push('')">Prize Dashboard </button>
-        <button class='btn' @click="$router.push('/bookshelf/{{user.id}}')">Bookshelf </button>
+        <table class="parent">
+        <label for="Children"></label>
+          <tr>
+            <th>Child</th>
+            <th>Books Completed</th>
+            <th>Minutes Read</th>
+            <th>Current Book</th>
+            <th>Points Balance</th>
+          </tr>
+          <tr v-for="user in familyUsers" :key="user.id">
+            <td>{{user.first_name}}</td>
+            <td>still need</td>
+            <td>{{user.totalMinutes}}</td>
+            <td>still need</td>
+            <td>{{user.pointsBalance}}</td>
+          </tr>
+        </table> 
+      <div class="forms">
+        <add-book v-bind:familyUsers="familyUsers"/>
+        <!-- v-for="name in this.familyUsers" v-bind:key="name.id" v-bind:familyUsers="name"/>/ -->
+        <!-- I'm positive I'm not getting this right. Spent 45 mins trying to research what goes where and moving on to CSS just for a bit -->
+        <registration-form-child />
+        
       </div>
        
 
-      <add-book v-bind:familyUsers="familyUsers"/>
-      <!-- v-for="name in this.familyUsers" v-bind:key="name.id" v-bind:familyUsers="name"/>/ -->
-      <!-- I'm positive I'm not getting this right. Spent 45 mins trying to research what goes where and moving on to CSS just for a bit -->
-      <registration-form-child />
+      
 
      
   </div>
@@ -83,16 +81,17 @@ created() {
 </script>
 
 <style>
-.dash-buttons{
+
+.forms{
   padding:10px;
   display:flex;
-  justify-content: space-around;
+  flex-direction: column;
 
 }
 .parent {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  padding-top: 40px;
+  float: left;
+  width: 50%;
   justify-content: center;
 }
 .parent td, .parent th {

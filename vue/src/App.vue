@@ -56,7 +56,7 @@ export default {
 /*---------------------------------------*/
 /* Web Font*/
 /*---------------------------------------*/
-@import url("https://fonts.googleapis.com/css?family=Futura");
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
 
 /*---------------------------------------*/
 /* Top Banner */
@@ -124,16 +124,13 @@ export default {
 .topnav .dropdown-content a:hover {
   background-color: #f9f9f9;
 }
-
 /* Show the dropdown menu on hover */
 .topnav .dropdown:hover .dropdown-content {
   display: block;
 }
-
 /*---------------------------------------*/
 /* Title and Sub-text */
 /*---------------------------------------*/
-
 .title h1{
   text-align:center; font-size:70px; text-transform:uppercase; color:#222; letter-spacing:1px;
   font-family: 'Bubblegum Sans', cursive;
@@ -157,41 +154,41 @@ export default {
   background-color:#f8f8f8;
 }
 body{
-    font-family: "Futura", sans-serif;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 20px;
     background: linear-gradient(to right, #8ab9bc 0%, #b0dde0 50%, #8ab9bc 99%);
 }
-
 /*---------------------------------------*/
 /* Forms */
 /*---------------------------------------*/
 .form-register{
-  font-family: "Futura", sans-serif;
-    width: 50%;
+  font-family: 'League Spartan', sans-serif;
     margin: 30px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
 }
 .form-login{
-  font-family: "Futura", sans-serif;
+  font-family: 'League Spartan', sans-serif;
     width: 1200px;
     margin: 30px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
 }
 .form-add-book{
-    font-family: "Futura", sans-serif;
-    width: 50%;
-    margin: 50px auto;
+    font-family: 'League Spartan', sans-serif;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
 }
 .form-header {
     height: 50px;
-    background-color: #d3e0e0;
+    background-color: #c1e9e9;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 20px;
-    padding-top: 10px
+    padding-top: 20px
+}
+.form-header h1{
+    font-size: 16px;
 }
 /*---------------------------------------*/
 /* Form Body */
@@ -214,7 +211,7 @@ body{
 }
 .form-body .label-title {
     color: #157788;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     padding-right: 20px;  
 }
@@ -274,7 +271,7 @@ body{
 /*---------------------------------------*/
 .form-footer {
     height: 30px;
-    background-color: #d3e0e0;
+    background-color: #c1e9e9;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     text-align: right;
@@ -329,19 +326,6 @@ body{
     display: inline-flex;
     margin: 10px auto;
     padding: 20px;
-  
-}
-#nav {
-    list-style: none;
-    font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 17px;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    color: #000000;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: small-caps;
-    text-transform: none;
+
 }
 </style>
