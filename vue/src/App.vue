@@ -122,10 +122,11 @@ export default {
 
 /* Add a grey background color to dropdown links on hover */
 .topnav .dropdown-content a:hover {
-  background-color: #f9f9f9;
+  background-color: rgba(187, 218, 218, 0.8);
 }
 /* Show the dropdown menu on hover */
 .topnav .dropdown:hover .dropdown-content {
+  background-color: #f9f9f9;
   display: block;
 }
 /*---------------------------------------*/
