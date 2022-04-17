@@ -56,7 +56,7 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public List <Book> getAllBooks() {
-        String sql = "SELECT * FROM book_info; ";
+        String sql = "SELECT * FROM book_info ORDER BY difficulty; ";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql);
         List <Book> results = new ArrayList<>();
         while (resultSet.next()) {
