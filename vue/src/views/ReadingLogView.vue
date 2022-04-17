@@ -4,7 +4,7 @@
         <div class="photo">
           <img src="@/assets/Homepagephoto.png" />
         </div>
-    <ReadingLog />  <!-- REG'S TEMP CODE TO RENDER READINGLOG.  THIS NEEDS TO BE DELETED -->
+    <ReadingLog />  
 </div>
 
 
@@ -14,12 +14,12 @@
 <script>
 // import AppHeader from "./components/Appheader.vue"
 
-import ReadingLog from "@/components/ReadingLog.vue"  // REG'S TEMP CODE TO RENDER READINGLOG.  THIS NEEDS TO BE DELETED -->     
+import ReadingLog from "@/components/ReadingLog.vue"  
 
 export default {
   name: "home",
   components: {
-      ReadingLog    // REG'S TEMP CODE TO RENDER READINGLOG.  THIS NEEDS TO BE DELETED -->
+      ReadingLog    
       
   },
   // computed: {
