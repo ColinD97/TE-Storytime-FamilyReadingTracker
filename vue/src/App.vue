@@ -71,14 +71,14 @@ export default {
   float: left;
   font-family: "Arial Black", Gadget, sans-serif;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 20px;
   text-decoration: none;
   font-size: 18px;
 }
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #f9f9f9;
-  color: black;
+  color: #222222;
 }
 .topnav .dropdown {
   float: left;
@@ -95,7 +95,7 @@ export default {
   font-family: "Arial Black", Gadget, sans-serif;
   text-align: center;
   margin-top: 10px;
-  padding: 14px 16px;
+  padding: 6px 16px;
   text-decoration: none;
   font-size: 18px;
 }
@@ -106,14 +106,14 @@ export default {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 /* Links inside the dropdown */
 .topnav .dropdown-content a {
   float: none;
-  color: black;
+  color: #222222;
+  margin-top: 4px;
   padding: 12px 16px;
   text-decoration: none;
   text-align: left;
@@ -324,7 +324,6 @@ body{
 }
 .container {
     display: inline-flex;
-    margin: 10px auto;
     padding: 20px;
 
 }
