@@ -79,9 +79,9 @@ VALUES
 	('Strictly No Elephants', 'Taeeun Yoo', 9781481416474, 2),
 	('Harry Potter and the Deathly Hollows', 'J. K. Rowling', 9780545139700, 5),
 	('Fancy Nancy: Poet Extraordinaire!', 'Jane O''Connor', 9780061896439, 3),
-	('An Illustrated Book of Bad Arguments', 'Ali Almossawi', 9781615192250, 5),
+	('An Illustrated Book of Bad Arguments', 'Ali Almossawi', 9780989931205, 5),
 	('We Are Grateful: Otsaliheliga', 'Traci Sorell', 9781580897723, 3),
-	('Danza', 'Amalia Hernandez', 9781419725326, 4);
+	('Native Homes', 'Bobbie Kalman', 9780778703716, 4);
 
 
 INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, past_book, current_book, future_book, notes)
