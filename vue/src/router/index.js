@@ -10,7 +10,7 @@ import ParentChildDash from '../views/ParentChildDashView.vue'
 // import RegisterChildView from '../views/RegisterChildView.vue'
 import BookShelf from '../views/BookshelfView.vue'
 import CatalogueView from '../views/CatalogueView'
-import ReadingLog from '../components/ReadingLog'
+// import ReadingLog from '../components/ReadingLog'
 
 
 
@@ -113,15 +113,15 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {
-      path: "/readinglog/:userId",
-      name: "reading-log",
-      component: ReadingLog,
-      meta: {
-        requiresAuth: false
-      }
+    // {
+    //   path: "/readinglog/:userId",
+    //   name: "reading-log",
+    //   component: ReadingLog,
+    //   meta: {
+    //     requiresAuth: false
+    //   }
 
-    }  
+    // }  
   ]
 })
 

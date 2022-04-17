@@ -1,28 +1,30 @@
 <template>
 <div id="app">
+
      <div class="topnav" id="myTopnav">
       <router-link class='container' v-bind:to="{ name: 'home' }">HOME </router-link>
-      <router-link class='container' v-bind:to="{ name: 'register' }">REGISTER</router-link>  
-      <router-link class='container' v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">LOGOUT</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">LOGIN</router-link> 
-    <div class="dropdown">
-      <button class="dropbtn">GO TO:
-        <i class="fa fa-caret-down"></i>
-      </button>
-        <div class="dropdown-content">
-          <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">DASHBOARD</router-link> 
-          <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">BOOKSHELF</router-link> 
-          <router-link class='container' v-bind:to="{ name: 'reading-log'}">READING LOG</router-link> 
-          <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">CATALOGUE</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">DASHBOARD</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">BOOKSHELF</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'reading-log'}">READING LOG</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">CATALOGUE</router-link> 
+      
+        <div class="dropdown" id="push">
+          <button class="dropbtn">GO TO:
+            <i class="fa fa-caret-down"></i>
+          </button>
+            <div class="dropdown-content">
+              <router-link  v-bind:to="{ name: 'register' }">REGISTER</router-link>  
+              <router-link  v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">LOGOUT</router-link> 
+              <router-link  v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">LOGIN</router-link> 
+            </div>
         </div>
-    </div>
-    </div>
+      </div>
       <!-- <router-link class='container' v-bind:to="{ name: goToDashboard(), params: {userId: currentUserId}}">DashboardTest</router-link> 
       <router-link class='container' v-bind:to= "goToDashMethod" >DashboardTest2</router-link>  -->
       <!-- <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4> -->
       <!-- <h4>*TEMPORARY* current role: {{currentRole}}</h4> -->
     <router-view />
-  </div>
+</div>
 </template>
 
 <script>
@@ -62,8 +64,14 @@ export default {
 /* Top Banner */
 /*---------------------------------------*/
 .topnav {
-  overflow: hidden;
+    display: flex;
 }
+    
+.push {
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
 
 /* Style the links inside the navigation bar */
 .topnav a {
@@ -81,7 +89,7 @@ export default {
   color: #222222;
 }
 .topnav .dropdown {
-  float: left;
+  
   overflow: hidden;
 }
 
@@ -377,11 +385,6 @@ body{
     color: #ffffff;
     cursor: pointer;  
     box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
-}
-.container {
-    display: inline-flex;
-    padding: 20px;
-
 }
 
 Drop down boxes
