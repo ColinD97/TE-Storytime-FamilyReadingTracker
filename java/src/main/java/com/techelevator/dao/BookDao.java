@@ -17,4 +17,6 @@ public interface BookDao {
     List <Book> getAllBooks();
 
     boolean createLogEntry(LogReadingDTO entry);
+
+    List <LogReadingDTO> getUserBooks(long id);
 }

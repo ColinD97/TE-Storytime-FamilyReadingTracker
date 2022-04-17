@@ -6,6 +6,7 @@ import com.techelevator.dao.UserDao;
 import com.techelevator.model.Book;
 import com.techelevator.model.LogReadingDTO;
 import com.techelevator.model.UserBook;
+import com.techelevator.model.UserIdDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -66,5 +67,11 @@ public class BookController {
     @RequestMapping(value="/readinglog", method = RequestMethod.POST)
     public boolean createLogEntry(@RequestBody LogReadingDTO entry) {
         return bookDao.createLogEntry(entry);
+    }
+
+    @RequestMapping(value="/readinglog", method = RequestMethod.GET)
+    public List<LogReadingDTO> getUserBook(@RequestBody UserIdDTO userIdDto){
+        long readerId = userIdDto.getUser_id();
+        return bookDao.getUserBooks(readerId);
     }
 }

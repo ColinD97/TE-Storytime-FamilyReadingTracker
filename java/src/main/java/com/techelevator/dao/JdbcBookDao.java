@@ -77,6 +77,31 @@ public class JdbcBookDao implements BookDao{
         return (value == 1);
     }
 
+    @Override
+    public List<LogReadingDTO> getUserBooks(long id) {
+        String sql = "SELECT * FROM users_books WHERE user_id = ?;";
+        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, id);
+        List <LogReadingDTO> results = new ArrayList<>();
+        while (resultSet.next()) {
+            results.add(mapRowToLogReading(resultSet));
+        }
+        return results;
+    }
+
+    private LogReadingDTO mapRowToLogReading(SqlRowSet resultSet) {
+        LogReadingDTO log = new LogReadingDTO();
+        log.setUser_id(resultSet.getLong("user_id"));
+        log.setBook_id(resultSet.getInt("book_id"));
+        log.setMinutes_read(resultSet.getInt("minutes_read"));
+        log.setReading_format(resultSet.getString("reading_format"));
+        log.setTimes_read(resultSet.getInt("times_read"));
+        log.setPast_book(resultSet.getBoolean("past_book"));
+        log.setCurrent_book(resultSet.getBoolean("current_book"));
+        log.setFuture_book(resultSet.getBoolean("future_book"));
+        log.setNotes(resultSet.getString("notes"));
+        return log;
+    }
+
     private Book mapRowToBook(SqlRowSet resultSet) {
         Book book = new Book();
         book.setBook_id(resultSet.getInt("book_id"));
