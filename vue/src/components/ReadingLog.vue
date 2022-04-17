@@ -13,28 +13,20 @@
 <div>
     <form>
         <label for="Reader">Reader:</label>      
-          <select name="readers" id="readers" v-model="userBook.userId" required autofocus >     <!-- Reg Discussion Note:  Need for required and autofocus properties?  Confirm -->
-          <!-- Test options for SELECT LIST.  DELETE after JS+ Hooks implementation is complete
-            <option value="Child 1">Child 1</option>        
-            <option value="Child 2">Child 2</option>        
-            <option value="Child 3">Child 3</option>        
-           -->
-           </select><br>
-          
+          <select name="readers" id="readers" v-model="userBook.userId" required autofocus>
+            <option disabled value="">Pick a Reader</option>
+            <option v-for="userId in userBook" v-bind:key="userId">{{userId}}</option>               
+           </select><br>            
         
         <label for="Assigned Books">Book:</label>
           <select name="book" id="assignedBooks" v-model="userBook.bookId" autofocus >
-
-           <!-- Test options for SELECT LIST.  DELETE after JS+ Hooks implementation is complete
-            <option value="Book 1">Book 1</option>        
-            <option value="Book 2">Book 2</option>        
-            <option value="Book 3">Book 3</option>        
-            -->
-            </select><br>
-          
+            <option disabled value="">Pick a Book</option>
+            <option v-for="bookId in userBook" v-bind:key="bookId">{{bookId}}</option>
+            </select><br>          
 
         <label for="Book Format">Format:</label>
-          <select name="BookFormat" id="BookFormat" v-model="userBook.BookFormat" autofocus />
+          <select name="BookFormat" id="BookFormat" v-model="userBook.readingFormat" autofocus />  
+            <!-- <option disabled value="">Pick Book Format</option>  -->
             <option value="Paper">Paper</option>
             <option value="Digital">Digital</option>
             <option value="Audiobook">Audiobook</option>
@@ -51,46 +43,55 @@
 
         <label for="ChildReadingNotes">Notes:</label><br>
           <textarea id="ChildReadingNotes" name="ChildReadingNotes" rows="4" cols="50" v-model="userBook.notes" /><br>
-          <button class="btn" type="submit" v-on:click="SubmitNote">Submit Note</button>                                 
+          <button class="btn" type="submit" v-on:click="notes">Submit Note</button>                                 
     </form>
 </div>
 
 </template>
 
 <script>
-import BookService from '@/services/BookService.js'; 
+// import BookService from '@/services/BookService.js'; 
 
 export default {
-    name: 'user_book',
+    name: 'userBook',
     data() {
-      return {
+      return {                 
         userBook: {
-          userId: "",
-          bookId: "",
-          minutesRead: "",
-          readingFormat:"",
-          timesRead:"",
-          pastBook:"",
-          currentBook:"",
-          futureBook:"",
-          notes:"",
+          userId: ['A','B','C'],
+          bookId: 'A Sword of Swords',
+          minutesRead: '',
+          readingFormat: '',
+          timesRead: '',
+          pastBook: '',
+          currentBook: '',
+          futureBook: '',
+          notes: '',
         }       
-      }; 
-    },
-  methods: {
-    LogReading() {                                                // Reg Note:  I know this name sucks.  Will think of a best practice name once I sort this out
-      console.log('Log Reading Testing' + this.userBook)          // Console log for testing - DELETE on clean up pass
-        BookService
-          .LogReading(this.userBook)
-          // Reg Note:  I don't THINK I need to do an if statement
+      } 
     }
+};
+    
 
-  }      
-}
+  //   created() {
+  //     BookService.getUserBooksUserId().then((response) => {
+  //       this.userId = response.data;
+  //     }
+  //  };
+   
+
+    
+
+//   methods: {
+//     LogReading() {          
+//       console.log('Log Reading Testing' + this.userBook)        
+   
+//     }     
+
+//   }      
+// }
 </script>
 
 
 
 <style>
-
 </style>
