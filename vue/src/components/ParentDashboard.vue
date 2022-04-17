@@ -6,18 +6,18 @@
         <table class="parent">
         <label for="Children"></label>
           <tr>
-            <th>Child</th>
-            <th>Books Completed</th>
-            <th>Minutes Read</th>
-            <th>Current Book</th>
-            <th>Points Balance</th>
+            <th class='left-end-top'>Child</th>
+            <th class='middle'>Books Completed</th>
+            <th class='middle'>Minutes Read</th>
+            <th class='middle'>Current Book</th>
+            <th class='right-end-top'>Points Balance</th>
           </tr>
           <tr v-for="user in familyUsers" :key="user.id">
-            <td>{{user.first_name}}</td>
-            <td>still need</td>
-            <td>{{user.totalMinutes}}</td>
-            <td>still need</td>
-            <td>{{user.pointsBalance}}</td>
+            <td class='left-end'>{{user.first_name}}</td>
+            <td class='middle'>still need</td>
+            <td class='middle'> {{user.totalMinutes}}</td>
+            <td class='middle'>still need</td>
+            <td class='right-end'>{{user.pointsBalance}}</td>
           </tr>
         </table> 
       <div class="forms">
@@ -102,6 +102,21 @@ created() {
   text-align: left;
   background-color: #126c7c;
   color: white;
+}
+.left-end{
+border-radius: 8px 3px 3px 8px;
+}
+.middle {
+border-radius: 3px 3px 3px 3px;
+}
+.right-end{
+border-radius: 3px 8px 8px 3px;
+}
+.right-end-top{
+border-radius: 3px 8px 5px 3px;
+}
+.left-end-top {
+border-radius: 8px 3px 3px 5px;
 }
 
 </style>

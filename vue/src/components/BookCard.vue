@@ -20,6 +20,7 @@ export default {
 
 .card {
   display: grid;
+  background: rgba(241, 243, 243, 0.3);
   grid-template-columns: 1fr;
   grid-template-rows: 70px 300px 30px 30px 20px;
   gap: 3px;
@@ -32,6 +33,7 @@ export default {
   margin: 15px;
   text-align: center;
   align-content: center;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.10),0 5px 5px 0 rgba(0,0,0,0.08);box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
 }
 .card .book-title {
   grid-row: 1;
@@ -39,7 +41,7 @@ export default {
   padding-bottom:10px;
 }
 .card .cover{
-  background: rgba(77, 170, 162, 0.3);
+  background: rgba(237, 245, 244, 0.5);
   border-radius: 10px 10px 10px 10px;
   grid-row: 2; 
 }
