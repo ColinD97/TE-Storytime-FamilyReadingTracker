@@ -1,19 +1,19 @@
 <template>
 <div id="app">
      <div class="topnav" id="myTopnav">
-      <router-link class='container' v-bind:to="{ name: 'home' }">Home </router-link>
-      <router-link class='container' v-bind:to="{ name: 'register' }">Register</router-link>  
-      <router-link class='container' v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'home' }">HOME </router-link>
+      <router-link class='container' v-bind:to="{ name: 'register' }">REGISTER</router-link>  
+      <router-link class='container' v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">LOGOUT</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">LOGIN</router-link> 
     <div class="dropdown">
-      <button class="dropbtn">Go to:
+      <button class="dropbtn">GO TO:
         <i class="fa fa-caret-down"></i>
       </button>
         <div class="dropdown-content">
-          <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">Dashboard</router-link> 
-          <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">Bookshelf</router-link> 
-          <router-link class='container' v-bind:to="{ name: 'reading-log'}">Reading Log</router-link> 
-          <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">Catalogue</router-link> 
+          <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">DASHBOARD</router-link> 
+          <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">BOOKSHELF</router-link> 
+          <router-link class='container' v-bind:to="{ name: 'reading-log'}">READING LOG</router-link> 
+          <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">CATALOGUE</router-link> 
         </div>
     </div>
     </div>
@@ -73,11 +73,11 @@ export default {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 19px;
+  font-size: 18px;
 }
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #f9f9f9;
   color: black;
 }
 .topnav .dropdown {
@@ -97,7 +97,7 @@ export default {
   margin-top: 10px;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 /* Dropdown content (hidden by default) */
@@ -122,7 +122,7 @@ export default {
 
 /* Add a grey background color to dropdown links on hover */
 .topnav .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #f9f9f9;
 }
 
 /* Show the dropdown menu on hover */
@@ -193,13 +193,6 @@ body{
     padding-left: 20px;
     padding-top: 10px
 }
-/* .form-header h1 {
-    font-size: 10px;
-    text-align: center;
-    color: #666;
-    padding-left: 20px;
-    border-bottom: 1px solid #cccccc;
-} */
 /*---------------------------------------*/
 /* Form Body */
 /*---------------------------------------*/
@@ -224,7 +217,6 @@ body{
     font-size: 22px;
     font-weight: bold;
     padding-right: 20px;  
-
 }
 .form-body .form-input {
     font-size: 14px;
