@@ -41,7 +41,7 @@ CREATE TABLE users_books (
 	past_book boolean,
 	current_book boolean,
 	future_book boolean,
-	notes varchar (50),
+	notes varchar (150),
 	CONSTRAINT PK_users_books PRIMARY KEY(user_id, book_id),
     FOREIGN KEY(user_id) REFERENCES users(user_id),
     FOREIGN KEY(book_id) REFERENCES book_info(book_id)
@@ -51,15 +51,15 @@ CREATE TABLE users_books (
 INSERT INTO users (username, family_id, first_name, last_name, email, password_hash, role, total_minutes, points_balance)
 VALUES
 	('user', 2, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_PARENT', 90, 100),
-	('admin', 1, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_CHILD', 2450, 200),
-	('regreg', 1, 'Reginald', 'Arnedo', 'reg@hotmail.com', '$2a$10$D6LUTeihoDMiJTtw2zsWTuy8qaxS5MZkFA7sRwa538FDGu4/T/qOK', 'ROLE_CHILD', 0, 0),
+	('admin', 2, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_CHILD', 2450, 2100),
+	('regreg', 2, 'Reginald', 'Arnedo', 'reg@hotmail.com', '$2a$10$D6LUTeihoDMiJTtw2zsWTuy8qaxS5MZkFA7sRwa538FDGu4/T/qOK', 'ROLE_CHILD', 20, 110),
 	('indigowolf', 2, 'Kai Indigo', 'Wolf', 'kai.wolf@gmail.com', '$2a$10$CemCJcwUc/yxFjK20VKQS.7NxjkM/iR/liyQtzfXtgQjfBxV/EUgm', 'ROLE_PARENT', 40, 999),
-	('niles', 2, 'Niles', 'Xavier', 'nx@aol.com', '$2a$10$afmIx5OHly1g2UlW0.iW0O6CBqy4.2STcOJapa97Jw3DjUyU40gke', 'ROLE_CHILD', 70, 150),
-	('lovely', 2, 'Piper', 'Lovelace', 'pip@gmail.com', '$2a$10$niS2RFa/pz/iGOOANcliBOogp30yhVf6P5xoVpPKoV5alItlu2Coq', 'ROLE_CHILD', 15, 100),
+	('niles', 2, 'Niles', 'Xavier', 'nx@aol.com', '$2a$10$afmIx5OHly1g2UlW0.iW0O6CBqy4.2STcOJapa97Jw3DjUyU40gke', 'ROLE_CHILD', 70, 1450),
+	('lovely', 2, 'Piper', 'Lovelace', 'pip@gmail.com', '$2a$10$niS2RFa/pz/iGOOANcliBOogp30yhVf6P5xoVpPKoV5alItlu2Coq', 'ROLE_CHILD', 115, 1000),
 	('jess', 2, 'Jessica', 'Wolf', 'jw@gmail.com', '$2a$10$i7jJUMMotAVXqGj.q22y8OiKILcBiP9pAgJZc8u1ilLz9jK9mvcxm' , 'ROLE-CHILD', 90, 150),
 	('snape', 2, 'Severus', 'Snape', 'snape@slytherin.com', '$2a$10$Ud8pVA/eQWCFRwWJVhREbu9gDOLOBGv8BBQ6nuzw3RpWbNiaKUR1.', 'ROLE-CHILD', 20, 150),
 	('fanofdepp', 2, 'Stella', 'Depp', 'sdepp@johnny.com', '$2a$10$52hZgsBIboDv/nje3saBXuIIcEAw2N5F5Aj5tbK/FQN/2getqNEwu', 'ROLE-CHILD', 150, 2000),
-	('artguy', 2, 'Scout', 'Handford', 'scout@dreamworks.com', '$2a$10$Ud8pVA/eQWCFRwWJVhREbu9gDOLOBGv8BBQ6nuzw3RpWbNiaKUR1.', 'ROLE_PARENT', 90, 200);
+	('artguy', 2, 'Scout', 'Handford', 'scout@dreamworks.com', '$2a$10$Ud8pVA/eQWCFRwWJVhREbu9gDOLOBGv8BBQ6nuzw3RpWbNiaKUR1.', 'ROLE_PARENT', 90, 2090);
 
 
 INSERT INTO book_info (title, author, isbn, difficulty)
@@ -86,22 +86,24 @@ VALUES
 
 INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, past_book, current_book, future_book, notes)
 VALUES
-	(4, 1, 30, '', 2, true, false, false, 'Definitely good for sleepy time.'),
-	(4, 2, 30, '', 1, false, true, false, ''),
-	(4, 5, 60, '', 1, true, true, false, 'Colin said this one is too wordy.'),
-	(4, 3, 60, '', 2, false, true, false, ''),
-	(4, 6, 90, '', 3, false, true, false, ''),
-	(4, 4, 90, '', 1, true, false, false, ''),
-	(4, 8, 30, '', 1, true, false, false, ''),
-	(4, 9, 60, '', 5, false, true, false, 'Reg loves this one! He asks for it every night.'),
-	(4, 7, 60, '', 2, false, true, false, ''),
-    (4, 14, 90, '', 3, false, true, false, ''),
-    (4, 13, 90, '', 1, true, false, false, ''),
-    (4, 12, 30, '', 1, false, true, false, ''),
-    (4, 11, 60, '', 2, false, true, false, ''),
-    (4, 10, 90, '', 3, true, false, false, ''),
-    (3, 2, 90, '', 1, true, false, false, ''),
-    (3, 1, 30, '', 1, true, false, false, '');
+	(1, 1, 30, '', 2, true, false, false, 'Definitely good for sleepy time.'),
+	(1, 2, 30, '', 1, false, true, false, ''),
+	(1, 5, 60, '', 1, true, true, false, 'Colin said this one is too wordy.'),
+	(1, 3, 60, '', 2, false, true, false, ''),
+	(1, 6, 90, '', 3, false, true, false, ''),
+	(1, 4, 90, '', 1, true, false, false, ''),
+	(1, 8, 30, '', 1, true, false, false, ''),
+	(1, 9, 60, '', 5, false, true, false, 'Reg loves this one! He asks for it every night.'),
+	(1, 7, 60, '', 2, false, true, false, ''),
+    (1, 14, 90, '', 3, false, true, false, ''),
+    (1, 13, 90, '', 1, true, false, false, ''),
+    (1, 12, 30, '', 1, false, true, false, ''),
+    (1, 11, 60, '', 2, false, true, false, ''),
+    (1, 10, 90, '', 3, true, false, false, ''),
+    (1, 15, 90, '', 1, true, false, false, ''),
+    (1, 17, 30, '', 1, true, false, false, ''),
+    (1, 18, 30, '', 1, true, false, false, ''),
+    (1, 16, 30, '', 1, true, false, false, 'Definitely for older kids with difficult vocabulary and deep concepts.');
 
 
 --- USER SETUP (Do Not Modify)
