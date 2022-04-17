@@ -50,7 +50,7 @@ CREATE TABLE users_books (
 
 INSERT INTO users (username, family_id, first_name, last_name, email, password_hash, role, total_minutes, points_balance)
 VALUES
-	('user', 1, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_PARENT', 90, 100),
+	('user', 2, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_PARENT', 90, 100),
 	('admin', 1, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_CHILD', 2450, 200),
 	('regreg', 1, 'Reginald', 'Arnedo', 'reg@hotmail.com', '$2a$10$D6LUTeihoDMiJTtw2zsWTuy8qaxS5MZkFA7sRwa538FDGu4/T/qOK', 'ROLE_CHILD', 0, 0),
 	('indigowolf', 2, 'Kai Indigo', 'Wolf', 'kai.wolf@gmail.com', '$2a$10$CemCJcwUc/yxFjK20VKQS.7NxjkM/iR/liyQtzfXtgQjfBxV/EUgm', 'ROLE_PARENT', 40, 999),
@@ -67,37 +67,41 @@ VALUES
 	('How to Play Your Best Golf All the Time', 'Tommy Armour', 9780684813790, 5),
 	('The Rainbow Fish', 'J Alison James', 1558580093, 1),
 	('1984', 'George Orwell', 9780140009729, 5),
-	('Just Me and My Dad', 'Mercer Mayer', 0307118398, 2),
+	('The Boy Who Loved Math', 'Deborah Heiligman', 9781596433076, 4),
 	('Macbeth', 'William Shakespeare', 9780333419991, 5),
 	('If You Give a Mouse a Cookie', 'Felicia Bond', 9780064434096, 2),
 	('Inside Out & Back Again', 'Thanhha Lai', 9780545508971, 3),
 	('Where the Wild Things Are', 'Maurice Sendak', 9780064431781, 2),
 	('The Giver', 'Louis Lowry', 9780395645666, 4),
 	('Charlotte''s Web', 'Jennifer Frantz', 9780060882846, 3 ),
-	('Brown Bear, Brown Bear, What Do You See?', 'Brown Bear', 0805017445, 1),
-	('The Very Hungry Caterpillar', 'Reginald Arnedo', 0399227539, 1),
+	('Atlas of Adventures: Wonders of the World', 'Ben Handicott', 9781786033444, 3),
+	('The Very Hungry Caterpillar', 'Eric Carle', 9780399226908, 1),
 	('Strictly No Elephants', 'Taeeun Yoo', 9781481416474, 2),
-	('Harry Potter and the Deathly Hollows', 'J. K. Rowling', 9780545139700, 5);
+	('Harry Potter and the Deathly Hollows', 'J. K. Rowling', 9780545139700, 5),
+	('Fancy Nancy: Poet Extraordinaire!', 'Jane O''Connor', 9780061896439, 3),
+	('An Illustrated Book of Bad Arguments', 'Ali Almossawi', 9781615192250, 5),
+	('We Are Grateful: Otsaliheliga', 'Traci Sorell', 9781580897723, 3),
+	('Danza', 'Amalia Hernandez', 9781419725326, 4);
 
 
 INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, past_book, current_book, future_book, notes)
 VALUES
-	(3, 1, 30, '', 2, true, false, false, 'Definitely good for sleepy time.'),
-	(1, 2, 30, '', 1, false, true, false, ''),
-	(1, 1, 60, '', 1, true, true, false, 'Colin said this one is too wordy.'),
-	(2, 3, 60, '', 2, false, true, false, ''),
-	(6, 3, 90, '', 3, false, true, false, ''),
-	(5, 4, 90, '', 1, true, false, false, ''),
-	(2, 8, 30, '', 1, true, false, false, ''),
-	(3, 9, 60, '', 5, false, true, false, 'Reg loves this one! He asks for it every night.'),
-	(6, 7, 60, '', 2, false, true, false, ''),
-    (6, 14, 90, '', 3, false, true, false, ''),
-    (5, 13, 90, '', 1, true, false, false, ''),
-    (8, 12, 30, '', 1, false, true, false, ''),
+	(4, 1, 30, '', 2, true, false, false, 'Definitely good for sleepy time.'),
+	(4, 2, 30, '', 1, false, true, false, ''),
+	(4, 5, 60, '', 1, true, true, false, 'Colin said this one is too wordy.'),
+	(4, 3, 60, '', 2, false, true, false, ''),
+	(4, 6, 90, '', 3, false, true, false, ''),
+	(4, 4, 90, '', 1, true, false, false, ''),
+	(4, 8, 30, '', 1, true, false, false, ''),
+	(4, 9, 60, '', 5, false, true, false, 'Reg loves this one! He asks for it every night.'),
+	(4, 7, 60, '', 2, false, true, false, ''),
+    (4, 14, 90, '', 3, false, true, false, ''),
+    (4, 13, 90, '', 1, true, false, false, ''),
+    (4, 12, 30, '', 1, false, true, false, ''),
     (4, 11, 60, '', 2, false, true, false, ''),
-    (7, 10, 90, '', 3, true, false, false, ''),
-    (5, 9, 90, '', 1, true, false, false, ''),
-    (6, 8, 30, '', 1, true, false, false, '');
+    (4, 10, 90, '', 3, true, false, false, ''),
+    (3, 2, 90, '', 1, true, false, false, ''),
+    (3, 1, 30, '', 1, true, false, false, '');
 
 
 --- USER SETUP (Do Not Modify)

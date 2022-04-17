@@ -26,7 +26,7 @@ export default {
   font-family: "Arial Black", Gadget, sans-serif;
   border: 4px solid white;
   border-radius: 10px;
-  width: 270px;
+  width: 290px;
   height: 520px;
   padding: 5px;
   margin: 15px;
@@ -38,13 +38,15 @@ export default {
   color: #222222;
 }
 .card .cover{
-  background: rgba(59, 150, 142, 0.8);
+  background: rgba(59, 150, 142, 0.5);
   border-radius: 10px 10px 10px 10px;
   grid-row: 2; 
 }
 #cover{
   border-radius: 5px 5px 5px 5px;
-  vertical-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .card .book-author {
   grid-row: 3;
