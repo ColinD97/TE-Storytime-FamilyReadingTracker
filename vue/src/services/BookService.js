@@ -26,8 +26,8 @@ export default {
 
 // Reg Note:  Start of implementation of ReadingLog.vue code.  
 
-   getUserBooksUserId(userId) {
-        return axios.get(`/readinglog/${userId}`)
+   logReading(userBook) {
+        return axios.post(`/readinglog/`, userBook)
     },
 
     
