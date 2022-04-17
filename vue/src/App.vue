@@ -134,6 +134,9 @@ export default {
 .title h1{
   text-align:center; font-size:70px; text-transform:uppercase; color:#222; letter-spacing:1px;
   font-family: 'Bubblegum Sans', cursive;
+    /* Shadows are visible under slightly transparent text color */
+    color: rgba(3, 93, 109, 0.8);
+    text-shadow: 1px 4px 6px #b0dde0, 0 0 0 #000, 1px 4px 6px #b0dde0;
 }
 .title h1 span {
   margin-top: 5px;
@@ -144,6 +147,7 @@ export default {
     grid-template-rows: 27px 0;
     grid-gap: 20px;
     align-items: center;
+    box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
 }
 .title h1 span:after,.title h1 span:before {
     content: " ";
@@ -151,7 +155,7 @@ export default {
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc;
     height: 5px;
-  background-color:#f8f8f8;
+    background-color:#f8f8f8;
 }
 body{
     font-family: 'League Spartan', sans-serif;
@@ -166,6 +170,7 @@ body{
     margin: 30px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
+    box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
 }
 .form-login{
   font-family: 'League Spartan', sans-serif;
@@ -173,11 +178,13 @@ body{
     margin: 30px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
+    box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
 }
 .form-add-book{
     font-family: 'League Spartan', sans-serif;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
+    box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
 }
 .form-header {
     height: 50px;
@@ -228,6 +235,7 @@ body{
     border-radius: 6px;
     background: white;
     outline: none;
+    
 }
 .form-body .form-password {
     font-size: 14px;
@@ -264,7 +272,7 @@ body{
 .btn-body:hover {
     background-color: #1fc1dd;
     color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.10),0 5px 5px 0 rgba(0,0,0,0.08);
 }
 /*---------------------------------------*/
 /* Form Footer */
@@ -277,7 +285,7 @@ body{
     text-align: right;
     padding: 18px;
     border-top: 1px solid #cccccc;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.10),0 5px 5px 0 rgba(0,0,0,0.08);
 }
 .form-footer span {
     float: right;
