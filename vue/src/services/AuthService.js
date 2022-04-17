@@ -15,12 +15,12 @@ export default {
     return axios.post(`/parent/dashboard/${userId}`, user)
   },
 
-  getParentId(user) {
-    return axios.get(`/parent/${user}`); 
-  },
-
   getFamilyByUserId(userId){
     console.log('get family by userId: '+userId)
     return axios.get(`/parent/dashboard/${userId}`)
-  }
+  },
+
+  getUserById(userId) {
+    return axios.get(`/user/${userId}`); 
+  },
 }

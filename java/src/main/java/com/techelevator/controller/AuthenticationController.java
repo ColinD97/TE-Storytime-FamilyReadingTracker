@@ -91,6 +91,12 @@ public class AuthenticationController {
         return userDao.getUsersByFamilyId(family_id);
     }
 
+//    Is this needed?
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public User getUserById(@PathVariable String id) {
+        return null;
+    }
+
 
     /**
      * Object to return as body in JWT Authentication.
