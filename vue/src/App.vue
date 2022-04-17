@@ -133,7 +133,13 @@ export default {
 /* Title and Sub-text */
 /*---------------------------------------*/
 .title h1{
-  text-align:center; font-size:70px; text-transform:uppercase; color:#222; letter-spacing:1px;
+  margin-top:65px;
+  margin-bottom: 15px;
+  text-align:center; 
+  font-size:70px; 
+  text-transform:uppercase; 
+  color:#222; 
+  letter-spacing:1px;
   font-family: 'Bubblegum Sans', cursive;
     /* Shadows are visible under slightly transparent text color */
     color: rgba(3, 63, 71, 0.8);
@@ -141,8 +147,13 @@ export default {
 }
 .title h1 span {
   margin-top: 5px;
-    font-size:25px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
-    text-transform: uppercase; font-family: 'Bubblegum Sans', cursive;
+    font-size:25px; 
+    color:#444; 
+    word-spacing:1px; 
+    font-weight:normal; 
+    letter-spacing:2px;
+    text-transform: uppercase; 
+    font-family: 'Bubblegum Sans', cursive;
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     grid-template-rows: 27px 0;
@@ -187,6 +198,12 @@ body{
     border-radius: 10px;
     box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
 }
+.form-reading-log{
+  font-family: 'League Spartan', sans-serif;
+    background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
+    border-radius: 10px;
+    box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
+}
 .form-header {
     height: 50px;
     background-color: #c1e9e9;
@@ -209,13 +226,24 @@ body{
     margin: 30px;
     height: 100px;
 }
+.form-reading-log .form-body{
+  margin: 30px;
+    height: 100px;
+}
 .form-body {
-    margin: 30px;
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
     height: 40px;
 }
+
 .form-group {
     margin-bottom: 35px;
+}
+.form-group-wide {
+  width:60%;
+}
+.form-group-narrow{
+  width:39%;
 }
 .form-body .label-title {
     color: #157788;
@@ -259,6 +287,25 @@ body{
 .horizontal-group .right {
     float: right;
     width: 40%;
+}
+.split-form-one-group-right{
+  float:left;
+  width: 50%; 
+}
+.split-form-two-group-right{
+  float: right;
+  width: 49%;
+}
+.split-form-one-group-left{
+  float:left;
+  width: 50%; 
+  margin-left: 0;
+  padding-left: 0;
+}
+.split-form-two-group-left{
+  float: right;
+  width: 50%;
+  margin: 0%;
 }
 .btn-body {
     display: inline-block;
@@ -335,5 +382,11 @@ body{
     display: inline-flex;
     padding: 20px;
 
+}
+
+Drop down boxes
+
+.drop-down{
+  margin-left: 10px;
 }
 </style>

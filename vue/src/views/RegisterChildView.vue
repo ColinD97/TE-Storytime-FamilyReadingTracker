@@ -1,16 +1,16 @@
 <template>
   <div>
-    <registration-form-child />
+    <!-- <registration-form-child /> -->
   </div>
 </template>
 
 <script>
-import RegistrationFormChild from '../components/RegistrationFormChild.vue'
-export default {
+// import RegistrationFormChild from '../components/RegistrationFormChild.vue'
+// export default {
   
-  components: { RegistrationFormChild },
+//   components: { RegistrationFormChild },
 
-}
+// }
 </script>
 
 <style>

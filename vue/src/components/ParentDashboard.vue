@@ -22,14 +22,10 @@
         </table> 
       <div class="forms">
         <add-book v-bind:familyUsers="familyUsers"/>
+        <reading-log />
         <registration-form-child />
         
-      </div>
-       
-
-      
-
-     
+      </div> 
   </div>
 </template>
 
@@ -37,9 +33,10 @@
 import AuthService from "@/services/AuthService";
 import AddBook from './AddBook.vue';
 import RegistrationFormChild from './RegistrationFormChild.vue'
+import ReadingLog from './ReadingLog.vue'
 
 export default {
-  components: { AddBook, RegistrationFormChild },
+  components: { AddBook, RegistrationFormChild, ReadingLog },
 // create + data (empty group of users that I will fill with this return request)
   name: 'parent-dashboard-userID',          // Spot check this with the team. 
   // Reg Note:  If I need to do a PROP, it's here

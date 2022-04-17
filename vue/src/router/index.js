@@ -7,7 +7,7 @@ import Register from '../views/RegisterView.vue'
 import store from '../store/index'
 import ParentDashboard from '../views/ParentDashboardView.vue'
 import ParentChildDash from '../views/ParentChildDashView.vue'
-import RegisterChildView from '../views/RegisterChildView.vue'
+// import RegisterChildView from '../views/RegisterChildView.vue'
 import BookShelf from '../views/BookshelfView.vue'
 import CatalogueView from '../views/CatalogueView'
 import ReadingLog from '../components/ReadingLog'
@@ -61,14 +61,14 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    {//are we doing separate child and adult registrations still? 
-      path: "/register/child",
-      name: "register-child",
-      component: RegisterChildView,
-      meta: {
-        requiresAuth: false
-      }
-    },
+    // {//are we doing separate child and adult registrations still? 
+    //   path: "/register/child",
+    //   name: "register-child",
+    //   component: RegisterChildView,
+    //   meta: {
+    //     requiresAuth: false
+    //   }
+    // },
     { // Router for ParentDashboard - MVP for Sprint 1
       path: "/parent/dashboard/:userId",
       name: "parent",
@@ -121,9 +121,7 @@ const router = new Router({
         requiresAuth: false
       }
 
-    }
-
-    
+    }  
   ]
 })
 

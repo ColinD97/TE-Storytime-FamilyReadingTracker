@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>{{ currentRole }}</h1>
-    <h1>{{ isParent }}</h1>
+    <!-- <h1>{{ currentRole }}</h1>
+    <h1>{{ isParent }}</h1> -->
     <div v-if="isParent">
       <parent-dashboard />
     </div>

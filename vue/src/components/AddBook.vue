@@ -31,7 +31,7 @@
                     />
                     </div>
             </div>
-            <!-- ISBN -->
+            <!-- ISBN and Difficulty-->
             <div class="horizontal-group">
                     <div class="form-group left">
                         <label for="email" class="label-title">ISBN</label>
@@ -63,7 +63,11 @@
                 </button>
                   <div class="custom-select" style="width:350px;" id='dropdown'>
                     <label for="custom-select">Assign book to:</label>
-                    <select v-model= "book.userId" style="width:150px;" class="box">
+                    <select 
+                    class="drop-down"
+                    v-model= "book.userId" 
+                    style="width:150px;" 
+                    >
                       <option disabled value="0">Children:</option>
                       <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.id">{{user.first_name}}</option>
                     </select>
@@ -133,9 +137,7 @@ export default {
 /* .form-header{
   font-size: 30px;
 } */
-.box{
-  margin-left: 10px;
-}.form-footer .custom-select {
+.form-footer .custom-select {
   width: 200px;
 }
 .form-footer .select-selected:after {

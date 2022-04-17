@@ -3,7 +3,10 @@
 
   <div class="child-register">    
     <form class="form-register" @submit.prevent="register">
-    <h1 class="form-header">New Family Member Registration:</h1>
+    <div>
+      <h1 class="form-header">New Family Member Registration:</h1>
+      
+    </div>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
     </div>
