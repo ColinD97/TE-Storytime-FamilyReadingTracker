@@ -22,8 +22,6 @@
         </table> 
       <div class="forms">
         <add-book v-bind:familyUsers="familyUsers"/>
-        <!-- v-for="name in this.familyUsers" v-bind:key="name.id" v-bind:familyUsers="name"/>/ -->
-        <!-- I'm positive I'm not getting this right. Spent 45 mins trying to research what goes where and moving on to CSS just for a bit -->
         <registration-form-child />
         
       </div>
@@ -47,12 +45,8 @@ export default {
   // Reg Note:  If I need to do a PROP, it's here
   data() {
     return {
-      // user: {         // Spot check this with the team.  
-      //   id: '',              
-      // },
-      familyUsers: [],
-      // currentUserId: this.$route.params.userId    
 
+      familyUsers: [],
 
       // 2) Notes for Kai: pass this array into the add book as a prop. inside add a book they can see the family user array coming in as props. use in v-for 
 
