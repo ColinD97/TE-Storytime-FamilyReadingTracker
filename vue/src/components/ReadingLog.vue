@@ -30,14 +30,15 @@
             </select><br>          
 
         <label for="Book Format">Format:</label>
-          <select name="BookFormat" id="BookFormat" v-model="userBook.readingFormat" autofocus />  
-            <!-- <option disabled value="">Pick Book Format</option>  -->
+          <select name="BookFormat" id="BookFormat" v-model="userBook.readingFormat" autofocus >  
+            <option disabled value="">Pick Book Format</option>
             <option value="Paper">Paper</option>
             <option value="Digital">Digital</option>
             <option value="Audiobook">Audiobook</option>
             <option value="ReadAloudReader">Read-Aloud (Reader)</option>
             <option value="ReadAloudListener">Read-Aloud (Listener)</option>
             <option value="Other">Other</option>
+          </select>
           <br>
 
         <label for="Minutes Read">Minutes Read:</label><br>
@@ -47,45 +48,55 @@
           <input type="Checkbox" id="FinishedBookCheckbox" v-model="FinishedBookChecked" /><br>
 
         <label for="ChildReadingNotes">Notes:</label><br>
-          <textarea id="ChildReadingNotes" name="ChildReadingNotes" rows="4" cols="50" v-model="userBook.notes" /><br>
+          <textarea id="ChildReadingNotes" name="ChildReadingNotes" rows="4" cols="50" v-model="userBook.notes" v-bind:key="notes"/><br>
           <button class="btn" type="submit" v-on:click="notes">Submit Note</button>                                 
     </form>
-</div>
+  </div>
 </div>
 
 </template>
 
 <script>
-// import BookService from '@/services/BookService.js'; 
+import BookService from '@/services/BookService.js'; 
 
 export default {
     name: 'userBook',
     data() {
-      return {                 
+      return {
         userBook: {
           userId: ['A','B','C'],
           bookId: 'A Sword of Swords',
-          minutesRead: '',
+          minutesRead: 30,
           readingFormat: '',
           timesRead: '',
           pastBook: '',
           currentBook: '',
           futureBook: '',
           notes: '',
-        }       
-      } 
+        },    
+      };
+    },
+  methods: {
+    LogReading() {
+        console.log('Checking for userID'+ this.userId)
+          BookService
+            .LogReading(this.userBook)
+    
     }
-};
-    
+  }
+}
 
-  //   created() {
-  //     BookService.getUserBooksUserId().then((response) => {
-  //       this.userId = response.data;
-  //     }
-  //  };
-   
 
-    
+
+
+        
+    // created() {
+    //   BookService.getUserBooksUserId(this.userId).then((response) => {
+    //     this.userId = response.data;
+//      })
+//   },
+//  }   
+
 
 //   methods: {
 //     LogReading() {          
