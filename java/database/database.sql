@@ -82,14 +82,23 @@ VALUES
 
 INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, past_book, current_book, future_book, notes)
 VALUES
-	(1, 1, 30, '', 2, true, false, false, 'Definitely good for sleepy time.'),
-	(1, 2, 30, '', 1, false, false, true, ''),
-	(2, 1, 60, '', 1, true, true, false, 'Colin said this one is too wordy.'),
+	(3, 1, 30, '', 2, true, false, false, 'Definitely good for sleepy time.'),
+	(1, 2, 30, '', 1, false, true, false, ''),
+	(1, 1, 60, '', 1, true, true, false, 'Colin said this one is too wordy.'),
 	(2, 3, 60, '', 2, false, true, false, ''),
-	(1, 3, 90, '', 3, false, false, true, ''),
-	(2, 4, 90, '', 1, true, false, false, ''),
-	(2, 8, 30, '', 1, false, false, true, ''),
-	(1, 9, 60, '', 5, false, true, false, 'Reg loves this one! He asks for it every night.');
+	(6, 3, 90, '', 3, false, true, false, ''),
+	(5, 4, 90, '', 1, true, false, false, ''),
+	(2, 8, 30, '', 1, true, false, false, ''),
+	(3, 9, 60, '', 5, false, true, false, 'Reg loves this one! He asks for it every night.'),
+	(6, 7, 60, '', 2, false, true, false, ''),
+    (6, 14, 90, '', 3, false, true, false, ''),
+    (5, 13, 90, '', 1, true, false, false, ''),
+    (8, 12, 30, '', 1, false, true, false, ''),
+    (4, 11, 60, '', 2, false, true, false, ''),
+    (7, 10, 90, '', 3, true, false, false, ''),
+    (5, 9, 90, '', 1, true, false, false, ''),
+    (6, 8, 30, '', 1, true, false, false, '');
+
 
 --- USER SETUP (Do Not Modify)
 DROP USER IF EXISTS final_capstone_owner;
