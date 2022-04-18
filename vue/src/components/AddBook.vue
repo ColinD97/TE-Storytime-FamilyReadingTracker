@@ -68,8 +68,8 @@
                     v-model= "book.userId" 
                     style="width:150px;" 
                     >
-                      <option disabled value="0">Children:</option>
-                      <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.id">{{user.first_name}}</option>
+                      <option disabled hidden value="">Children:</option>
+                      <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.user_id">{{user.first_name}}</option>
                     </select>
                   </div>  
                 </div> 

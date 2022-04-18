@@ -24,13 +24,14 @@
             class="drop-down"
             name="readers"
             id="readers"
-            v-model="userBook.userId"
+            v-model="userBook.user_id"
             required
             autofocus
           >
-            <option disabled value="">Pick a Reader</option>
-            <option v-for="name in reader" v-bind:key="name.index">
-              {{ name }}
+            <option disabled hidden value="">Pick a Reader</option>
+            <option v-for="user in familyUsers" v-bind:key="user.index"
+              :value="user.user_id">
+              {{ user.first_name }}
             </option></select
           ><br />
           </div>
@@ -40,16 +41,17 @@
                 type="text"
                 id="minutesread"
                 name="MinutesRead"
-                v-model="userBook.minutesRead"
+                v-model="userBook.minutes_read"
               />
           </div> 
         </div>
         <div class="form-group-narrow right">
             <label for="FinishedBookCheckbox" class="label-title">Finished Book?</label>
             <input
-              type="Checkbox"
+              type="checkbox"
               id="finishedbookcheckbox"
-              v-model="userBook.currentBook"
+              v-model="userBook.past_book"
+              value="true"
             /><br />
         </div>
       </div>
@@ -62,11 +64,11 @@
               class="drop-down"
               name="BookFormat"
               id="bookformat"
-              v-model="userBook.readingFormat"
+              v-model="userBook.reading_format"
               autofocus
             >
-              <option disabled value="">Pick Book Format</option>
-              <option value="Paper">Paper</option>
+              <option disabled hidden value="">Pick Book Format</option>
+              <option selected value="Paper">Paper</option>
               <option value="Digital">Digital</option>
               <option value="Audiobook">Audiobook</option>
               <option value="ReadAloudReader">Read-Aloud (Reader)</option>
@@ -81,20 +83,14 @@
               class="drop-down"
               name="book"
               id="assignedbooks"
-              v-model="userBook.bookId"
-              autofocus
-            >
-              <option disabled value="">Pick a Book</option>
-              <option v-for="bookId in userBook" v-bind:key="bookId">
-                {{ bookId }}
-              </option></select
-            >
+              v-model="userBook.book_id"
+              autofocus>
+              <option disabled hidden value="">Pick a Book</option>
+              <option v-for="book in familyBooks" v-bind:key="book.index"
+                :value="book.book_id">
+                {{ book.title }}
+              </option></select>
           </div>
-
-         
-
-
-
         </div>
         <div class="form-group-narrow right">
           <label for="ChildReadingNotes" class="label-title">Notes</label><br />
@@ -122,37 +118,46 @@
 import BookService from "@/services/BookService.js";
 
 export default {
-  name: "userBook",
+  name: "ReadingLog",
+  props: ['familyUsers'], 
   data() {
     return {
       userBook: {
-        userId: "",
-        bookId: "",
-        minutesRead: "",
-        readingFormat: "",
-        timesRead: "",
-        pastBook: "",
-        currentBook: "",
-        futureBook: "",
+        user_id: "",
+        book_id: "",
+        minutes_read: "",
+        reading_format: "Paper",
+        times_read: "",
+        past_book: false,
+        current_book: "true",
+        future_book: "",
         notes: ""
       },
-      reader: ["Colin", "Nolan", "Reg", "Kai"],
+      // reader: ["Colin", "Nolan", "Reg", "Kai"],
+      familyBooks: [],
     };
   },
   methods: {
     LogReading() {
       console.log("Checking for userID" + this.userId);
-      BookService.LogReading(this.userBook);
+      if (this.userBook.past_book === true) {
+        this.userBook.times_read = 1
+      }
+      BookService.logReading(this.userBook);
+      BookService.getAllBooksByFamily(this.$store.state.user.family_id).then((response) => {
+        this.familyBooks = response.data;
+      })
     },
-  },
-};
 
-// created() {
-//   BookService.getUserBooksUserId(this.userId).then((response) => {
-//     this.userId = response.data;
-//      })
-//   },
-//  }
+    
+  },
+
+  created() {
+    BookService.getAllBooksByFamily(this.$store.state.user.family_id).then((response) => {
+      this.familyBooks = response.data;
+      })
+    },
+ }
 
 </script>
 
