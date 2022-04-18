@@ -112,7 +112,7 @@ public class JdbcBookDao implements BookDao{
             results.add(mapRowToBook(resultSet));
         }
         return results;
-    }
+    } // Using This one as the call for the drop-down on reading-log
 
     private LogReadingDTO mapRowToLogReading(SqlRowSet resultSet) {
         LogReadingDTO log = new LogReadingDTO();
