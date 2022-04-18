@@ -102,19 +102,19 @@ created() {
   justify-content: center;
 }
 .parent td, .parent th {
-  border: 1px solid #bbf2fc;
+  border: 1px solid #f3f7f4;
   padding: 8px;
 }
-.parent tr:nth-child(even){background-color: #f2f2f2;}
+.parent tr:nth-child(even){background-color: #ffffff;}
 
-.parent tr:hover {background-color: #ddd;}
+.parent tr:hover {background-color: #d1e6d6}
 
 .parent th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   background-color: #126c7c;
-  color: white;
+  color: #f2f7f3;
 }
 .left-end{
 border-radius: 8px 3px 3px 8px;
