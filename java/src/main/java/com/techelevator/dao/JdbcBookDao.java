@@ -88,6 +88,17 @@ public class JdbcBookDao implements BookDao{
         return results;
     }
 
+    @Override
+    public List<LogReadingDTO> getFamilyUserBooks(int id) {
+        String sql = "SELECT * FROM users_books WHERE family_id = ?;";
+        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, id);
+        List <LogReadingDTO> results = new ArrayList<>();
+        while (resultSet.next()) {
+            results.add(mapRowToLogReading(resultSet));
+        }
+        return results;
+    }
+
     private LogReadingDTO mapRowToLogReading(SqlRowSet resultSet) {
         LogReadingDTO log = new LogReadingDTO();
         log.setUser_id(resultSet.getLong("user_id"));

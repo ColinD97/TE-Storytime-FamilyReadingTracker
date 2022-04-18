@@ -37,6 +37,7 @@
 
 <script>
 import AuthService from "@/services/AuthService";
+import BookService from "@/services/BookService";
 import AddBook from './AddBook.vue';
 import RegistrationFormChild from './RegistrationFormChild.vue'
 import ReadingLog from './ReadingLog.vue'
@@ -50,6 +51,8 @@ export default {
     return {
 
       familyUsers: [],
+      userData: [],
+
 
       // 2) Notes for Kai: pass this array into the add book as a prop. inside add a book they can see the family user array coming in as props. use in v-for 
 
@@ -58,20 +61,27 @@ export default {
     computed: {
     currentUserId: function(){
       return this.$store.state.user.id
-    }
+    }, 
+    // logForUserId(){
+    //   user_id: 
+    //   }
   },
   methods: {
     goToRegisterChild(){
       this.$router.push({name: 'register-child'})
+    },
+    getReadingLog(logForUserId){
+      BookService.getReadingLog(logForUserId).then(response => {
+        this.userData = response.data
+      })
     }
   },
 
 created() {
-    AuthService
-      .getFamilyByUserId(this.currentUserId)
-      .then(response => {
+    AuthService.getFamilyByUserId(this.currentUserId).then(response => {
           this.familyUsers = response.data;
       })
+    // BookService.getReadinglog()
   }
 }
 

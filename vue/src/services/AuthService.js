@@ -23,4 +23,8 @@ export default {
   getUserById(userId) {
     return axios.get(`/user/${userId}`); 
   },
+
+  getDashboardInfo(familyId) {
+    return axios.get(`/user/dashboard/${familyId}`)
+  }
 }

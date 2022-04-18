@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.techelevator.model.UserDashInfo;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -102,6 +103,13 @@ public class JdbcUserDao implements UserDao {
             results.add(mapRowToUser(resultSet));
         }
         return results;
+    }
+
+    @Override
+    public List<UserDashInfo> getUserDashboardInfoByFamilyId(int familyId) {
+
+
+        return null;
     }
 
 

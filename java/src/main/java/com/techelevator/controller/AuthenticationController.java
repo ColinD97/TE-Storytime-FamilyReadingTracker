@@ -97,6 +97,12 @@ public class AuthenticationController {
         return null;
     }
 
+    @RequestMapping(value = "/user/dashboard/{id}", method = RequestMethod.GET)
+    public List<UserDashInfo> getFamilyDashboardUsers(@PathVariable int familyId) {
+        return userDao.getUserDashboardInfoByFamilyId(familyId);
+    }
+
+
 
     /**
      * Object to return as body in JWT Authentication.
