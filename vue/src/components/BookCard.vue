@@ -20,7 +20,7 @@ export default {
 
 .card {
   display: grid;
-  background: rgba(241, 243, 243, 0.3);
+  background: rgb(209, 230, 214, 0.6);
   grid-template-columns: 1fr;
   grid-template-rows: 70px 300px 30px 30px 20px;
   gap: 3px;

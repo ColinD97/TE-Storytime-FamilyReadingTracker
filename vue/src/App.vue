@@ -150,8 +150,8 @@ export default {
   letter-spacing:1px;
   font-family: 'Bubblegum Sans', cursive;
     /* Shadows are visible under slightly transparent text color */
-    color: rgba(3, 63, 71, 0.8);
-    text-shadow: 1px 4px 6px #b0dde0, 0 0 0 #000, 1px 4px 6px #b0dde0;
+    color: rgba(7, 50, 61, 0.85);
+    text-shadow: 1px 2px 4px #eef1f1, 0 0 0 #000, 1px 2px 3px #183c41;
 }
 .title h1 span {
   margin-top: 5px;
@@ -214,14 +214,18 @@ body{
 }
 .form-header {
     height: 50px;
-    background-color: #c1e9e9;
+    background-color: rgb(209, 230, 214);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 20px;
     padding-top: 20px
 }
-.form-header h1{
-    font-size: 16px;
+.form-header{
+    font-size: 36px;
+    font-family: 'League Spartan', sans-serif;
+    color: #313131;
+    text-shadow: 1px 4px 6px #9dc0c0, 0 0 0 rgb(51, 53, 53), 1px 1px 1px #2a656d;
+    
 }
 /*---------------------------------------*/
 /* Form Body */
@@ -257,7 +261,8 @@ body{
     color: #157788;
     font-size: 20px;
     font-weight: bold;
-    padding-right: 20px;  
+    padding-right: 10px;  
+    padding-left: 10px;
 }
 .form-body .form-input {
     font-size: 14px;
@@ -335,7 +340,7 @@ body{
 /*---------------------------------------*/
 .form-footer {
     height: 30px;
-    background-color: #c1e9e9;
+    background-color: rgb(209, 230, 214);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     text-align: right;

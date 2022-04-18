@@ -42,11 +42,7 @@
                 name="MinutesRead"
                 v-model="userBook.minutesRead"
               />
-          </div>
-          
-
-
-          
+          </div> 
         </div>
         <div class="form-group-narrow right">
             <label for="FinishedBookCheckbox" class="label-title">Finished Book?</label>
@@ -57,8 +53,6 @@
             /><br />
         </div>
       </div>
-
-
       <!-- Format, Minutes Read, Notes-->
       <div class="horizontal-group">
         <div class="form-group-wide left">
@@ -108,7 +102,7 @@
             id="childreadingnotes"
             name="ChildReadingNotes"
             rows="4"
-            cols="45"
+            cols="40"
             v-model="userBook.notes" 
           /><br />
         </div>
