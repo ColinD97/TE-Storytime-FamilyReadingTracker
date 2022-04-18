@@ -106,12 +106,40 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public List<UserDashInfo> getUserDashboardInfoByFamilyId(int familyId) {
-
-
-        return null;
+    public List<UserDashInfo> getUserDashboardInfoByFamilyId(String familyId) {
+        String sql = "SELECT users.user_id, first_name, SUM(times_read) AS books_read, SUM(minutes_read) as total_minutes_read, points_balance " +
+                "FROM users " +
+                "JOIN users_books ON users.user_id = users_books.user_id " +
+                "JOIN book_info ON users_books.book_id = book_info.book_id " +
+                "WHERE users.family_id = ? " +
+                "GROUP BY users.user_id, first_name, points_balance;";
+        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
+        List<UserDashInfo> results = new ArrayList<>();
+        while (resultSet.next()) {
+            results.add(mapRowToDashUser(resultSet));
+            }
+//        sql = "select distinct on (users.user_id) users.user_id, book_info.title\n" +
+//                "FROM users \n" +
+//                "JOIN users_books ON users.user_id = users_books.user_id \n" +
+//                "JOIN book_info ON users_books.book_id = book_info.book_id \n" +
+//                "WHERE users.family_id = ? AND current_book = true;";
+//        resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
+//        while (resultSet.next()) {
+//            results.add(mapRowToDashUser(resultSet));
+//        }
+        return results;
     }
+    private UserDashInfo mapRowToDashUser(SqlRowSet rs) {
+        UserDashInfo userDash = new UserDashInfo();
+        userDash.setUser_id(rs.getLong("user_id"));
+        userDash.setFirst_name(rs.getString("first_name"));
+        userDash.setBooks_read(rs.getInt("books_read"));
+        userDash.setTotal_minutes_read(rs.getInt("total_minutes_read"));
+        userDash.setPoints_balance(rs.getInt("points_balance"));
+//        userDash.setCurrent_book(rs.getString("title"));
+        return userDash;
 
+    }
 
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();

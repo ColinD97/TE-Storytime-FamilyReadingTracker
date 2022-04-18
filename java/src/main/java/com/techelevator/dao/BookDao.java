@@ -22,4 +22,6 @@ public interface BookDao {
 
     List <LogReadingDTO> getFamilyUserBooks(int id);
 
+    List<Book> getBooksByFamilyId(String familyId);
+
 }

@@ -80,4 +80,9 @@ public class BookController {
         return bookDao.getFamilyUserBooks(id);
     }
 
+    @RequestMapping(value = "/readinglog/books/{id}", method = RequestMethod.GET)
+    public List<Book> getBooksByFamily(@PathVariable String id) {
+        return bookDao.getBooksByFamilyId(id);
+    }
+
 }

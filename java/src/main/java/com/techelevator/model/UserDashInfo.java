@@ -7,29 +7,19 @@ import java.util.Set;
 
 public class UserDashInfo {
 
-    private Long id;
-    private String family_id;
+    private Long user_id;
     private String first_name;
-    private String last_name;
     private int books_read;
-    private Integer totalMinutes;
-    private String currentBook;
-    private Integer pointsBalance;
+    private Integer total_minutes_read;
+    private String current_book;
+    private Integer points_balance;
 
-    public Long getId() {
-        return id;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFamily_id() {
-        return family_id;
-    }
-
-    public void setFamily_id(String family_id) {
-        this.family_id = family_id;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
     public String getFirst_name() {
@@ -40,14 +30,6 @@ public class UserDashInfo {
         this.first_name = first_name;
     }
 
-    public String getLast_name() {
-        return last_name;
-    }
-
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
-
     public int getBooks_read() {
         return books_read;
     }
@@ -56,27 +38,27 @@ public class UserDashInfo {
         this.books_read = books_read;
     }
 
-    public Integer getTotalMinutes() {
-        return totalMinutes;
+    public Integer getTotal_minutes_read() {
+        return total_minutes_read;
     }
 
-    public void setTotalMinutes(Integer totalMinutes) {
-        this.totalMinutes = totalMinutes;
+    public void setTotal_minutes_read(Integer total_minutes_read) {
+        this.total_minutes_read = total_minutes_read;
     }
 
-    public String getCurrentBook() {
-        return currentBook;
+    public String getCurrent_book() {
+        return current_book;
     }
 
-    public void setCurrentBook(String currentBook) {
-        this.currentBook = currentBook;
+    public void setCurrent_book(String current_book) {
+        this.current_book = current_book;
     }
 
-    public Integer getPointsBalance() {
-        return pointsBalance;
+    public Integer getPoints_balance() {
+        return points_balance;
     }
 
-    public void setPointsBalance(Integer pointsBalance) {
-        this.pointsBalance = pointsBalance;
+    public void setPoints_balance(Integer points_balance) {
+        this.points_balance = points_balance;
     }
 }

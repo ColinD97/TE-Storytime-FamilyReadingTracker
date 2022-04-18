@@ -15,12 +15,12 @@
                 <th class='middle'>Current Book</th>
                 <th class='right-end-top'>Points Balance</th>
               </tr>
-              <tr v-for="user in familyUsers" :key="user.id">
+              <tr v-for="user in userData" :key="user.id">
                 <td class='left-end'>{{user.first_name}}</td>
+                <td class='middle'>{{user.books_read}}</td>
+                <td class='middle'> {{user.total_minutes_read}}</td>
                 <td class='middle'>still need</td>
-                <td class='middle'> {{user.totalMinutes}}</td>
-                <td class='middle'>still need</td>
-                <td class='right-end'>{{user.pointsBalance}}</td>
+                <td class='right-end'>{{user.points_balance}}</td>
               </tr>
             </table> 
           </div>
@@ -78,10 +78,13 @@ export default {
   },
 
 created() {
-    AuthService.getFamilyByUserId(this.currentUserId).then(response => {
-          this.familyUsers = response.data;
-      })
+    // AuthService.getFamilyByUserId(this.currentUserId).then(response => {
+    //       this.familyUsers = response.data;
+    //   })
     // BookService.getReadinglog()
+    AuthService.getDashboardInfo(this.$store.state.user.family_id).then(response => {
+      this.userData = response.data
+    })
   }
 }
 

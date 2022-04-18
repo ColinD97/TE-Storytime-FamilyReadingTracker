@@ -10,6 +10,10 @@ export default {
         return axios.get('/bookshelf')
     },
 
+    getAllBooksByFamily(familyId){
+        return axios.get(`/readinglog/books/${familyId}`)
+    },
+
     addBook(userId, book) {
         return axios.post(`/bookshelf/${userId}`, book)
     },

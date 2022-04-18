@@ -20,5 +20,5 @@ public interface UserDao {
 
     List<User> getUsersByFamilyId(String familyId);
 
-    List<UserDashInfo> getUserDashboardInfoByFamilyId(int familyId);
+    List<UserDashInfo> getUserDashboardInfoByFamilyId(String familyId);
 }
