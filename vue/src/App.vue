@@ -54,6 +54,9 @@ export default {
 
 
 <style >
+/*---------------------------------------*/
+/* Reset */
+/*---------------------------------------*/
 
 /*---------------------------------------*/
 /* Web Font*/
@@ -71,8 +74,6 @@ export default {
     margin-left: auto;
     justify-content: flex-end;
 }
-
-
 /* Style the links inside the navigation bar */
 .topnav a {
   color: #222222;
