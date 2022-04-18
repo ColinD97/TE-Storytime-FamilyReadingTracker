@@ -50,8 +50,8 @@ CREATE TABLE users_books (
 
 INSERT INTO users (username, family_id, first_name, last_name, email, password_hash, role, total_minutes, points_balance)
 VALUES
-	('user', 2, 'Colin', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_PARENT', 90, 100),
-	('admin', 2, 'Nolan', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_CHILD', 2450, 2100),
+	('user', 2, 'Amanda', 'Davis', 'cd@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_PARENT', 90, 100),
+	('admin', 2, 'Aubrey', 'Tsai', 'nt@gmail.com','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_CHILD', 2450, 2100),
 	('regreg', 2, 'Reginald', 'Arnedo', 'reg@hotmail.com', '$2a$10$D6LUTeihoDMiJTtw2zsWTuy8qaxS5MZkFA7sRwa538FDGu4/T/qOK', 'ROLE_CHILD', 20, 110),
 	('indigowolf', 2, 'Kai Indigo', 'Wolf', 'kai.wolf@gmail.com', '$2a$10$CemCJcwUc/yxFjK20VKQS.7NxjkM/iR/liyQtzfXtgQjfBxV/EUgm', 'ROLE_PARENT', 40, 999),
 	('niles', 2, 'Niles', 'Xavier', 'nx@aol.com', '$2a$10$afmIx5OHly1g2UlW0.iW0O6CBqy4.2STcOJapa97Jw3DjUyU40gke', 'ROLE_CHILD', 70, 1450),
