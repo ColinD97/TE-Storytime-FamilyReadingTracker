@@ -37,7 +37,7 @@
 
 <script>
 import AuthService from "@/services/AuthService";
-import BookService from "@/services/BookService";
+// import BookService from "@/services/BookService";
 import AddBook from './AddBook.vue';
 import RegistrationFormChild from './RegistrationFormChild.vue'
 import ReadingLog from './ReadingLog.vue'
@@ -71,11 +71,11 @@ export default {
     goToRegisterChild(){
       this.$router.push({name: 'register-child'})
     },
-    getReadingLog(logForUserId){
-      BookService.getReadingLog(logForUserId).then(response => {
-        this.userData = response.data
-      })
-    }
+    // getReadingLog(logForUserId){
+    //   BookService.getReadingLog(logForUserId).then(response => {
+    //     this.userData = response.data
+    //   })
+    // }
   },
 
 created() {

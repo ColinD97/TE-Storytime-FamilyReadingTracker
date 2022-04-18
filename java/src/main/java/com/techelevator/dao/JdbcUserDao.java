@@ -118,7 +118,7 @@ public class JdbcUserDao implements UserDao {
         while (resultSet.next()) {
             results.add(mapRowToDashUser(resultSet));
             }
-//        sql = "select distinct on (users.user_id) users.user_id, book_info.title\n" +
+//        sql = "select distinct on (users.user_id) users.user_id, e\n" +
 //                "FROM users \n" +
 //                "JOIN users_books ON users.user_id = users_books.user_id \n" +
 //                "JOIN book_info ON users_books.book_id = book_info.book_id \n" +
