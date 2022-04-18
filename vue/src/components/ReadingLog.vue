@@ -30,7 +30,7 @@
           >
             <option disabled hidden value="">Pick a Reader</option>
             <option v-for="user in familyUsers" v-bind:key="user.index"
-              :value="user.user_id">
+              :value="user.id">
               {{ user.first_name }}
             </option></select
           ><br />

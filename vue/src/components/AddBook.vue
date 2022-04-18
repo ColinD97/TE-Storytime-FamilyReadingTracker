@@ -65,11 +65,11 @@
                     <label for="custom-select">Assign book to:</label>
                     <select 
                     class="drop-down"
-                    v-model= "book.userId" 
+                    v-model= "assignToUser" 
                     style="width:150px;" 
                     >
                       <option disabled hidden value="">Children:</option>
-                      <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.user_id">{{user.first_name}}</option>
+                      <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.id">{{user.first_name}}</option>
                     </select>
                   </div>  
                 </div> 
@@ -92,8 +92,8 @@ export default {
         author: "",
         isbn: "",
         difficulty: "",
-        userId: "",
       },
+      assignToUser: ""
       
     };
   },
@@ -101,7 +101,7 @@ export default {
     addBook() {
       console.log('add book'+ this.book)
       BookService
-        .addBook(this.userId, this.book)
+        .addBook(this.assignToUser, this.book)
         .then(response => {
           if (response.status === 201) {
             this.$router.push({path: '/'});

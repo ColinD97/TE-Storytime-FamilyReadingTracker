@@ -27,8 +27,8 @@
           <img src="@/assets/Dashboard.png" class="grid-item-2"/>
         </div>
       <div class="right-side">
-        <reading-log v-bind:familyUsers="familyUsers" />
-        <add-book v-bind:familyUsers="familyUsers"/>
+        <reading-log v-bind:familyUsers="familyUsersAll" />
+        <add-book v-bind:familyUsers="familyUsersAll"/>
         <registration-form-child /> 
       </div> 
     </div>    
@@ -52,6 +52,7 @@ export default {
 
       familyUsers: [],
       userData: [],
+      familyUsersAll: []
 
 
       // 2) Notes for Kai: pass this array into the add book as a prop. inside add a book they can see the family user array coming in as props. use in v-for 
@@ -78,10 +79,11 @@ export default {
   },
 
 created() {
-    // AuthService.getFamilyByUserId(this.currentUserId).then(response => {
-    //       this.familyUsers = response.data;
-    //   })
+    AuthService.getFamilyByUserId(this.currentUserId).then(response => {
+          this.familyUsersAll = response.data;
+      })
     // BookService.getReadinglog()
+    console.log('create getDashboardInfo')
     AuthService.getDashboardInfo(this.$store.state.user.family_id).then(response => {
       this.familyUsers = response.data
     })
