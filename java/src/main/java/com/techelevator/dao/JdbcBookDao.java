@@ -27,7 +27,7 @@ public class JdbcBookDao implements BookDao{
                 "current_book, future_book, notes) VALUES (?, ?, 0, 'Paper', 0, false, false, true, '');";
         jdbcTemplate.update(sql, readerId, id);
         return getBookById(id);
-    }
+    }  // For ADD A BOOK and BOOKSHELF
 
     @Override
     public Book getBookById(int id) {

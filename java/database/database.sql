@@ -43,9 +43,9 @@ CREATE TABLE users_books (
 	current_book boolean,
 	future_book boolean,
 	notes varchar (150),
-	time_read timestamp,
+	date_logged timestamp,
 	session_points int,
-	CONSTRAINT PK_users_books PRIMARY KEY(user_id, time_read),
+	CONSTRAINT PK_users_books PRIMARY KEY(user_id, date_logged),
     FOREIGN KEY(book_id) REFERENCES book_info(book_id)
 
 );
@@ -86,7 +86,7 @@ VALUES
 	('Native Homes', 'Bobbie Kalman', 9780778703716, 4, 'non-fiction');
 
 
-INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, past_book, current_book, future_book, notes, time_read, session_points)
+INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, past_book, current_book, future_book, notes, date_logged, session_points)
 VALUES
 	(1, 1, 30, 'Paper', 2, true, false, false, 'Definitely good for sleepy time.', '2022-01-22 19:10:25', 10),
 	(1, 2, 30, 'Paper', 1, false, true, false, '','2022-01-23 17:10:21', 10),

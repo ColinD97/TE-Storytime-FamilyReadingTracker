@@ -3,7 +3,7 @@
       <div class="title">
         <h1>Parent Dashboard<span>Keep track of your kid's reading. Build habits for life.</span></h1>
       </div>
-      
+
       <div class="box"> 
         <div class="left-side">
           <div class="grid-item-1">
@@ -14,14 +14,14 @@
                 <th class='middle'>Books Completed</th>
                 <th class='middle'>Minutes Read</th>
                 <th class='middle'>Current Book</th>
-                <th class='right-end-top'>Points Balance</th>
+                <!-- <th class='right-end-top'>Points Balance</th> -->
               </tr>
               <tr v-for="user in familyUsers" :key="user.id">
                 <td class='left-end'>{{user.first_name}}</td>
                 <td class='middle'>{{user.books_read}}</td>
                 <td class='middle'> {{user.total_minutes_read}}</td>
                 <td class='middle'>still need</td>
-                <td class='right-end'>{{user.points_balance}}</td>
+                <!-- <td class='right-end'>{{user.points_balance}}</td> -->
               </tr>
             </table> 
           </div>
