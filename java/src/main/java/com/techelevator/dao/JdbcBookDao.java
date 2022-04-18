@@ -27,7 +27,7 @@ public class JdbcBookDao implements BookDao{
                 "current_book, future_book, notes) VALUES (?, ?, 0, 'Paper', 0, false, false, true, '');";
         jdbcTemplate.update(sql, readerId, id);
         return getBookById(id);
-    }
+    }  // For ADD A BOOK and BOOKSHELF
 
     @Override
     public Book getBookById(int id) {
@@ -104,14 +104,15 @@ public class JdbcBookDao implements BookDao{
         String sql = "SELECT book_info.* FROM users JOIN users_books " +
                 "ON users.user_id = users_books.user_id JOIN book_info " +
                 "ON users_books.book_id = book_info.book_id " +
-                "WHERE family_id = ? ORDER BY difficulty; ";
+                "WHERE family_id = ? " +
+                "GROUP BY book_info.book_id ORDER BY difficulty; ";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
         List <Book> results = new ArrayList<>();
         while (resultSet.next()) {
             results.add(mapRowToBook(resultSet));
         }
         return results;
-    }
+    } // Using This one as the call for the drop-down on reading-log
 
     private LogReadingDTO mapRowToLogReading(SqlRowSet resultSet) {
         LogReadingDTO log = new LogReadingDTO();

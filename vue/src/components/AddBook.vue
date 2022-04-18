@@ -3,7 +3,7 @@
 <div>
 
   <form class="form-add-book" @submit.prevent="register">
-    <h1 class="form-header">Add A Book</h1>
+    <h1 class="form-header">Add A Book To Family Collection</h1>
     <div class="form-body">
             <!-- Title and Author -->
             <div class="horizontal-group">
@@ -61,7 +61,7 @@
                 <button class="btn" type="submit" v-on:click="addBook" >
                 Add Book
                 </button>
-                  <div class="custom-select" style="width:350px;" id='dropdown'>
+                  <!-- <div class="custom-select" style="width:350px;" id='dropdown'>
                     <label for="custom-select">Assign book to:</label>
                     <select 
                     class="drop-down"
@@ -71,7 +71,7 @@
                       <option disabled hidden value="">Children:</option>
                       <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.id">{{user.first_name}}</option>
                     </select>
-                  </div>  
+                  </div>   -->
                 </div> 
   </form>
 </div>
