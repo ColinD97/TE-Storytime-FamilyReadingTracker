@@ -104,7 +104,8 @@ public class JdbcBookDao implements BookDao{
         String sql = "SELECT book_info.* FROM users JOIN users_books " +
                 "ON users.user_id = users_books.user_id JOIN book_info " +
                 "ON users_books.book_id = book_info.book_id " +
-                "WHERE family_id = ? ORDER BY difficulty; ";
+                "WHERE family_id = ? " +
+                "GROUP BY book_info.book_id ORDER BY difficulty; ";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
         List <Book> results = new ArrayList<>();
         while (resultSet.next()) {

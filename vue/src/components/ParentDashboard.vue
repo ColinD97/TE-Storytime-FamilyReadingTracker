@@ -3,6 +3,7 @@
       <div class="title">
         <h1>Parent Dashboard<span>Keep track of your kid's reading. Build habits for life.</span></h1>
       </div>
+      
       <div class="box"> 
         <div class="left-side">
           <div class="grid-item-1">

@@ -13,7 +13,7 @@
 
   <div>
     <form class="form-reading-log">
-      <h1 class="form-header">Reading Log</h1>
+      <h1 class="form-header">Log Reading</h1>
       <div class="form-body">
         <!-- Reader and Book -->
       <div class="horizontal-group">
