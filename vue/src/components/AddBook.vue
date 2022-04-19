@@ -102,13 +102,15 @@ export default {
     addBook() {
       console.log('add book'+ this.book)
       BookService
+      // Assign to family ID
         .addBook(this.assignToUser, this.book)
         .then(response => {
           if (response.status === 201) {
             this.$router.push({path: '/'});
           }
         })
-    }
+    },
+    
   }
 };
 

@@ -37,6 +37,7 @@
 <script>
 import AddBook from "./AddBook.vue";
 import ReadingLog from "./ReadingLog.vue";
+
 export default {
   components: { AddBook, ReadingLog },
   data() {
