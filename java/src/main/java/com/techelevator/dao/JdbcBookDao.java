@@ -24,7 +24,6 @@ public class JdbcBookDao implements BookDao{
         Integer id = jdbcTemplate.queryForObject(sql, Integer.class,
                 bookData.getTitle(), bookData.getAuthor(), bookData.getIsbn(), bookData.getDifficulty(), bookData.getGenre());
         LocalDateTime currentDate = LocalDateTime.now();
-        System.out.println("Date: " + currentDate);
         sql = "INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, review, " +
                 "date_logged, session_points) VALUES (?, ?, 0, 'Paper', 0, '', ?, 0);";
         jdbcTemplate.update(sql, readerId, id, currentDate);
@@ -43,22 +42,25 @@ public class JdbcBookDao implements BookDao{
     }
 
     @Override
-    public List <UserBook> getBooksByUserId(Long userId) {
-        String sql = "SELECT book_info.book_id, title, author, isbn, difficulty, genre, times_read, " +
-                "current_book, future_book FROM users JOIN users_books " +
-                "ON users.user_id = users_books.user_id JOIN book_info " +
-                "ON users_books.book_id = book_info.book_id WHERE users.user_id = ?;";
-        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, userId);
-        List <UserBook> results = new ArrayList<>();
+    public List <Book> getBooksByUserId(int id) {
+//        String sql = "SELECT book_info.book_id, title, author, isbn, difficulty " +
+//                "FROM book_info JOIN users_books ON users_books.book_id = book_info.book_id " +
+//                "JOIN users ON users_books.user_id = users.user_id WHERE family_id = ?;";
+        String sql = "SELECT book_info.book_id, title, author, isbn, difficulty " +
+                "FROM book_info JOIN users_books ON users_books.book_id = book_info.book_id " +
+                "JOIN users ON users_books.user_id = users.user_id WHERE family_id " +
+                "= (SELECT family_id FROM users WHERE user_id = ?);";
+        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, id);
+        List <Book> results = new ArrayList<>();
         while (resultSet.next()) {
-            results.add(mapRowToUserBook(resultSet));
+            results.add(mapRowToBook(resultSet));
         }
         return results;
     }
 
     @Override
     public List <Book> getAllBooks() {
-        String sql = "SELECT * FROM book_info ORDER BY difficulty; ";
+        String sql = "SELECT * FROM book_info ORDER BY difficulty;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql);
         List <Book> results = new ArrayList<>();
         while (resultSet.next()) {
@@ -70,12 +72,11 @@ public class JdbcBookDao implements BookDao{
     @Override
     public boolean createLogEntry(LogReadingDTO entry) {
         String sql = "INSERT INTO users_books (user_id, book_id, minutes_read, " +
-                "reading_format, times_read, past_book, current_book, future_book, " +
-                "notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                "reading_format, times_read, review, date_logged, session_points)" +
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         int value = jdbcTemplate.update(sql, entry.getUser_id(),
                 entry.getBook_id(), entry.getMinutes_read(), entry.getReading_format(),
-                entry.getTimes_read(), entry.isPast_book(), entry.isCurrent_book(),
-                entry.isFuture_book(), entry.getNotes());
+                entry.getTimes_read(), entry.getReview(), entry.getDate_logged(), entry.getSession_points());
         return (value == 1);
     }
 
@@ -146,10 +147,9 @@ public class JdbcBookDao implements BookDao{
         log.setMinutes_read(resultSet.getInt("minutes_read"));
         log.setReading_format(resultSet.getString("reading_format"));
         log.setTimes_read(resultSet.getInt("times_read"));
-        log.setPast_book(resultSet.getBoolean("past_book"));
-        log.setCurrent_book(resultSet.getBoolean("current_book"));
-        log.setFuture_book(resultSet.getBoolean("future_book"));
-        log.setNotes(resultSet.getString("notes"));
+        log.setReview(resultSet.getString("review"));
+        log.setDate_logged(resultSet.getTimestamp("date_logged").toLocalDateTime());
+        log.setSession_points(resultSet.getInt("session_points"));
         return log;
     }
 
@@ -171,9 +171,6 @@ public class JdbcBookDao implements BookDao{
         book.setIsbn(resultSet.getString("isbn"));
         book.setDifficulty(resultSet.getInt("difficulty"));
         book.setTimesRead(resultSet.getInt("times_read"));
-        book.setPastBook(resultSet.getBoolean("past_book"));
-        book.setCurrentBook(resultSet.getBoolean("current_book"));
-        book.setFutureBook(resultSet.getBoolean("future_book"));
         return book;
     }
 }
