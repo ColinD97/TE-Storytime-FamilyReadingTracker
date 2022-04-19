@@ -14,7 +14,7 @@ CREATE TABLE book_info (
     book_id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     author VARCHAR(100) NOT NULL,
-	isbn BIGINT,
+	isbn VARCHAR(13),
 	difficulty int,
 	genre VARCHAR(50)
 );
@@ -40,7 +40,7 @@ CREATE TABLE users_books (
 	reading_format varchar (50) NOT NULL,
 	times_read int,
 	review varchar (150),
-	date_logged timestamp,
+	date_logged timestamp(0) without time zone,
 	session_points int,
 	CONSTRAINT PK_users_books PRIMARY KEY(user_id, date_logged),
     FOREIGN KEY(book_id) REFERENCES book_info(book_id)
