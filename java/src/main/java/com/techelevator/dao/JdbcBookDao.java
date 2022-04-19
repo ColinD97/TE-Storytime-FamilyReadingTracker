@@ -113,7 +113,9 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public List<UserDetailDTO> getUserDetails(long detail_id) {
-        String sql = ";";
+        String sql = "SELECT book_info.book_id, title, author, genre, SUM(minutes_read) AS minutes_per_book, " +
+                "SUM(times_read) AS times_read_total FROM users_books JOIN book_info ON users_books.book_id = book_info.book_id " +
+                "WHERE users_books.user_id = ? GROUP BY book_info.book_id, title, author, genre ORDER BY title;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, detail_id);
         List<UserDetailDTO> results = new ArrayList<>();
         while (resultSet.next()) {
@@ -129,7 +131,7 @@ public class JdbcBookDao implements BookDao{
         userDetail.setGenre(resultSet.getString("genre"));
         userDetail.setMinutes_per_book(resultSet.getInt("minutes_per_book"));
         userDetail.setTimes_read_total(resultSet.getInt("times_read_total"));
-
+        return userDetail;
     }
 
     private LogReadingDTO mapRowToLogReading(SqlRowSet resultSet) {

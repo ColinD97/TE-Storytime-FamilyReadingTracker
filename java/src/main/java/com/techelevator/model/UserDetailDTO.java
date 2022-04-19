@@ -1,6 +1,7 @@
 package com.techelevator.model;
 
-import java.sql.Timestamp;
+
+import java.time.LocalDateTime;
 
 public class UserDetailDTO {
 
@@ -10,7 +11,15 @@ public class UserDetailDTO {
     private String genre;
     private int minutes_per_book;
     private int times_read_total;
-    private Timestamp last_date;
+    private LocalDateTime last_read;
+
+    public LocalDateTime getLast_read() {
+        return last_read;
+    }
+
+    public void setLast_read(LocalDateTime last_read) {
+        this.last_read = last_read;
+    }
 
     public int getBook_id() {
         return book_id;

@@ -82,7 +82,7 @@ public class BookController {
         return bookDao.getBooksByFamilyId(id);
     }
 
-    @RequestMapping(value = "/user/dashboard/detail/${id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/dashboard/detail/{id}", method = RequestMethod.GET)
     public List<UserDetailDTO> getUserDetail(@PathVariable String id) {
         long detail_id = Long.parseLong(id);
         return bookDao.getUserDetails(detail_id);
