@@ -143,8 +143,19 @@ export default {
           .registerFamilyUser(this.user, this.currentUserId)
           .then((response) => {
             if (response.status == 201) {
+              alert('Child account created!  Hurray for our side!'),
+              this.user = {
+                first_name: '',
+                last_name: '',
+                email: '',
+                username: '',
+                password: '',
+                confirmPassword: '',
+                role: 'child',
+              }
               this.$router.push({
-                name: 'parent', params: {id: this.currentUserId}
+                name: 'parent', params: {id: this.currentUserId} //delete this later after demo'ing to calin ,     
+
                 //query: { registration: 'success' },
               });
             }

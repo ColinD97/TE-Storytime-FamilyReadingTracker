@@ -135,6 +135,17 @@ export default {
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
+              alert('Account created!  Hurray for our side!'),
+              this.user = {
+                first_name: '',
+                last_name: '',
+                email: '',
+                username: '',
+                password: '',
+                confirmPassword: '',
+                role: 'parent',
+              }
+              
               this.$router.push({
                 path: '/login',
                 query: { registration: 'success' },
