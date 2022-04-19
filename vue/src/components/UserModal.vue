@@ -2,27 +2,27 @@
   <transition name="modal-fade">
     <div class="modal-overlay" @click="$emit('close-modal')">
       <div class="modal" @click.stop>
-        <img src="@/assets/tiger.png" class="cardpic"/>
-        <!-- <table class="parent">
-            <label for="Children"></label> -->
-              <!-- <tr>
+        <!-- <img src="@/assets/tiger.png" class="cardpic"/> -->
+        <table class="parent">
+            <label for="Children"></label>
+              <tr>
                 <th class='left-end-top'>Child</th>
                 <th class='middle'>Books Completed</th>
                 <th class='middle'>Minutes Read</th>
-                <th class='right-end-top'>Current Book</th> -->
+                <th class='right-end-top'>Current Book</th>
                 <!-- <th class='right-end-top'>Points Balance</th> -->
-              <!-- </tr> -->
+              </tr>
                
                <!-- Need to tie all this in to the user that was clicked on -->
                <!-- Using user-book table and info from Reg's table -->
-              <!-- <tr v-for="user in familyUsers" :key="user.id">
+              <tr v-for="user in familyUsers" :key="user.id">
                 <td class='left-end'>{{user.first_name}}</td> 
                 <td class='middle'>{{user.books_read}}</td>
                 <td class='middle'> {{user.total_minutes_read}}</td>
-                <td class='right-end'>still need</td> -->
-                <!-- <td class='right-end'>{{user.points_balance}}</td> -->
-              <!-- </tr>
-            </table>  -->
+                <td class='right-end'>still need</td>
+                <td class='right-end'>{{user.points_balance}}</td>
+              </tr>
+            </table> 
       </div>
       <div class="close" @click="$emit('close-modal')">
         <img class="close-img" src="src\assets\booklog.png" alt="" />
@@ -34,30 +34,31 @@
 </template>
 
 <script>
-// import BookService from "@/services/BookService";
+import BookService from "@/services/BookService";
 
-  // export default {
-  //   name: 'child-modal-userID',  
-  // data() {
-  //   return {
+  export default {
+    name: 'child-modal-userID',  
+  data() {
+    return {
 
-  //     childData: [] ,
-  //     showModal: false,
+      childData: [] ,
+      showModal: false,
 
-  //   }
-  // },
-  //   computed: {
-  //   currentUserId: function(){
-  //     return this.$store.state.user.id
-  //   }, 
-  // },
-  // created() {
+    }
+  },
+    computed: {
+    currentUserId: function(){
+      return this.$store.state.user.id
+    }, 
+  },
+  created() {
    
-  //   console.log('create idkwhatimdoinglol')
-  //   BookService.getUserDetail(this.$store.state.user.user_id).then(response => {
-  //     this.childData = response.data
-  //   })
-  // }
+    console.log('create idkwhatimdoinglol')
+    BookService.getUserDetail(this.$store.state.user.user_id).then(response => {
+      this.childData = response.data
+    })
+  }
+  };
     
 
 </script>
@@ -79,7 +80,7 @@
   background-color: #fac2a8;
   height: 500px;
   width: 900px;
-  margin-top: 5%;
+  margin-top: 1%;
   padding: 30px 0;
   border-radius: 20px;
 }

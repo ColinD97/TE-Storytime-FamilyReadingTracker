@@ -37,15 +37,22 @@
 <script>
 import AddBook from "./AddBook.vue";
 import ReadingLog from "./ReadingLog.vue";
+import AuthService from "@/services/AuthService";
 
 export default {
   components: { AddBook, ReadingLog },
   data() {
     return {
+      familyUsers: [],
       user: this.$store.state.user,
       test: "test",
     };
   },
+  created() {
+    AuthService.getFamilyByUserId(this.currentUserId).then(response => {
+          this.familyUsersAll = response.data;
+      })
+  }
 };
 </script>
 

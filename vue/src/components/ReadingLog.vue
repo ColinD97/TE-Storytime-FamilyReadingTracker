@@ -31,7 +31,7 @@
             
             
             <div v-else>
-              <label class="label-title" for="readers">{{user.first_name}}</label>
+              <p class="label-title" for="readers">{{this.$.store.state.user.first_name}}</p>
             </div>
           
           </div>
@@ -115,7 +115,6 @@
 </template>
 
 <script>
-import AuthService from "@/services/AuthService";
 import BookService from "@/services/BookService.js";
 
 export default {
@@ -152,22 +151,15 @@ export default {
       this.familyBooks = response.data;
       })
     },
-    // COLIN *** added computed stuff here that I copied from dashboardview where you used it to v:if between parent/child roles
-    computed: {
-    currentUserId: function () {
-      return this.$store.state.user.id;
-    },
-    currentRole: function () {
-      AuthService
-      return this.$store.state.user.authorities[0].name;
-    },
-    isParent: function () {
-      if (this.$store.state.user.authorities[0].name == "ROLE_PARENT") {
-        return true;
-      } else {
-        return false;
-      }
-    },
+  
+  computed: {
+  isParent: function () {
+    if (this.$store.state.user.authorities[0].name == "ROLE_PARENT") {
+      return true;
+    } else {
+      return false;
+    }
+  },
   },
  }
 </script>
