@@ -152,12 +152,7 @@ export default {
                 password: '',
                 confirmPassword: '',
                 role: 'child',
-              }
-              this.$router.push({
-                name: 'parent', params: {id: this.currentUserId} //delete this later after demo'ing to calin ,     
-
-                //query: { registration: 'success' },
-              });
+              },  
              <v-alert
               color="blue"
               dense
