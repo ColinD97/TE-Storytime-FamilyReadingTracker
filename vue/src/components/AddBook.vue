@@ -2,7 +2,7 @@
     
 <div>
 
-  <form class="form-add-book" @submit.prevent="register">
+  <form class="form-add-book">
     <h1 class="form-header">Add A Book To Family Collection</h1>
     <div class="form-body">
             <!-- Title and Author -->
@@ -102,13 +102,15 @@ export default {
     addBook() {
       console.log('add book'+ this.book)
       BookService
+      // Assign to family ID
         .addBook(this.assignToUser, this.book)
         .then(response => {
           if (response.status === 201) {
             this.$router.push({path: '/'});
           }
         })
-    }
+    },
+    
   }
 };
 

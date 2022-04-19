@@ -22,11 +22,17 @@ export default {
 // Reg Note:  Start of implementation of ReadingLog.vue code.  
 
    logReading(userBook) {
-        return axios.post(`/readinglog/`, userBook)
+        return axios.post('/readinglog/', userBook)
     },
 
     getReadingLog(userId) {
         return axios.get('/readinglog/', userId)
+    },
+
+// For UserModal - check w/ Colin to see if he can switch 'id' for 'userId' for
+// consistency
+    getUserDetail(id) {
+        return axios.get(`/user/dashboard/detail/${id}`)
     }
 
     

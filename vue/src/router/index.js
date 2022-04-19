@@ -9,7 +9,7 @@ import ParentDashboard from '../views/ParentDashboardView.vue'
 import ParentChildDash from '../views/ParentChildDashView.vue'
 // import RegisterChildView from '../views/RegisterChildView.vue'
 import BookShelf from '../views/BookshelfView.vue'
-import CatalogueView from '../views/CatalogueView'
+import HistoryView from '../views/HistoryView'
 // import ReadingLog from '../components/ReadingLog'
 
 
@@ -106,9 +106,9 @@ const router = new Router({
     },
     {
       // Working on hook for new version of BookshelfView
-      path: "/catalogue",
-      name: "bookshelf-catalogue",
-      component: CatalogueView,
+      path: "/history",
+      name: "reading-history",
+      component: HistoryView,
       meta: {
         requiresAuth: false
       }

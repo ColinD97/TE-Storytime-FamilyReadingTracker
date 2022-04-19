@@ -1,14 +1,14 @@
 <template>
   <div>
-    <catalogue />
+    <history />
   </div>
 </template>
 
 <script>
-import Catalogue from '../components/Catalogue.vue'
+import History from '../components/History.vue'
 export default {
   
-  components: { Catalogue },
+  components: { History },
 
 }
 </script>

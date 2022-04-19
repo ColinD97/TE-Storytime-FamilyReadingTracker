@@ -5,7 +5,7 @@
       <router-link class='container' v-bind:to="{ name: 'home' }">HOME </router-link>
       <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">DASHBOARD</router-link> 
       <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">BOOKSHELF</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'bookshelf-catalogue'}">READING-LOG</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'reading-history'}">READING-LOG</router-link> 
       
         <div class="dropdown" id="push">
           <button class="dropbtn">GO TO:

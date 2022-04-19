@@ -143,10 +143,14 @@ export default {
           .registerFamilyUser(this.user, this.currentUserId)
           .then((response) => {
             if (response.status == 201) {
-              this.$router.push({
-                name: 'parent', params: {id: this.currentUserId}
-                //query: { registration: 'success' },
-              });
+             <v-alert
+              color="blue"
+              dense
+              elevation="9"
+              icon="$mdiAccount"
+              prominent
+              type="success"
+            ></v-alert>
             }
           })
           .catch((error) => {

@@ -19,21 +19,32 @@
       <div class="horizontal-group">
         <div class="form-group-wide left">
           <div class='split-form-one-group-left'>
-          <label class="label-title" for="readers">Reader</label>
-          <select
-            class="drop-down"
-            name="readers"
-            id="readers"
-            v-model="userBook.user_id"
-            required
-            autofocus
-          >
-            <option disabled hidden value="">Pick a Reader</option>
-            <option v-for="user in familyUsers" v-bind:key="user.index"
-              :value="user.id">
-              {{ user.first_name }}
-            </option></select
-          ><br />
+            
+            
+            <!-- Thought we could implement this somehow to swap between parent or child presentation of form but it disappeared from view on page now and IDK why -->
+            <div v-if="isParent">
+              <label class="label-title" for="readers">Reader</label>
+                  <select
+                    class="drop-down"
+                    name="readers"
+                    id="readers"
+                    v-model="userBook.user_id"
+                    required
+                    autofocus
+                  >
+                    <option disabled hidden value="">Pick a Reader</option>
+                    <option v-for="user in familyUsers" v-bind:key="user.index"
+                      :value="user.id">
+                      {{ user.first_name }}
+                    </option></select
+                  ><br />
+            </div>
+            
+            
+            <div v-else>
+              <label class="label-title" for="readers">{{user.first_name}}</label>
+            </div>
+          
           </div>
            <div class='split-form-two-group-left'>
             <label for="MinutesRead" class="label-title">Minutes Read</label>
@@ -50,7 +61,7 @@
             <input
               type="checkbox"
               id="finishedbookcheckbox"
-              v-model="userBook.past_book"
+              v-model="userBook.times_read"
               value="true"
             /><br />
         </div>
@@ -106,7 +117,7 @@
     </div>
       <div class="form-footer">
         <button class="btn" type="submit" v-on:click="LogReading">
-        Submit Note
+        Submit
         </button>
       </div>
     </form>
@@ -115,6 +126,7 @@
 </template>
 
 <script>
+import AuthService from "@/services/AuthService";
 import BookService from "@/services/BookService.js";
 
 export default {
@@ -128,9 +140,6 @@ export default {
         minutes_read: "",
         reading_format: "Paper",
         times_read: "",
-        past_book: false,
-        current_book: "true",
-        future_book: "",
         notes: ""
       },
       familyBooks: [],
@@ -139,7 +148,7 @@ export default {
   methods: {
     LogReading() {
       console.log("Checking for userID" + this.userId);
-      if (this.userBook.past_book === true) {
+      if (this.userBook.times_read === true) {
         this.userBook.times_read = 1
       }
       BookService.logReading(this.userBook);
@@ -147,7 +156,6 @@ export default {
         this.familyBooks = response.data;
       })
     },
-
   },
 
   created() {
@@ -155,6 +163,23 @@ export default {
       this.familyBooks = response.data;
       })
     },
+    // COLIN *** added computed stuff here that I copied from dashboardview where you used it to v:if between parent/child roles
+    computed: {
+    currentUserId: function () {
+      return this.$store.state.user.id;
+    },
+    currentRole: function () {
+      AuthService
+      return this.$store.state.user.authorities[0].name;
+    },
+    isParent: function () {
+      if (this.$store.state.user.authorities[0].name == "ROLE_PARENT") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
  }
 </script>
 
