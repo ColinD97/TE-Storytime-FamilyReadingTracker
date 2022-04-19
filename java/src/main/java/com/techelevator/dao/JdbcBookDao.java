@@ -1,9 +1,6 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.Book;
-import com.techelevator.model.LogReadingDTO;
-import com.techelevator.model.User;
-import com.techelevator.model.UserBook;
+import com.techelevator.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -113,6 +110,29 @@ public class JdbcBookDao implements BookDao{
         }
         return results;
     } // Using This one as the call for the drop-down on reading-log
+
+    @Override
+    public List<UserDetailDTO> getUserDetails(long detail_id) {
+        String sql = "SELECT book_info.book_id, title, author, genre, SUM(minutes_read) AS minutes_per_book, " +
+                "SUM(times_read) AS times_read_total FROM users_books JOIN book_info ON users_books.book_id = book_info.book_id " +
+                "WHERE users_books.user_id = ? GROUP BY book_info.book_id, title, author, genre ORDER BY title;";
+        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, detail_id);
+        List<UserDetailDTO> results = new ArrayList<>();
+        while (resultSet.next()) {
+            results.add(mapRowToUserDetail(resultSet));
+        }
+        return results;
+    }
+    private UserDetailDTO mapRowToUserDetail(SqlRowSet resultSet) {
+        UserDetailDTO userDetail = new UserDetailDTO();
+        userDetail.setAuthor(resultSet.getString("author"));
+        userDetail.setTitle(resultSet.getString("title"));
+        userDetail.setBook_id(resultSet.getInt("book_id"));
+        userDetail.setGenre(resultSet.getString("genre"));
+        userDetail.setMinutes_per_book(resultSet.getInt("minutes_per_book"));
+        userDetail.setTimes_read_total(resultSet.getInt("times_read_total"));
+        return userDetail;
+    }
 
     private LogReadingDTO mapRowToLogReading(SqlRowSet resultSet) {
         LogReadingDTO log = new LogReadingDTO();

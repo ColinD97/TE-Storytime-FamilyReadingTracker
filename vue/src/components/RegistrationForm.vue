@@ -4,9 +4,6 @@
     <div class="title">
       <h1>Create Account<span>Keep track of your kid's reading. Build habits for life.</span></h1>
     </div>
-
-  <button class="btn" v-on:click="showForm= true" v-show="showForm === false">Add New Family Member</button>
-  
   
   <form class="form-register" @submit.prevent="register">
     <h1 class="form-header">New Member Registration:</h1>

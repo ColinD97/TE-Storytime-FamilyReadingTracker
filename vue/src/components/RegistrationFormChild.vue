@@ -158,6 +158,14 @@ export default {
 
                 //query: { registration: 'success' },
               });
+             <v-alert
+              color="blue"
+              dense
+              elevation="9"
+              icon="$mdiAccount"
+              prominent
+              type="success"
+            ></v-alert>
             }
           })
           .catch((error) => {
