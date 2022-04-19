@@ -9,7 +9,7 @@
             <table class="parent">
             <label for="Children"></label>
               <tr>
-                <th class='left-end-top'>Child</th>
+                <th class='left-end-top'>Name</th>
                 <th class='middle'>Books Completed</th>
                 <th class='middle'>Minutes Read</th>
                 <th class='right-end-top'>Current Book</th>

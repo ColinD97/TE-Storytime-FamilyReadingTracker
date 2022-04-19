@@ -106,7 +106,7 @@
     </div>
       <div class="form-footer">
         <button class="btn" type="submit" v-on:click="LogReading">
-        Submit Note
+        Submit
         </button>
       </div>
     </form>

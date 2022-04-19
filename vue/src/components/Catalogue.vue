@@ -1,7 +1,7 @@
 <template>
   <div class="add-book">
     <div class="title">
-    <h1>Catalogue <span>Welcome to your library</span></h1>
+    <h1>Reading History<span>Welcome to your library</span></h1>
     </div>
     <table class="catalogue">
       <thead class="table-header">
@@ -59,16 +59,15 @@ export default {
 }
 .catalogue tr:nth-child(even){background-color: #f2f2f2;}
 
-.catalogue tr:hover {background-color: #ddd;}
-
 .catalogue th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   background-color: #126c7c;
   color: white;
-  
 }
+.catalogue th:hover {background-color: #ddd;}
+
 .left-end{
 border-radius: 8px 3px 3px 8px;
 }
