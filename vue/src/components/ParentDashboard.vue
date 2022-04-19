@@ -31,7 +31,7 @@
         <reading-log v-bind:familyUsers="familyUsersAll" />
         <add-book v-bind:familyUsers="familyUsersAll"/>
         <registration-form-child /> 
-        <user-modal v-show="showModal" @close-modal="showModal = false"/>
+        <!-- <user-modal v-show="showModal" @close-modal="showModal = false"/> -->
       </div> 
     </div>    
   </div>
@@ -42,10 +42,10 @@ import AuthService from "@/services/AuthService";
 import AddBook from './AddBook.vue';
 import RegistrationFormChild from './RegistrationFormChild.vue'
 import ReadingLog from './ReadingLog.vue'
-import UserModal from './UserModal.vue'
+// import UserModal from './UserModal.vue'
 
 export default {
-  components: { AddBook, RegistrationFormChild, ReadingLog, UserModal  },
+  components: { AddBook, RegistrationFormChild, ReadingLog,   },
 // create + data (empty group of users that I will fill with this return request)
   name: 'parent-dashboard-userID',  
   // Reg Note:  If I need to do a PROP, it's here
