@@ -3,7 +3,7 @@
     <div class="title">
     <h1>Reading History<span>Welcome to your library</span></h1>
     </div>
-    <table class="catalogue">
+    <table class="history">
       <thead class="table-header">
         <tr class="header-row">
           <th class='left-end-top'>Title</th>
@@ -28,7 +28,7 @@
 import BookService from "@/services/BookService.js";
 
 export default {
-  name: "Catalogue",
+  name: "History",
   data() {
     return {
       currentUserId: this.$store.state.user.id,
@@ -45,28 +45,28 @@ export default {
 </script>
 
 <style>
-.catalogue {
+.history {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
   justify-content: center;
   font-weight: 100;
 }
-.catalogue td, .catalogue th {
+.history td, .history th {
   border: 1px solid #bbf2fc;
   padding: 10px;
   
 }
-.catalogue tr:nth-child(even){background-color: #f2f2f2;}
+.history tr:nth-child(even){background-color: #f2f2f2;}
 
-.catalogue th {
+.history th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   background-color: #126c7c;
   color: white;
 }
-.catalogue th:hover {background-color: #ddd;}
+.history th:hover {background-color: #ddd;}
 
 .left-end{
 border-radius: 8px 3px 3px 8px;

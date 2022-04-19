@@ -2,7 +2,7 @@
     
 <div>
 
-  <form class="form-add-book" @submit.prevent="register">
+  <form class="form-add-book">
     <h1 class="form-header">Add A Book To Family Collection</h1>
     <div class="form-body">
             <!-- Title and Author -->

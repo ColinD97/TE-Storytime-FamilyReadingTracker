@@ -34,32 +34,32 @@
 </template>
 
 <script>
-import BookService from "@/services/BookService";
+// import BookService from "@/services/BookService";
 
-  export default {
-    name: 'child-modal-userID',  
-  data() {
-    return {
+  // export default {
+  //   name: 'child-modal-userID',  
+  // data() {
+  //   return {
 
-      childData: [] ,
-      showModal: false,
+  //     childData: [] ,
+  //     showModal: false,
 
-    }
-  },
-    computed: {
-    currentUserId: function(){
-      return this.$store.state.user.id
-    }, 
-  },
-  created() {
+  //   }
+  // },
+  //   computed: {
+  //   currentUserId: function(){
+  //     return this.$store.state.user.id
+  //   }, 
+  // },
+  // created() {
    
-    console.log('create idkwhatimdoinglol')
-    BookService.getReadingLog(this.$store.state.user.user_id).then(response => {
-      this.childData = response.data
-    })
-  }
+  //   console.log('create idkwhatimdoinglol')
+  //   BookService.getUserDetail(this.$store.state.user.user_id).then(response => {
+  //     this.childData = response.data
+  //   })
+  // }
     
-}
+
 </script>
 
 <style scoped>

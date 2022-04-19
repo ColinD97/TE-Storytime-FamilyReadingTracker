@@ -50,7 +50,7 @@
             <input
               type="checkbox"
               id="finishedbookcheckbox"
-              v-model="userBook.past_book"
+              v-model="userBook.times_read"
               value="true"
             /><br />
         </div>
@@ -128,9 +128,6 @@ export default {
         minutes_read: "",
         reading_format: "Paper",
         times_read: "",
-        past_book: false,
-        current_book: "true",
-        future_book: "",
         notes: ""
       },
       familyBooks: [],
@@ -139,7 +136,7 @@ export default {
   methods: {
     LogReading() {
       console.log("Checking for userID" + this.userId);
-      if (this.userBook.past_book === true) {
+      if (this.userBook.times_read === true) {
         this.userBook.times_read = 1
       }
       BookService.logReading(this.userBook);
