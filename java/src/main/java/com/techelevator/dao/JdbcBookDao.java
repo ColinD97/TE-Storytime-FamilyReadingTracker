@@ -43,10 +43,7 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public List <Book> getBooksByUserId(int id) {
-//        String sql = "SELECT book_info.book_id, title, author, isbn, difficulty " +
-//                "FROM book_info JOIN users_books ON users_books.book_id = book_info.book_id " +
-//                "JOIN users ON users_books.user_id = users.user_id WHERE family_id = ?;";
-        String sql = "SELECT book_info.book_id, title, author, isbn, difficulty " +
+        String sql = "SELECT DISTINCT book_info.book_id, title, author, isbn, difficulty " +
                 "FROM book_info JOIN users_books ON users_books.book_id = book_info.book_id " +
                 "JOIN users ON users_books.user_id = users.user_id WHERE family_id " +
                 "= (SELECT family_id FROM users WHERE user_id = ?);";
