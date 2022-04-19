@@ -12,14 +12,14 @@
                 <th class='left-end-top'>Child</th>
                 <th class='middle'>Books Completed</th>
                 <th class='middle'>Minutes Read</th>
-                <th class='middle'>Current Book</th>
+                <th class='right-end-top'>Current Book</th>
                 <!-- <th class='right-end-top'>Points Balance</th> -->
               </tr>
               <tr>
                 <td class='left-end'>{{user.first_name}}</td>
                 <td class='middle'>still need</td>
                 <td class='middle'>{{user.totalMinutes}}</td>
-                <td class='middle'>still need</td>
+                <td class='right-end'>still need</td>
                 <!-- <td class='right-end'>{{user.pointsBalance}}</td> -->
               </tr>
             </table> 

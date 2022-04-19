@@ -13,14 +13,14 @@
                 <th class='left-end-top'>Child</th>
                 <th class='middle'>Books Completed</th>
                 <th class='middle'>Minutes Read</th>
-                <th class='middle'>Current Book</th>
+                <th class='right-end-top'>Current Book</th>
                 <!-- <th class='right-end-top'>Points Balance</th> -->
               </tr>
-              <tr v-for="user in familyUsers" :key="user.id">
+              <tr v-for="user in familyUsers" :key="user.id" @click="showModal = true">
                 <td class='left-end'>{{user.first_name}}</td>
                 <td class='middle'>{{user.books_read}}</td>
                 <td class='middle'> {{user.total_minutes_read}}</td>
-                <td class='middle'>still need</td>
+                <td class='right-end'>still need</td>
                 <!-- <td class='right-end'>{{user.points_balance}}</td> -->
               </tr>
             </table> 
@@ -31,6 +31,10 @@
         <reading-log v-bind:familyUsers="familyUsersAll" />
         <add-book v-bind:familyUsers="familyUsersAll"/>
         <registration-form-child /> 
+        <user-modal v-show="showModal" @close-modal="showModal = false"/>
+          <!-- <div class="save-btn">
+            <button @click="showModal = true">Save</button>
+          </div> -->
       </div> 
     </div>    
   </div>
@@ -38,25 +42,23 @@
 
 <script>
 import AuthService from "@/services/AuthService";
-// import BookService from "@/services/BookService";
 import AddBook from './AddBook.vue';
 import RegistrationFormChild from './RegistrationFormChild.vue'
 import ReadingLog from './ReadingLog.vue'
+import UserModal from './UserModal.vue'
 
 export default {
-  components: { AddBook, RegistrationFormChild, ReadingLog },
+  components: { AddBook, RegistrationFormChild, ReadingLog, UserModal  },
 // create + data (empty group of users that I will fill with this return request)
-  name: 'parent-dashboard-userID',          // Spot check this with the team. 
+  name: 'parent-dashboard-userID',  
   // Reg Note:  If I need to do a PROP, it's here
   data() {
     return {
 
       familyUsers: [],
       userData: [],
-      familyUsersAll: []
-
-
-      // 2) Notes for Kai: pass this array into the add book as a prop. inside add a book they can see the family user array coming in as props. use in v-for 
+      familyUsersAll: [] ,
+      showModal: false,
 
     }
   },
@@ -107,6 +109,7 @@ created() {
 .parent td, .parent th {
   border: 1px solid #f3f7f4;
   padding: 8px;
+  
 }
 .parent tr:nth-child(even){background-color: #ffffff;}
 

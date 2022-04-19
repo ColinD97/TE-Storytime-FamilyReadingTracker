@@ -92,6 +92,7 @@ export default {
         author: "",
         isbn: "",
         difficulty: "",
+        genre: "",
       },
       assignToUser: ""
       

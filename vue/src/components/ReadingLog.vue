@@ -133,7 +133,6 @@ export default {
         future_book: "",
         notes: ""
       },
-      // reader: ["Colin", "Nolan", "Reg", "Kai"],
       familyBooks: [],
     };
   },
@@ -149,7 +148,6 @@ export default {
       })
     },
 
-    
   },
 
   created() {
@@ -158,7 +156,6 @@ export default {
       })
     },
  }
-
 </script>
 
 
