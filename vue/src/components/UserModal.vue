@@ -1,32 +1,48 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-overlay" @click="$emit('close-modal')">
-      <div class="modal" @click.stop>
-        <!-- <img src="@/assets/tiger.png" class="cardpic"/> -->
+      <!-- <div class="modal" @click.stop>
         <table class="parent">
-            <label for="Children"></label>
-              <tr>
+            <label for="Children"></label> -->
+            <!-- 
+              prop to be id of kid whose info we need. (look inside add book)
+              inside modal, created call to ask for info from that one kid
+              getuserdetails will be called by created
+              v-bind
+              
+              learn how to use v-model two way link in the v-for
+              v-for loop in homework and when you clicked on info it fed it back out (parent dash)
+
+              from line 32 parentdash <add-book v-bind:userID="familyUsersAll"/> for reference
+            
+              Kids Name
+            author
+            title
+              genre
+            </title> -->
+              <!-- <tr>
                 <th class='left-end-top'>Child</th>
                 <th class='middle'>Books Completed</th>
                 <th class='middle'>Minutes Read</th>
-                <th class='right-end-top'>Current Book</th>
+                <th class='right-end-top'>Current Book</th> -->
                 <!-- <th class='right-end-top'>Points Balance</th> -->
-              </tr>
+              <!-- </tr> -->
                
                <!-- Need to tie all this in to the user that was clicked on -->
                <!-- Using user-book table and info from Reg's table -->
-              <tr v-for="user in familyUsers" :key="user.id">
+              <!-- <tr v-for="user in familyUsers" :key="user.id">  
+                userId
                 <td class='left-end'>{{user.first_name}}</td> 
                 <td class='middle'>{{user.books_read}}</td>
                 <td class='middle'> {{user.total_minutes_read}}</td>
                 <td class='right-end'>still need</td>
                 <td class='right-end'>{{user.points_balance}}</td>
               </tr>
-            </table> 
-      </div>
+            </table>  -->
+      <!-- </div>
       <div class="close" @click="$emit('close-modal')">
         <img class="close-img" src="src\assets\booklog.png" alt="" />
-      </div>
+      </div> -->
       
     </div>
   </transition>
@@ -52,7 +68,6 @@ import BookService from "@/services/BookService";
     }, 
   },
   created() {
-   
     console.log('create idkwhatimdoinglol')
     BookService.getUserDetail(this.$store.state.user.user_id).then(response => {
       this.childData = response.data
@@ -106,7 +121,6 @@ h6 {
   margin: 20px 0;
 }
 p {
-  /* font-weight: 500; */
   font-size: 16px;
   margin: 20px 0;
 }

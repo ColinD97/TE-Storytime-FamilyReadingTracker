@@ -32,9 +32,6 @@
         <add-book v-bind:familyUsers="familyUsersAll"/>
         <registration-form-child /> 
         <user-modal v-show="showModal" @close-modal="showModal = false"/>
-          <!-- <div class="save-btn">
-            <button @click="showModal = true">Save</button>
-          </div> -->
       </div> 
     </div>    
   </div>
