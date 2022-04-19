@@ -18,15 +18,6 @@ export default {
         return axios.post(`/bookshelf/${userId}`, book)
     },
 
-//For later
-    updateBook(user, book) {
-        return axios.put(`/bookshelf/${user}`, book);
-    },
-
-    deleteBooks(user) {
-        return axios.delete(`/bookshelf/${user}`)
-
-    },
 
 // Reg Note:  Start of implementation of ReadingLog.vue code.  
 

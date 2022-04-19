@@ -3,10 +3,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.BookDao;
 import com.techelevator.dao.UserDao;
-import com.techelevator.model.Book;
-import com.techelevator.model.LogReadingDTO;
-import com.techelevator.model.UserBook;
-import com.techelevator.model.UserIdDTO;
+import com.techelevator.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -83,6 +80,12 @@ public class BookController {
     @RequestMapping(value = "/readinglog/books/{id}", method = RequestMethod.GET)
     public List<Book> getBooksByFamily(@PathVariable String id) {
         return bookDao.getBooksByFamilyId(id);
+    }
+
+    @RequestMapping(value = "/user/dashboard/detail/${id}", method = RequestMethod.GET)
+    public List<UserDetailDTO> getUserDetail(@PathVariable String id) {
+        long detail_id = Long.parseLong(id);
+        return bookDao.getUserDetails(detail_id);
     }
 
 }

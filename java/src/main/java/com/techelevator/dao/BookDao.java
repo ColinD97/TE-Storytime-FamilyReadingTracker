@@ -3,6 +3,7 @@ package com.techelevator.dao;
 import com.techelevator.model.Book;
 import com.techelevator.model.LogReadingDTO;
 import com.techelevator.model.UserBook;
+import com.techelevator.model.UserDetailDTO;
 
 import java.util.List;
 
@@ -23,5 +24,7 @@ public interface BookDao {
     List <LogReadingDTO> getFamilyUserBooks(int id);
 
     List<Book> getBooksByFamilyId(String familyId);
+
+    List<UserDetailDTO> getUserDetails(long detail_id);
 
 }
