@@ -1,5 +1,8 @@
 package com.techelevator.model;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 public class LogReadingDTO {
 
     private Long user_id;
@@ -7,10 +10,9 @@ public class LogReadingDTO {
     private int minutes_read;
     private String reading_format;
     private int times_read;
-    private boolean past_book;
-    private boolean current_book;
-    private boolean future_book;
-    private String notes;
+    private String review;
+    private LocalDateTime date_logged;
+    private int session_points;
 
     public Long getUser_id() {
         return user_id;
@@ -52,36 +54,31 @@ public class LogReadingDTO {
         this.times_read = times_read;
     }
 
-    public boolean isPast_book() {
-        return past_book;
+    public String getReview() {
+        return review;
     }
 
-    public void setPast_book(boolean past_book) {
-        this.past_book = past_book;
+    public void setReview(String review) {
+        this.review = review;
     }
 
-    public boolean isCurrent_book() {
-        return current_book;
+    public LocalDateTime getDate_logged() {
+        return date_logged;
     }
 
-    public void setCurrent_book(boolean current_book) {
-        this.current_book = current_book;
+    public void setDate_logged(LocalDateTime date_logged) {
+        this.date_logged = date_logged;
     }
 
-    public boolean isFuture_book() {
-        return future_book;
+    public void setDate_logged(Timestamp date_logged) {
+        this.date_logged = date_logged.toLocalDateTime();
     }
 
-    public void setFuture_book(boolean future_book) {
-        this.future_book = future_book;
+    public int getSession_points() {
+        return session_points;
     }
 
-    public String getNotes() {
-        return notes;
+    public void setSession_points(int session_points) {
+        this.session_points = session_points;
     }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
 }

@@ -1,16 +1,5 @@
 <template>
   <div class="reading-log">
-    <!-- 
-  READER: Visual implementation pass working.  Temp data in just to show.  Doing Javascript and hooks next
-    --NOTE:  Changed from BUTTONS to SELECT LIST per Mary HIGHLY,HIGHLY recommending this instead of buttons
-  BOOK:  Visual implementation pass working.  Temp data in just to show. Doing Javascript and hooks next
-  FORMAT:  Visual implementation and options done and ready for KAI phase.  The options are a FIXED list.  Need to do JS and hooks next.
-  MINUTES READ:  Visual implementation pass working.  Doing JS and hooks next
-  FINISHED BOOK?:  Visual implementation of it working.  Checkbox is check and uncheckable.  Need to do JS and hooks next
-  NOTES:  Visual implementation pass working.  Was made so when the box is filled a scrollbar appears.  Need to do JS and hooks next
-  SUBMIT BUTTON:  Submit button visual implementation pass working.  Need to do the JS and hooks next.
- -->
-
   <div>
     <form class="form-reading-log">
       <h1 class="form-header">Log Reading</h1>
@@ -42,7 +31,7 @@
             
             
             <div v-else>
-              <label class="label-title" for="readers">{{user.first_name}}</label>
+              <p class="label-title" for="readers">{{this.$.store.state.user.first_name}}</p>
             </div>
           
           </div>
@@ -126,7 +115,6 @@
 </template>
 
 <script>
-import AuthService from "@/services/AuthService";
 import BookService from "@/services/BookService.js";
 
 export default {
@@ -163,22 +151,15 @@ export default {
       this.familyBooks = response.data;
       })
     },
-    // COLIN *** added computed stuff here that I copied from dashboardview where you used it to v:if between parent/child roles
-    computed: {
-    currentUserId: function () {
-      return this.$store.state.user.id;
-    },
-    currentRole: function () {
-      AuthService
-      return this.$store.state.user.authorities[0].name;
-    },
-    isParent: function () {
-      if (this.$store.state.user.authorities[0].name == "ROLE_PARENT") {
-        return true;
-      } else {
-        return false;
-      }
-    },
+  
+  computed: {
+  isParent: function () {
+    if (this.$store.state.user.authorities[0].name == "ROLE_PARENT") {
+      return true;
+    } else {
+      return false;
+    }
+  },
   },
  }
 </script>

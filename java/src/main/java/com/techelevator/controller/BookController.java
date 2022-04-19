@@ -54,7 +54,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/bookshelf/{id}", method = RequestMethod.GET)
-    public List<UserBook> getBooksByUser(@PathVariable long id) {
+    public List<Book> getBooksByUser(@PathVariable int id) {
         return bookDao.getBooksByUserId(id);
     }
 

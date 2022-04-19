@@ -143,6 +143,16 @@ export default {
           .registerFamilyUser(this.user, this.currentUserId)
           .then((response) => {
             if (response.status == 201) {
+              alert('Child account created!  Hurray for our side!'),
+              this.user = {
+                first_name: '',
+                last_name: '',
+                email: '',
+                username: '',
+                password: '',
+                confirmPassword: '',
+                role: 'child',
+              },  
              <v-alert
               color="blue"
               dense

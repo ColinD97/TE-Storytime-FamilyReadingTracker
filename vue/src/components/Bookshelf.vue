@@ -1,5 +1,11 @@
 <template>
 <div class="book-shelf">
+  <v-layout row class="mb-3">
+    <v-btn class="btn" small flat color="grey" @click="sortBy('title')">By Title</v-btn>
+    <v-btn class="btn" small flat color="grey" @click="sortBy('author')">By Author</v-btn>
+    <v-btn class="btn" small flat color="grey" @click="sortBy('genre')">By Genre</v-btn>
+    <v-btn class="btn" small flat color="grey" @click="sortBy('difficulty')">By Difficulty</v-btn>
+  </v-layout>
   <book-card v-for="book in this.books" v-bind:key="book.id" v-bind:book="book"/>  
 </div>
 </template>
@@ -13,7 +19,7 @@ export default {
   name: "Bookshelf",
   data() {
     return {
-      currentUserId: this.$store.state.user.id,
+      currentFamilyId: this.$store.state.user.family_id,
       books: [],
     };
   },
@@ -21,8 +27,15 @@ export default {
     BookCard
     
   },
+
+    methods: {
+    sortBy(property){
+      this.books.sort((a,b) => a[property] < b[property] ? -1 : 1)
+    }
+  },
+
   created() {
-    BookService.getBooks(this.currentUserId).then((response) => {
+    BookService.getBooks(this.currentFamilyId).then((response) => {
       this.books = response.data;
     });
   },

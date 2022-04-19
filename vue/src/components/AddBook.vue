@@ -105,7 +105,15 @@ export default {
       // Assign to family ID
         .addBook(this.assignToUser, this.book)
         .then(response => {
-          if (response.status === 201) {
+          if (response.status === 201) {              
+              this.book = {
+                title: '',
+                author: '',
+                isbn: '',
+                difficulty: '',
+                genre: '',       
+              },
+            alert('AddBook sucessful!  Hurray for our side!'),
             this.$router.push({path: '/'});
           }
         })
