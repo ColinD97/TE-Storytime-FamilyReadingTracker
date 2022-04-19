@@ -5,6 +5,7 @@ import com.techelevator.dao.BookDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,6 +46,7 @@ public class BookController {
          */
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path="/bookshelf/{id}", method = RequestMethod.POST)
     public Book createBook(@RequestBody Book book, @PathVariable String id){
         long readerId = Long.parseLong(id);
@@ -61,6 +63,7 @@ public class BookController {
         return bookDao.getAllBooks();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value="/readinglog", method = RequestMethod.POST)
     public boolean createLogEntry(@RequestBody LogReadingDTO entry) {
         return bookDao.createLogEntry(entry);
