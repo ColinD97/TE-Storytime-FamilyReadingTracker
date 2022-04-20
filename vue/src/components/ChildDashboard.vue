@@ -91,11 +91,9 @@ export default {
 .parent tr:nth-child(even) {
   background-color: #ffffff;
 }
-
 .parent tr:hover {
   background-color: #d1e6d6;
 }
-
 .parent th {
   padding-top: 12px;
   padding-bottom: 12px;

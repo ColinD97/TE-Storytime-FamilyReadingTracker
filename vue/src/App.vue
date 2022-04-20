@@ -230,19 +230,18 @@ body{
     height: 160px;
 }
 .form-add-book .form-body {
-    margin: 30px;
+    margin: 20px;
     height: 100px;
 }
 .form-reading-log .form-body{
-  margin: 30px;
-    height: 100px;
+  margin: 10px;
+    height: 150px;
 }
 .form-body {
     margin: 10px;
     padding: 10px;
     height: 40px;
 }
-
 .form-group {
     margin-bottom: 35px;
 }
@@ -387,8 +386,10 @@ body{
     box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
 }
 
-Drop down boxes
 
+/*---------------------------------------*/
+/* Disorganized chaos*/
+/*---------------------------------------*/
 .drop-down{
   margin-left: 10px;
 }

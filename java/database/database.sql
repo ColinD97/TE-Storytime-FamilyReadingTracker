@@ -63,24 +63,24 @@ VALUES
 
 INSERT INTO book_info (title, author, isbn, difficulty, genre)
 VALUES
-	('How to Play Your Best Golf All the Time', 'Tommy Armour', 9780684813790, 5, 'reference'),
-	('The Rainbow Fish', 'J Alison James', 1558580093, 1, 'early-reader'),
-	('1984', 'George Orwell', 9780140009729, 5, 'classic'),
-	('The Boy Who Loved Math', 'Deborah Heiligman', 9781596433076, 4, 'early reader'),
-	('Macbeth', 'William Shakespeare', 9780333419991, 5, 'classic'),
-	('If You Give a Mouse a Cookie', 'Felicia Bond', 9780064434096, 2, 'early reader'),
-	('Inside Out & Back Again', 'Thanhha Lai', 9780545508971, 3, 'young adult'),
-	('Where the Wild Things Are', 'Maurice Sendak', 9780064431781, 2, 'early reader'),
-	('The Giver', 'Louis Lowry', 9780395645666, 4, 'young adult'),
-	('Charlotte''s Web', 'Jennifer Frantz', 9780060882846, 3, 'early reader' ),
-	('Atlas of Adventures: Wonders of the World', 'Ben Handicott', 9781786033444, 3, 'reference'),
-	('The Very Hungry Caterpillar', 'Eric Carle', 9780399226908, 1, 'early reader'),
-	('Strictly No Elephants', 'Taeeun Yoo', 9781481416474, 2, 'early reader'),
-	('Harry Potter and the Deathly Hollows', 'J. K. Rowling', 9780545139700, 5, 'young adult'),
-	('Fancy Nancy: Poet Extraordinaire!', 'Jane O''Connor', 9780061896439, 3, 'early reader'),
-	('An Illustrated Book of Bad Arguments', 'Ali Almossawi', 9780989931205, 5, 'reference'),
-	('We Are Grateful: Otsaliheliga', 'Traci Sorell', 9781580897723, 3, 'non-fiction'),
-	('Native Homes', 'Bobbie Kalman', 9780778703716, 4, 'non-fiction');
+	('How to Play Your Best Golf All the Time', 'Tommy Armour', 9780684813790, 5, 'Reference'),
+	('The Rainbow Fish', 'J Alison James', 1558580093, 1, 'Early Reader'),
+	('1984', 'George Orwell', 9780140009729, 5, 'Classic'),
+	('The Boy Who Loved Math', 'Deborah Heiligman', 9781596433076, 4, 'Early Reader'),
+	('Macbeth', 'William Shakespeare', 9780333419991, 5, 'Classic'),
+	('If You Give a Mouse a Cookie', 'Felicia Bond', 9780064434096, 2, 'Early Reader'),
+	('Inside Out & Back Again', 'Thanhha Lai', 9780545508971, 3, 'Young Adult'),
+	('Where the Wild Things Are', 'Maurice Sendak', 9780064431781, 2, 'Early Reader'),
+	('The Giver', 'Louis Lowry', 9780395645666, 4, 'Young Adult'),
+	('Charlotte''s Web', 'Jennifer Frantz', 9780060882846, 3, 'Early Reader' ),
+	('Atlas of Adventures: Wonders of the World', 'Ben Handicott', 9781786033444, 3, 'Reference'),
+	('The Very Hungry Caterpillar', 'Eric Carle', 9780399226908, 1, 'Early Reader'),
+	('Strictly No Elephants', 'Taeeun Yoo', 9781481416474, 2, 'Early Reader'),
+	('Harry Potter and the Deathly Hollows', 'J. K. Rowling', 9780545139700, 5, 'Young Adult'),
+	('Fancy Nancy: Poet Extraordinaire!', 'Jane O''Connor', 9780061896439, 3, 'Early Reader'),
+	('An Illustrated Book of Bad Arguments', 'Ali Almossawi', 9780989931205, 5, 'Reference'),
+	('We Are Grateful: Otsaliheliga', 'Traci Sorell', 9781580897723, 3, 'Non-Fiction'),
+	('Native Homes', 'Bobbie Kalman', 9780778703716, 4, 'Non-Fiction');
 
 
 INSERT INTO users_books (user_id, book_id, minutes_read, reading_format, times_read, review, date_logged, session_points)

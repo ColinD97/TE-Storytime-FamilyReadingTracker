@@ -2,19 +2,19 @@
   <transition name="modal-fade">
     <div class="modal-overlay" @click="$emit('close-modal')">
       <div class="modal" @click.stop>
-        <div class="title">
+        <div class="modal-title">
           <h1> Reading details for: </h1>
         </div>
-        <table class="parent">
+        <table class="modal-parent">
             <label for="Children"></label>
 
-              <tr>
-                <th class='left-end-top'>Title</th>
-                <th class='middle'>Author</th>
-                <th class='middle'>Genre</th>
-                <th class='right-end-top'>Minutes</th>
-                <th class='right-end-top'>Times Read</th>
-                <th class='right-end-top'>Date</th>
+              <tr class='modal-table-header'>
+                <th class='left-end-top' id='header'>Title</th>
+                <th class='middle' id='header'>Author</th>
+                <th class='middle' id='header'>Genre</th>
+                <th class='right-end-top' id='header'>Minutes</th>
+                <th class='right-end-top' id='header'>Times Read</th>
+                <th class='right-end-top' id='header'>Date</th>
               </tr>
 
               <tr v-for="booklog in childData" :key="booklog.index">  
@@ -68,6 +68,19 @@ import BookService from "@/services/BookService";
 </script>
 
 <style scoped>
+.modal-title{
+  margin-top:15px;
+  margin-bottom: 15px;
+  text-align:center; 
+  font-size:26px; 
+  text-transform:uppercase; 
+  color:#222; 
+  letter-spacing:1px;
+  font-family: 'Bubblegum Sans', cursive;
+    /* Shadows are visible under slightly transparent text color */
+    color: rgba(7, 50, 61, 0.85);
+    text-shadow: 1px 2px 4px #eef1f1, 0 0 0 #000, 1px 2px 3px #183c41;
+}
 
 .modal-overlay {
   position: fixed;
@@ -80,7 +93,7 @@ import BookService from "@/services/BookService";
   background-color: #000000da;
 }
 .modal {
-  text-align: center;
+  text-align: left;
   background-color: #d9f5dd;
   height: 570px;
   width: 1200px;
@@ -88,6 +101,7 @@ import BookService from "@/services/BookService";
   padding: 0px 0;
   border-radius: 5px;
   overflow: scroll;
+   overflow-x: hidden;
 }
 .close {
   margin: 10% 0 0 16px;
@@ -103,5 +117,29 @@ import BookService from "@/services/BookService";
 .modal-fade-enter-active,
 .modal-fade-leave-active {
   transition: opacity 0.5s ease;
+}
+.modal-parent {
+  padding-top: 20px;
+  float: left;
+  width: 100%;
+  justify-content: left;
+}
+.modal-parent td, .parent th {
+  border: 1px solid #f3f7f4;
+  padding: 8px; 
+}
+.modal-parent tr:nth-child(even){background-color: #ffffff;}
+
+.modal-parent tr:hover {background-color: #d1e6d6}
+
+.modal-parent th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #126c7c;
+  color: #f2f7f3;
+}
+#header{
+  padding-left: 9px;
 }
 </style>

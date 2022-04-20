@@ -155,58 +155,6 @@ export default {
     background-color: #157788;
     color: white;
 }
-/*---------------------------------------*/
-/* Drop-Down Menu */
-/*---------------------------------------*/
-/* .form-header{
-  font-size: 30px;
-} */
-.form-footer .custom-select {
-  width: 200px;
-}
-.form-footer .select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
 
-/* Point the arrow upwards when the select box is open (active): */
-.form-footer .select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-/* style the items (options), including the selected item: */
-.form-footer .select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-}
-
-/* Style items (options): */
-.form-footer .select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/* Hide the items when the select box is closed: */
-.form-footer .select-hide {
-  display: none;
-}
-
-.form-footer .select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
 
 </style>

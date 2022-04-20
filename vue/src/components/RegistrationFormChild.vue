@@ -91,7 +91,7 @@
                             />
                         </div>
                         <div class="form-group right">
-                          <input type="checkbox" id="isParent" name="isParent" value="isParent">
+                          <input type="checkbox" class="isParent" name="isParent" value="isParent">
                           <label for="isParent">Add as additional parent? </label>
                         </div>
                 </div>
@@ -182,14 +182,12 @@ export default {
 </script>
 
 <style>
-#isParent{
+.isParent{
   margin: 10px;
-  margin-left: 20%;
-  color: #157788;
-  font-size: 22px;
+  margin-left: 10%;
+  font-size: 18px;
   font-weight: bold;
-  padding-right: 20px; 
-  
+  padding-right: 18px; 
 }
 
 

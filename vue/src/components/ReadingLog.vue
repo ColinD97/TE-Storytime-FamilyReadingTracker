@@ -19,14 +19,15 @@
                     required
                     autofocus
                   >
-                    <option disabled hidden value="">Pick a Reader</option>
-                    <option
+                    <option class='links' disabled hidden value="">Pick a Reader</option>
+                    <option class='links'
                       v-for="user in familyUsers"
                       v-bind:key="user.index"
                       :value="user.id"
                     >
                       {{ user.first_name }}
-                    </option></select
+                    </option>
+                    </select
                   ><br />
                 </div>
 
@@ -37,68 +38,18 @@
                 </div>
               </div>
               <div class="split-form-two-group-left">
-                <label for="MinutesRead" class="label-title"
-                  >Minutes Read</label
-                >
-                <input
-                  type="text"
-                  id="minutesread"
-                  name="MinutesRead"
-                  v-model="userBook.minutes_read"
-                />
-              </div>
-            </div>
-            <div class="form-group-narrow right">
-              <label for="FinishedBookCheckbox" class="label-title"
-                >Finished Book?</label
-              >
-              <input
-                type="checkbox"
-                id="finishedbookcheckbox"
-                v-model="userBook.times_read"
-                value="true"
-              /><br />
-            </div>
-          </div>
-          <!-- Format, Minutes Read, Notes-->
-          <div class="horizontal-group">
-            <div class="form-group-wide left">
-              <div class="split-form-one-group-left">
-                <label for="BookFormat" class="label-title">Format</label>
-                <select
-                  class="drop-down"
-                  name="BookFormat"
-                  id="bookformat"
-                  v-model="userBook.reading_format"
-                  autofocus
-                >
-                  <option disabled hidden value="">Pick Book Format</option>
-                  <option selected value="Paper">Paper</option>
-                  <option value="Digital">Digital</option>
-                  <option value="Audiobook">Audiobook</option>
-                  <option value="ReadAloudReader">Read-Aloud (Reader)</option>
-                  <option value="ReadAloudListener">
-                    Read-Aloud (Listener)
-                  </option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="split-form-two-group-left">
                 <label for="assignedBooks" class="label-title">Book</label>
                 <select
                   class="drop-down"
                   name="book"
                   id="assignedbooks"
                   v-model="userBook.book_id"
-                  autofocus
-                >
-                  <option disabled hidden value="">Pick a Book</option>
-                  <option
+                  autofocus>
+                  <option class='links' disabled hidden value="">Pick a Book</option>
+                  <option class='links'
                     v-for="book in familyBooks"
                     v-bind:key="book.index"
-                    :value="book.book_id"
-                  >
+                    :value="book.book_id">
                     {{ book.title }}
                   </option>
                 </select>
@@ -110,14 +61,61 @@
               <textarea
                 id="childreadingnotes"
                 name="ChildReadingNotes"
-                rows="4"
-                cols="40"
+                rows= "6"
+                cols="35"
                 v-model="userBook.notes"
               /><br />
             </div>
           </div>
+          <!-- Format, Minutes Read, Notes-->
+          <div class="horizontal-group">
+            <div class="form-group-wide left">
+              <div class="split-form-one-group-left">
+                <label for="MinutesRead" class="label-title"
+                  >Minutes Read</label
+                >
+                <input
+                  type="text"
+                  id="minutesread"
+                  name="MinutesRead"
+                  v-model="userBook.minutes_read"
+                />
+              </div>
+
+              <div class="split-form-two-group-left">
+                <label for="BookFormat" class="label-title">Format</label>
+                <select
+                  class="drop-down"
+                  name="BookFormat"
+                  id="bookformat"
+                  v-model="userBook.reading_format"
+                  autofocus
+                >
+                  <option class='links' disabled hidden value="">Pick Book Format</option>
+                  <option class='links' selected value="Paper">Paper</option>
+                  <option class='links' value="Digital">Digital</option>
+                  <option class='links' value="Audiobook">Audiobook</option>
+                  <option class='links' value="ReadAloudReader">Read-Aloud (Reader)</option>
+                  <option class='links' value="ReadAloudListener">
+                    Read-Aloud (Listener)
+                  </option>
+                  <option class='links' value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group-narrow right">
+              
+            </div>
+          </div>
         </div>
         <div class="form-footer">
+           <label for="FinishedBookCheckbox" class="label-title">Finished Book?</label>
+              <input
+                type="checkbox"
+                id="finishedbookcheckbox"
+                v-model="userBook.times_read"
+                value="true"
+              />
           <button class="btn" type="submit" v-on:click="LogReading">
             Submit
           </button>
@@ -183,26 +181,43 @@ export default {
 
 
 <style>
-#readers {
-  width: 125px;
-  margin-bottom: 15px;
-  margin-top: 2px;
+.drop-down{
+  border: 2px;
+  background: #ffffff;
+  outline: 3px;
+  color: #222222;
+  font-family: 'League Spartan', sans-serif;
+  text-align: left;
+  margin-top: 8px;
+  padding: 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
 }
-
+select {
+  line-height: 2px;
+}
+option{
+  min-height: 1.4em;
+  padding: 1px 3px 2px;
+}
+#readers {
+  width: 165px;
+  margin-bottom: 15px;
+}
 #minutesread {
-  margin-top: 2px;
-  margin-bottom: 25px;
-  width: 80px;
+  margin-top: 16px;
+  width: 170px;
+
 }
 
 #assignedbooks {
-  margin-top: 30px;
-  width: 150px;
+  width: 170px;
 }
 
 #bookformat {
-  margin-top: 30px;
   width: 140px;
+  margin-top: 16px;
+  width: 170px;
 }
 
 .label-kid{
