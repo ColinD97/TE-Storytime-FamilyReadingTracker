@@ -129,16 +129,36 @@ public class JdbcBookDao implements BookDao{
     }
 
     @Override
-    public List<LogReadingDTO> getReadingLog(long user_id) {
-        String sql = "SELECT * FROM users_books LEFT JOIN users " +
-                "ON users_books.user_id = users.user_id WHERE family_id " +
-                "= (SELECT family_id WHERE users.user_id = ?) ORDER BY date_logged DESC;";
+    public List<UserHistoryDTO> getReadingLog(long user_id) {
+//        String sql = "SELECT * FROM users_books LEFT JOIN users " +
+//                "ON users_books.user_id = users.user_id WHERE family_id " +
+//                "= (SELECT family_id WHERE users.user_id = ?) ORDER BY date_logged DESC;";
+        String sql = "SELECT users.user_id, first_name, title, author, genre, reading_format, minutes_read, times_read as finished_book, review, session_points, date_logged \n" +
+                "FROM users_books LEFT JOIN users ON users_books.user_id = users.user_id \n" +
+                "JOIN book_info ON users_books.book_id = book_info.book_id \n" +
+                "WHERE family_id= (SELECT family_id FROM users WHERE users.user_id = ?) ORDER BY date_logged DESC;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, user_id);
-        List <LogReadingDTO> results = new ArrayList<>();
+        List <UserHistoryDTO> results = new ArrayList<>();
         while (resultSet.next()) {
-            results.add(mapRowToLogReading(resultSet));
+            results.add(mapRowToUserHistory(resultSet));
         }
         return results;
+    }
+
+    private UserHistoryDTO mapRowToUserHistory(SqlRowSet resultSet){
+        UserHistoryDTO history = new UserHistoryDTO();
+        history.setUser_id(resultSet.getLong("user_id"));
+        history.setFirst_name(resultSet.getString("first_name"));
+        history.setTitle(resultSet.getString("title"));
+        history.setAuthor(resultSet.getString("author"));
+        history.setGenre(resultSet.getString("genre"));
+        history.setFormat(resultSet.getString("reading_format"));
+        history.setMinutes_read(resultSet.getInt("minutes_read"));
+        history.setFinished_book(resultSet.getString("finished_book"));
+        history.setReview(resultSet.getString("review"));
+        history.setSession_points(resultSet.getInt("session_points"));
+        history.setDate_logged(resultSet.getTimestamp("date_logged").toLocalDateTime());
+        return history;
     }
 
     private UserDetailDTO mapRowToUserDetail(SqlRowSet resultSet) {

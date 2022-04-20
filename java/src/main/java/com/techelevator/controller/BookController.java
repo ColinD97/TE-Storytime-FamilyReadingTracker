@@ -92,7 +92,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/readinglog/{id}", method = RequestMethod.GET)
-    public List <LogReadingDTO> getReadingLog(@PathVariable String id) {
+    public List <UserHistoryDTO> getReadingLog(@PathVariable String id) {
         long detail_id = Long.parseLong(id);
         return bookDao.getReadingLog(detail_id);
     }
