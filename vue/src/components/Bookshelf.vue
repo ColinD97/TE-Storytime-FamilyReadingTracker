@@ -1,12 +1,12 @@
 <template>
 <div>
     <div class='buttons'>
-    <v-layout row class="mb-3">
-      <v-btn class="btn"  @click="sortBy('title')">By Title</v-btn>
-      <v-btn class="btn"  @click="sortBy('author')">By Author</v-btn>
-      <v-btn class="btn"  @click="sortBy('genre')">By Genre</v-btn>
-      <v-btn class="btn"  @click="sortBy('difficulty')">By Difficulty</v-btn>
-    </v-layout >
+    <div row class="mb-3">
+      <button class="btn"  @click="sortBy('title')">By Title</button>
+      <button class="btn"  @click="sortBy('author')">By Author</button>
+      <button class="btn"  @click="sortBy('genre')">By Genre</button>
+      <button class="btn"  @click="sortBy('difficulty')">By Difficulty</button>
+    </div >
     </div>
   
   <div class="book-shelf">
