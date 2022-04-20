@@ -46,19 +46,25 @@
                     </div>
                     <div class="form-group right">
                     <label for="difficulty" class="label-title">Difficulty</label>
-                    <input
-                        type="text"
+                    <select
+                        class="drop-down"
+                        name="difficulty"
                         id="difficulty"
-                        class="form-input"
-                        placeholder="1 through 5"
                         v-model="book.difficulty"
                         autofocus
-                    />
+                    >
+                      <option disabled hidden value="">Pick Difficulty</option>
+                      <option selected value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
                     </div>
                 </div>
             </div>
               <div class="form-footer">
-                <button class="btn" type="submit" v-on:click="addBook" >
+                <button class="btn" type="submit" v-on:click="addBook" @click="checkISBNstr('isbn')">
                 Add Book
                 </button>
                   <!-- <div class="custom-select" style="width:350px;" id='dropdown'>
@@ -119,8 +125,15 @@ export default {
         })
     },
     
-  }
-};
+  },
+//     isbnStrLengthCheck() {
+//       if (this.book.isbn != /([0-9]){13}/g) {
+
+//       }
+     
+// },
+}
+
 
 </script>
 
