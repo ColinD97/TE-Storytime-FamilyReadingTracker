@@ -65,7 +65,7 @@ public class BookController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value="/readinglog", method = RequestMethod.POST)
-    public boolean createLogEntry(@RequestBody LogReadingDTO entry) {
+    public boolean createLogEntry(@RequestBody CreateLogReadingDTO entry) {
         return bookDao.createLogEntry(entry);
     }
 

@@ -56,14 +56,14 @@
               </div>
             </div>
             <div class="form-group-narrow right">
-              <label for="ChildReadingNotes" class="label-title">Notes</label
+              <label for="ChildReadingReview" class="label-title">Review</label
               ><br />
               <textarea
-                id="childreadingnotes"
-                name="ChildReadingNotes"
+                id="childreadingreview"
+                name="ChildReadingReview"
                 rows= "6"
                 cols="35"
-                v-model="userBook.notes"
+                v-model="userBook.review"
               /><br />
             </div>
           </div>
@@ -139,7 +139,8 @@ export default {
         minutes_read: "",
         reading_format: "Paper",
         times_read: "",
-        notes: "",
+        review: "",
+        session_points: 0
       },
       familyBooks: [],
       currentUser: this.$store.state.user,

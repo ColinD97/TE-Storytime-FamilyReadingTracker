@@ -68,13 +68,14 @@ public class JdbcBookDao implements BookDao{
     }
 
     @Override
-    public boolean createLogEntry(LogReadingDTO entry) {
+    public boolean createLogEntry(CreateLogReadingDTO entry) {
         String sql = "INSERT INTO users_books (user_id, book_id, minutes_read, " +
                 "reading_format, times_read, review, date_logged, session_points)" +
                 " VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+        LocalDateTime currentDate = LocalDateTime.now();
         int value = jdbcTemplate.update(sql, entry.getUser_id(),
                 entry.getBook_id(), entry.getMinutes_read(), entry.getReading_format(),
-                entry.getTimes_read(), entry.getReview(), entry.getDate_logged(), entry.getSession_points());
+                entry.getTimes_read(), entry.getReview(), currentDate, entry.getSession_points());
         return (value == 1);
     }
 
