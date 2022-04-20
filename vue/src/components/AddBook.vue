@@ -110,36 +110,51 @@ export default {
         difficulty: "",
         genre: "",
       },
-      assignToUser: "",
+      assignToUser: 1,
       isbnErrors: false,
       isbnErrorMsg: 'ISBN needs to be a 13 digit number.',
       
     };
   },
   methods: {
+    // addBook() {
+    //   if (this.book.isbn !== (/([0-9]){13}/g)) {
+    //     this.isbnErrors = true;
+    //     this.isbnErrorMsg = 'ISBN needs to be a 13 digit number.';
+    //   } else {
+    //   console.log('add book'+ this.book)
+    //   BookService
+    //   // Assign to family ID
+    //     .addBook(this.assignToUser, this.book)
+    //     .then(response => {
+    //       if (response.status === 201) {              
+    //           this.book = {
+    //             title: '',
+    //             author: '',
+    //             isbn: '',
+    //             difficulty: '',
+    //             genre: '',       
+    //           },
+    //         alert('AddBook successful!  Hurray for our side!'),
+    //         this.$router.push({path: '/'});
+    //       }
+    //     })
+    //   }
+    // }
     addBook() {
-      if (this.book.isbn !== (/([0-9]){13}/g)) {
-        this.isbnErrors = true;
-        this.isbnErrorMsg = 'ISBN needs to be a 13 digit number.';
-      } else {
-      console.log('add book'+ this.book)
-      BookService
-      // Assign to family ID
-        .addBook(this.assignToUser, this.book)
-        .then(response => {
-          if (response.status === 201) {              
-              this.book = {
-                title: '',
-                author: '',
-                isbn: '',
-                difficulty: '',
-                genre: '',       
-              },
-            alert('AddBook successful!  Hurray for our side!'),
-            this.$router.push({path: '/'});
-          }
-        })
-      }
+      BookService.addBook(this.assignToUser, this.book)
+      .then(response => {
+        if (response.status === 201) {              
+          this.book = {
+            title: '',
+            author: '',
+            isbn: '',
+            difficulty: '',
+            genre: '',       
+          },
+          alert('AddBook successful!  Hurray for our side!')
+        }
+      })
     }
   }
 }
@@ -152,19 +167,17 @@ export default {
 /* Buttons */
 /*---------------------------------------*/
 .btn-body {
-    display: inline-block;
-    padding: 10px 10px;
-    background-color: #1ca3dc;
-    font-size: 17px;
-    border: none;
-    border-radius: 5px;
-    color: #bcf5e7;
-    cursor: pointer;
+  display: inline-block;
+  padding: 10px 10px;
+  background-color: #1ca3dc;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  color: #bcf5e7;
+  cursor: pointer;
 }
 .btn-body:hover {
-    background-color: #157788;
-    color: white;
+  background-color: #157788;
+  color: white;
 }
-
-
 </style>
