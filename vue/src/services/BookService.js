@@ -22,7 +22,7 @@ export default {
 // Reg Note:  Start of implementation of ReadingLog.vue code.  
 
    logReading(userBook) {
-        return axios.post('/readinglog/', userBook)
+        return axios.post('/readinglog', userBook)
     },
 
     getReadingLog(userId) {
