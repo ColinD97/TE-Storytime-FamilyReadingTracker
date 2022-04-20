@@ -56,11 +56,11 @@
                         autofocus
                     >
                       <option disabled hidden value="">Select</option>
-                      <option selected value="1">Early Reader</option>
-                      <option value="2">Classic</option>
-                      <option value="3">Young Adult</option>
-                      <option value="4">Reference</option>
-                      <option value="5">Non-Fiction</option>
+                      <option selected value="Early Reader">Early Reader</option>
+                      <option value="Classic">Classic</option>
+                      <option value="Young Adult">Young Adult</option>
+                      <option value="Reference">Reference</option>
+                      <option value="Non-Fiction">Non-Fiction</option>
                     </select>
                     </div>
                     <div class="split-form-two-group-right">

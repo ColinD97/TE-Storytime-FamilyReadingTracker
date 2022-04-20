@@ -77,12 +77,6 @@ export default {
   display: flex;
   justify-content: space-around;
 }
-.parent {
-  padding-top: 40px;
-  float: left;
-  width: 100%;
-  justify-content: center;
-}
 .parent td,
 .parent th {
   border: 1px solid #f3f7f4;
@@ -116,4 +110,5 @@ export default {
 .left-end-top {
   border-radius: 8px 3px 3px 5px;
 }
+
 </style>

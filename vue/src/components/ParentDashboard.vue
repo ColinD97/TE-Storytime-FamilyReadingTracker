@@ -8,7 +8,6 @@
         <div class="left-side">
           <div class="grid-item-1">
             <table class="parent">
-              <button @click="showModal = true" > button </button>
             <label for="Children"></label>
               <tr>
                 <th class='left-end-top'>Child</th>
@@ -17,7 +16,7 @@
                 <th class='right-end-top'>Current Book</th>
                 <!-- <th class='right-end-top'>Points Balance</th> -->
               </tr>
-              <tr v-for="user in familyUsers" :key="user.id" @click="clickSelectedUser(user.user_id)">
+              <tr v-for="user in familyUsers" :key="user.id" @click="clickSelectedUser(user.user_id, user.first_name)">
                 <td class='left-end'>{{user.first_name}}</td>
                 <td class='middle'>{{user.books_read}}</td>
                 <td class='middle'> {{user.total_minutes_read}}</td>
@@ -32,7 +31,7 @@
         <reading-log v-bind:familyUsers="familyUsersAll" />
         <add-book v-bind:familyUsers="familyUsersAll"/>
         <registration-form-child /> 
-        <user-modal v-if="showModal"  v-bind:userDetail_id="selectedUserDetailId" @close-modal="showModal = false"/>
+        <user-modal v-if="showModal"  v-bind:userDetail_id="selectedUserDetailId" v-bind:userDetail_name="selectedUserDetailName" @close-modal="showModal = false"/>
       </div> 
     </div>    
   </div>
@@ -58,7 +57,8 @@ export default {
       familyUsersAll: [] ,
       showModal: false,
       clickedUserDetail_id: 2,
-      selectedUserDetailId: ''
+      selectedUserDetailId: '',
+      selectedUserDetailName: '',
     }
   },
     computed: {
@@ -73,10 +73,13 @@ export default {
     goToRegisterChild(){
       this.$router.push({name: 'register-child'})
     },
-    clickSelectedUser(id){
+    clickSelectedUser(id, name){
        this.selectedUserDetailId = id
+       this.selectedUserDetailName = name
        this.showModal = true
     }
+
+
     // getReadingLog(logForUserId){
     //   BookService.getReadingLog(logForUserId).then(response => {
     //     this.userData = response.data

@@ -180,6 +180,12 @@ export default {
 
 
 <style>
+.split-form-one-group-left-child{
+  float:left;
+  width: 50%; 
+  margin-left: 0;
+  padding-left: 0;
+}
 .drop-down{
   border: 2px;
   background: #ffffff;

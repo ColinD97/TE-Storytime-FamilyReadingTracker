@@ -186,6 +186,7 @@ body{
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
     box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
+    width: 1200px;
 }
 .form-login{
   font-family: 'League Spartan', sans-serif;
@@ -239,7 +240,7 @@ body{
 }
 .form-body {
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     height: 40px;
 }
 .form-group {
@@ -399,5 +400,8 @@ h4, h5, h6{
 h4{
   font-size: 29px;
   font-weight:bold;
+}
+h1{
+  margin-bottom: 6px;
 }
 </style>

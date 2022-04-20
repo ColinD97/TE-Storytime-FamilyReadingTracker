@@ -2,8 +2,8 @@
   <transition name="modal-fade">
     <div class="modal-overlay" @click="$emit('close-modal')">
       <div class="modal" @click.stop>
-        <div class="modal-title">
-          <h1> Reading details for: </h1>
+        <div class="title">
+          <h1 id="modal-h1"> Reading details for <span id='modal-span'>{{userDetail_name}}</span></h1>
         </div>
         <table class="modal-parent">
             <label for="Children"></label>
@@ -42,7 +42,7 @@ import BookService from "@/services/BookService";
 
   export default {
     name: 'child-modal-userID', 
-    props: ['userDetail_id'],
+    props: ['userDetail_id', 'userDetail_name'],
   data() {
     return {
 
@@ -68,20 +68,12 @@ import BookService from "@/services/BookService";
 </script>
 
 <style scoped>
-.modal-title{
-  margin-top:15px;
-  margin-bottom: 15px;
-  text-align:center; 
-  font-size:26px; 
-  text-transform:uppercase; 
-  color:#222; 
-  letter-spacing:1px;
-  font-family: 'Bubblegum Sans', cursive;
-    /* Shadows are visible under slightly transparent text color */
-    color: rgba(7, 50, 61, 0.85);
-    text-shadow: 1px 2px 4px #eef1f1, 0 0 0 #000, 1px 2px 3px #183c41;
+#modal-h1{
+  font-size: 50px;
 }
-
+#modal-span{
+  font-size: 40px;
+}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -90,12 +82,13 @@ import BookService from "@/services/BookService";
   right: 0;
   display: flex;
   justify-content: center;
+  align-content: center;
   background-color: #000000da;
 }
 .modal {
   text-align: left;
   background-color: #d9f5dd;
-  height: 570px;
+  height: 770px;
   width: 1200px;
   margin-top: 1%;
   padding: 0px 0;
