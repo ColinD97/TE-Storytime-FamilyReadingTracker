@@ -30,7 +30,6 @@
                     </select
                   ><br />
                 </div>
-
                 <div v-else>
                   <p class="label-kid" for="readers">
                     {{ currentUser.first_name }}
@@ -61,8 +60,8 @@
               <textarea
                 id="childreadingreview"
                 name="ChildReadingReview"
-                rows= "6"
-                cols="35"
+                rows= "7"
+                cols="48"
                 v-model="userBook.review"
               /><br />
             </div>
@@ -103,8 +102,7 @@
                 </select>
               </div>
             </div>
-            <div class="form-group-narrow right">
-              
+            <div class="form-group-narrow right"> 
             </div>
           </div>
         </div>
@@ -199,7 +197,7 @@ select {
 }
 option{
   min-height: 1.4em;
-  padding: 1px 3px 2px;
+  padding: 1px 3px 6px;
 }
 #readers {
   width: 165px;
@@ -208,19 +206,22 @@ option{
 #minutesread {
   margin-top: 16px;
   width: 170px;
-
 }
-
 #assignedbooks {
-  width: 170px;
+  width: 210px;
 }
-
 #bookformat {
   width: 140px;
   margin-top: 16px;
   width: 170px;
 }
-
+#genre{
+  width: 140px;
+  margin-right: 30px;
+}
+#difficulty{
+  width: 140px;
+}
 .label-kid{
   margin-top: 1px;
   margin-bottom: 1px;

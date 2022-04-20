@@ -230,8 +230,8 @@ body{
     height: 160px;
 }
 .form-add-book .form-body {
-    margin: 20px;
-    height: 100px;
+    margin: 15px;
+    height: 110px;
 }
 .form-reading-log .form-body{
   margin: 10px;
@@ -246,10 +246,10 @@ body{
     margin-bottom: 35px;
 }
 .form-group-wide {
-  width:60%;
+  width:58%;
 }
 .form-group-narrow{
-  width:39%;
+  width:41%;
 }
 .form-body .label-title {
     color: #157788;
@@ -289,11 +289,11 @@ body{
 }
 .horizontal-group .left {
     float: left;
-    width: 59%;
+    width: 54%;
 }
 .horizontal-group .right {
     float: right;
-    width: 40%;
+    width: 46%;
 }
 .split-form-one-group-right{
   float:left;

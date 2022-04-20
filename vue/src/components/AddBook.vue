@@ -20,6 +20,7 @@
                     />
                     </div>
                 <div class="form-group right">
+                  
                     <label for="author" class="label-title">Author</label>
                     <input
                         type="text"
@@ -45,7 +46,25 @@
                         />
                     </div>
                     <div class="form-group right">
-                    <label for="difficulty" class="label-title">Difficulty</label>
+                      <div class="split-form-one-group-right">
+                      <label for="difficulty" id="genre" class="label-title">Genre</label>
+                    <select
+                        class="drop-down"
+                        name="genre"
+                        id="genre"
+                        v-model="book.genre"
+                        autofocus
+                    >
+                      <option disabled hidden value="">Select</option>
+                      <option selected value="1">Early Reader</option>
+                      <option value="2">Classic</option>
+                      <option value="3">Young Adult</option>
+                      <option value="4">Reference</option>
+                      <option value="5">Non-Fiction</option>
+                    </select>
+                    </div>
+                    <div class="split-form-two-group-right">
+                    <label for="difficulty" id="difficulty" class="label-title">Difficulty</label>
                     <select
                         class="drop-down"
                         name="difficulty"
@@ -53,7 +72,7 @@
                         v-model="book.difficulty"
                         autofocus
                     >
-                      <option disabled hidden value="">Pick Difficulty</option>
+                      <option disabled hidden value="">Select</option>
                       <option selected value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -61,23 +80,14 @@
                       <option value="5">5</option>
                     </select>
                     </div>
+                    </div>
                 </div>
             </div>
               <div class="form-footer">
                 <button class="btn" type="submit" v-on:click="addBook">
                 Add Book
                 </button>
-                  <!-- <div class="custom-select" style="width:350px;" id='dropdown'>
-                    <label for="custom-select">Assign book to:</label>
-                    <select 
-                    class="drop-down"
-                    v-model= "assignToUser" 
-                    style="width:150px;" 
-                    >
-                      <option disabled hidden value="">Children:</option>
-                      <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.id">{{user.first_name}}</option>
-                    </select>
-                  </div>   -->
+                  
                 </div> 
   </form>
 </div>
