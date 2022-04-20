@@ -8,6 +8,7 @@
         <div class="left-side">
           <div class="grid-item-1">
             <table class="parent">
+              <button @click="showModal = true" > button </button>
             <label for="Children"></label>
               <tr>
                 <th class='left-end-top'>Child</th>
@@ -16,7 +17,7 @@
                 <th class='right-end-top'>Current Book</th>
                 <!-- <th class='right-end-top'>Points Balance</th> -->
               </tr>
-              <tr v-for="user in familyUsers" :key="user.id" @click="showModal = true">
+              <tr v-for="user in familyUsers" :key="user.id" @click="clickSelectedUser(user.user_id)">
                 <td class='left-end'>{{user.first_name}}</td>
                 <td class='middle'>{{user.books_read}}</td>
                 <td class='middle'> {{user.total_minutes_read}}</td>
@@ -31,7 +32,7 @@
         <reading-log v-bind:familyUsers="familyUsersAll" />
         <add-book v-bind:familyUsers="familyUsersAll"/>
         <registration-form-child /> 
-        <!-- <user-modal v-show="showModal" @close-modal="showModal = false"/> -->
+        <user-modal v-if="showModal"  v-bind:userDetail_id="selectedUserDetailId" @close-modal="showModal = false"/>
       </div> 
     </div>    
   </div>
@@ -42,10 +43,10 @@ import AuthService from "@/services/AuthService";
 import AddBook from './AddBook.vue';
 import RegistrationFormChild from './RegistrationFormChild.vue'
 import ReadingLog from './ReadingLog.vue'
-// import UserModal from './UserModal.vue'
+import UserModal from './UserModal.vue'
 
 export default {
-  components: { AddBook, RegistrationFormChild, ReadingLog,   },
+  components: { AddBook, RegistrationFormChild, ReadingLog, UserModal  },
 // create + data (empty group of users that I will fill with this return request)
   name: 'parent-dashboard-userID',  
   // Reg Note:  If I need to do a PROP, it's here
@@ -56,7 +57,8 @@ export default {
       userData: [],
       familyUsersAll: [] ,
       showModal: false,
-
+      clickedUserDetail_id: 2,
+      selectedUserDetailId: ''
     }
   },
     computed: {
@@ -71,6 +73,10 @@ export default {
     goToRegisterChild(){
       this.$router.push({name: 'register-child'})
     },
+    clickSelectedUser(id){
+       this.selectedUserDetailId = id
+       this.showModal = true
+    }
     // getReadingLog(logForUserId){
     //   BookService.getReadingLog(logForUserId).then(response => {
     //     this.userData = response.data

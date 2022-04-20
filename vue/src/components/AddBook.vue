@@ -119,7 +119,7 @@ export default {
                 difficulty: '',
                 genre: '',       
               },
-            alert('AddBook sucessful!  Hurray for our side!'),
+            alert('AddBook successful!  Hurray for our side!'),
             this.$router.push({path: '/'});
           }
         })

@@ -1,36 +1,38 @@
 <template>
-  <div class='child-dashboard'>
+  <div class="child-dashboard">
     <div class="title">
-      <h1>{{user.first_name}}'s Dashboard<span>What adventures are we going on today?</span></h1>
+      <h1>
+        {{ this.childDashboardInfo.first_name }}'s Dashboard<span
+          >What adventures are we going on today?</span
+        >
+      </h1>
     </div>
-    <div class="box"> 
-        <div class="left-side">
-          <div class="grid-item-1">
-            <table class="parent">
+    <div class="box">
+      <div class="left-side">
+        <div class="grid-item-1">
+          <table class="parent">
             <label for="Children"></label>
-              <tr>
-                <th class='left-end-top'>Name</th>
-                <th class='middle'>Books Completed</th>
-                <th class='middle'>Minutes Read</th>
-                <th class='right-end-top'>Current Book</th>
-                <!-- <th class='right-end-top'>Points Balance</th> -->
-              </tr>
-              <tr>
-                <td class='left-end'>{{user.first_name}}</td>
-                <td class='middle'>still need</td>
-                <td class='middle'>{{user.totalMinutes}}</td>
-                <td class='right-end'>still need</td>
-                <!-- <td class='right-end'>{{user.pointsBalance}}</td> -->
-              </tr>
-            </table> 
-             </div>
-          <img src="@/assets/Dashboard.png" class="grid-item-2"/>
+            <tr>
+              <th class="left-end-top">Name</th>
+              <th class="middle">Books Completed</th>
+              <th class="middle">Minutes Read</th>
+              <th class="right-end-top">Current Book</th>
+            </tr>
+            <tr>
+              <td class="left-end">{{ this.childDashboardInfo.first_name }}</td>
+              <td class="middle">{{ this.childDashboardInfo.books_read }}</td>
+              <td class="middle">{{ this.childDashboardInfo.total_minutes_read }}</td>
+              <td class="right-end">still need</td>
+            </tr>
+          </table>
         </div>
-        <div class="right-side">
-          <reading-log v-bind:familyUsers="familyUsersAll"/>
-          <add-book v-bind:familyUsers="familyUsersAll"/>   
-        </div> 
-  </div>
+        <img src="@/assets/Dashboard.png" class="grid-item-2" />
+      </div>
+      <div class="right-side">
+        <reading-log v-bind:familyUsers="familyUsersAll" />
+        <add-book v-bind:familyUsers="familyUsersAll" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,24 +42,38 @@ import ReadingLog from "./ReadingLog.vue";
 import AuthService from "@/services/AuthService";
 
 export default {
-  components: { AddBook, ReadingLog },
+ components: { AddBook, ReadingLog },
   data() {
     return {
-      familyUsers: [],
-      user: this.$store.state.user,
+      familyUsersAll: [],
+      currentUser: this.$store.state.user,
       test: "test",
+      dashboardInfo: [],
+      childDashboardInfo: {}
     };
   },
+  computed: {
+    currentUserId: function () {
+      return this.$store.state.user.id;
+    },
+
+  },
   created() {
-    AuthService.getFamilyByUserId(this.currentUserId).then(response => {
-          this.familyUsersAll = response.data;
-      })
-  }
+    AuthService.getFamilyByUserId(this.currentUserId).then((response) => {
+      this.familyUsersAll = response.data;
+    });
+    AuthService.getDashboardInfo(this.$store.state.user.family_id).then(
+      (response) => {
+        this.dashboardInfo = response.data;
+        this.childDashboardInfo = this.dashboardInfo.find(element => element.user_id === this.currentUserId)
+      }
+    );
+  },
 };
 </script>
 
 <style>
-.box{
+.box {
   display: flex;
   justify-content: space-around;
 }
@@ -67,13 +83,18 @@ export default {
   width: 100%;
   justify-content: center;
 }
-.parent td, .parent th {
+.parent td,
+.parent th {
   border: 1px solid #f3f7f4;
   padding: 8px;
 }
-.parent tr:nth-child(even){background-color: #ffffff;}
+.parent tr:nth-child(even) {
+  background-color: #ffffff;
+}
 
-.parent tr:hover {background-color: #d1e6d6}
+.parent tr:hover {
+  background-color: #d1e6d6;
+}
 
 .parent th {
   padding-top: 12px;
@@ -82,19 +103,19 @@ export default {
   background-color: #126c7c;
   color: #f2f7f3;
 }
-.left-end{
-border-radius: 8px 3px 3px 8px;
+.left-end {
+  border-radius: 8px 3px 3px 8px;
 }
 .middle {
-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
 }
-.right-end{
-border-radius: 3px 8px 8px 3px;
+.right-end {
+  border-radius: 3px 8px 8px 3px;
 }
-.right-end-top{
-border-radius: 3px 8px 5px 3px;
+.right-end-top {
+  border-radius: 3px 8px 5px 3px;
 }
 .left-end-top {
-border-radius: 8px 3px 3px 5px;
+  border-radius: 8px 3px 3px 5px;
 }
 </style>

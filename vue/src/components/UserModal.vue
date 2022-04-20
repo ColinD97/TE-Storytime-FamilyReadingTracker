@@ -1,48 +1,33 @@
 <template>
   <transition name="modal-fade">
     <div class="modal-overlay" @click="$emit('close-modal')">
-      <!-- <div class="modal" @click.stop>
+      <div class="modal" @click.stop>
         <table class="parent">
-            <label for="Children"></label> -->
-            <!-- 
-              prop to be id of kid whose info we need. (look inside add book)
-              inside modal, created call to ask for info from that one kid
-              getuserdetails will be called by created
-              v-bind
-              
-              learn how to use v-model two way link in the v-for
-              v-for loop in homework and when you clicked on info it fed it back out (parent dash)
+            <label for="Children"></label>
 
-              from line 32 parentdash <add-book v-bind:userID="familyUsersAll"/> for reference
-            
-              Kids Name
-            author
-            title
-              genre
-            </title> -->
-              <!-- <tr>
-                <th class='left-end-top'>Child</th>
-                <th class='middle'>Books Completed</th>
-                <th class='middle'>Minutes Read</th>
-                <th class='right-end-top'>Current Book</th> -->
-                <!-- <th class='right-end-top'>Points Balance</th> -->
-              <!-- </tr> -->
-               
-               <!-- Need to tie all this in to the user that was clicked on -->
-               <!-- Using user-book table and info from Reg's table -->
-              <!-- <tr v-for="user in familyUsers" :key="user.id">  
-                userId
-                <td class='left-end'>{{user.first_name}}</td> 
-                <td class='middle'>{{user.books_read}}</td>
-                <td class='middle'> {{user.total_minutes_read}}</td>
-                <td class='right-end'>still need</td>
-                <td class='right-end'>{{user.points_balance}}</td>
+              <tr>
+                <th class='left-end-top'>Title</th>
+                <th class='middle'>Author</th>
+                <th class='middle'>Genre</th>
+                <th class='right-end-top'>Minutes</th>
+                <th class='right-end-top'>Times Read</th>
+                <th class='right-end-top'>Date</th>
               </tr>
-            </table>  -->
-      <!-- </div>
+
+              <tr v-for="booklog in childData" :key="booklog.index">  
+                <td class='left-end'>{{booklog.title}}</td> 
+                <td class='middle'>{{booklog.author}}</td>
+                <td class='middle'> {{booklog.genre}}</td>
+                <td class='right-end'>{{booklog.minutes_per_book}}</td>
+                <td class='right-end'>{{booklog.times_read_total}}</td>
+                <td class='right-end'>{{booklog.last_read}}</td>
+
+              </tr>
+            </table> 
+      </div>
       <div class="close" @click="$emit('close-modal')">
         <img class="close-img" src="src\assets\booklog.png" alt="" />
-      </div> -->
+      </div>
       
     </div>
   </transition>
@@ -53,12 +38,13 @@
 import BookService from "@/services/BookService";
 
   export default {
-    name: 'child-modal-userID',  
+    name: 'child-modal-userID', 
+    props: ['userDetail_id'],
   data() {
     return {
 
       childData: [] ,
-      showModal: false,
+      // showModal: false,
 
     }
   },
@@ -68,8 +54,8 @@ import BookService from "@/services/BookService";
     }, 
   },
   created() {
-    console.log('create idkwhatimdoinglol')
-    BookService.getUserDetail(this.$store.state.user.user_id).then(response => {
+    console.log('create idkwhatimdoinglol ', this.userDetail_id)
+    BookService.getUserDetail(this.userDetail_id).then(response => {
       this.childData = response.data
     })
   }
