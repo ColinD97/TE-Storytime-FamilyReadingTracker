@@ -108,7 +108,7 @@ export default {
   },
   methods: {
     addBook() {
-      if (this.book.isbn != (/([0-9]){13}/g)) {
+      if (this.book.isbn !== (/([0-9]){13}/g)) {
         this.isbnErrors = true;
         this.isbnErrorMsg = 'ISBN needs to be a 13 digit number.';
       } else {
