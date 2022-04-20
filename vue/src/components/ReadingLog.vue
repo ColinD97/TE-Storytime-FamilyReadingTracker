@@ -31,7 +31,7 @@
                 </div>
 
                 <div v-else>
-                  <p class="label-title" for="readers">
+                  <p class="label-kid" for="readers">
                     {{ currentUser.first_name }}
                   </p>
                 </div>
@@ -188,17 +188,34 @@ export default {
   margin-bottom: 15px;
   margin-top: 2px;
 }
+
 #minutesread {
   margin-top: 2px;
   margin-bottom: 25px;
   width: 80px;
 }
+
 #assignedbooks {
   margin-top: 30px;
   width: 150px;
 }
+
 #bookformat {
   margin-top: 30px;
   width: 140px;
+}
+
+.label-kid{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  text-align:center; 
+  font-size:42px; 
+  text-transform:uppercase; 
+  color:#222; 
+  letter-spacing:1px;
+  font-family: 'Bubblegum Sans', cursive;
+    /* Shadows are visible under slightly transparent text color */
+    color: rgba(7, 50, 61, 0.85);
+    /* text-shadow: 1px 2px 4px #eef1f1, 0 0 0 #000, 1px 2px 3px #183c41; */
 }
 </style>

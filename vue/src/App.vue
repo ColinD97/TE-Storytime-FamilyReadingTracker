@@ -5,7 +5,7 @@
       <router-link class='container' v-bind:to="{ name: 'home' }">HOME </router-link>
       <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">DASHBOARD</router-link> 
       <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">BOOKSHELF</router-link> 
-      <router-link class='container' v-bind:to="{ name: 'reading-history'}">READING-LOG</router-link> 
+      <router-link class='container' v-bind:to="{ name: 'reading-history'}">READING-HISTORY</router-link> 
       
         <div class="dropdown" id="push">
           <button class="dropbtn">GO TO:
@@ -18,10 +18,6 @@
             </div>
         </div>
       </div>
-      <!-- <router-link class='container' v-bind:to="{ name: goToDashboard(), params: {userId: currentUserId}}">DashboardTest</router-link> 
-      <router-link class='container' v-bind:to= "goToDashMethod" >DashboardTest2</router-link>  -->
-      <!-- <h4>*TEMPORARY* current user id: {{this.currentUserId}}</h4> -->
-      <!-- <h4>*TEMPORARY* current role: {{currentRole}}</h4> -->
     <router-view />
 </div>
 </template>
@@ -33,7 +29,6 @@ export default {
   name: 'app',
   data() {
     return {
-      //currentUserId: this.$store.state.user.id
     }
   },
   computed: {
@@ -128,7 +123,7 @@ export default {
   display: block;
 }
 
-/* Add a grey background color to dropdown links on hover */
+/* Add a background color to dropdown links on hover */
 .topnav .dropdown-content a:hover {
   background-color: rgba(187, 218, 218, 0.8);
 }
@@ -396,5 +391,12 @@ Drop down boxes
 
 .drop-down{
   margin-left: 10px;
+}
+h4, h5, h6{
+  font-family: 'League Spartan', sans-serif;
+}
+h4{
+  font-size: 29px;
+  font-weight:bold;
 }
 </style>

@@ -2,6 +2,9 @@
   <transition name="modal-fade">
     <div class="modal-overlay" @click="$emit('close-modal')">
       <div class="modal" @click.stop>
+        <div class="title">
+          <h1> Reading details for: </h1>
+        </div>
         <table class="parent">
             <label for="Children"></label>
 
@@ -78,18 +81,13 @@ import BookService from "@/services/BookService";
 }
 .modal {
   text-align: center;
-  background-color: #fac2a8;
-  height: 500px;
-  width: 900px;
+  background-color: #d9f5dd;
+  height: 570px;
+  width: 1200px;
   margin-top: 1%;
-  padding: 30px 0;
-  border-radius: 20px;
-}
-.cardpic{
-    display: block;
-    margin: auto;
-    width: 600px;
-    padding-top: 60px;
+  padding: 0px 0;
+  border-radius: 5px;
+  overflow: scroll;
 }
 .close {
   margin: 10% 0 0 16px;
@@ -97,27 +95,6 @@ import BookService from "@/services/BookService";
 }
 .close-img {
   width: 25px;
-}
-.check {
-  width: 150px;
-}
-h6 {
-  font-weight: 500;
-  font-size: 28px;
-  margin: 20px 0;
-}
-p {
-  font-size: 16px;
-  margin: 20px 0;
-}
-button {
-  background-color: #ac003e;
-  width: 150px;
-  height: 40px;
-  color: white;
-  font-size: 14px;
-  border-radius: 16px;
-  margin-top: 50px;
 }
 .modal-fade-enter,
 .modal-fade-leave-to {

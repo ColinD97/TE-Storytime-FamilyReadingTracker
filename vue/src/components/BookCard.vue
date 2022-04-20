@@ -1,6 +1,6 @@
 <template>
   <div class='card'>
-      <h4 class="title"> {{book.title}} </h4>
+      <h4> {{book.title}} </h4>
       <div class='cover'>
         <img id="cover" v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'" />
       </div>
@@ -20,14 +20,15 @@ export default {
 
 .card {
   display: grid;
-  background: rgb(209, 230, 214, 0.6);
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(182,251,234,0.7987570028011204) 0%, rgba(38,128,144,1) 100%);
   grid-template-columns: 1fr;
-  grid-template-rows: 70px 300px 30px 30px 20px;
+  grid-template-rows: 70px 320px 30px 30px 20px;
   gap: 3px;
   font-family: "Arial Black", Gadget, sans-serif;
-  border: 4px solid white;
+  border: 5px solid white;
   border-radius: 10px;
-  width: 310px;
+  width: 310px; 
   height: 530px;
   padding: 5px;
   margin: 15px;
@@ -41,9 +42,10 @@ export default {
   padding-bottom:10px;
 }
 .card .cover{
-  background: rgba(237, 245, 244, 0.5);
+  background: rgba(209,230,214, 0.5);
   border-radius: 10px 10px 10px 10px;
   grid-row: 2; 
+  margin-bottom: 10px;
 }
 #cover{
   border-radius: 5px 5px 5px 5px;
@@ -54,6 +56,7 @@ export default {
 .card .book-author {
   grid-row: 3;
   text-align: center;
+  padding-top: 10px;
 }
 .card .book-isbn {
   grid-row: 4;

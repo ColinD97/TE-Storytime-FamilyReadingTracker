@@ -1,12 +1,17 @@
 <template>
-<div class="book-shelf">
-  <v-layout row class="mb-3">
-    <v-btn class="btn" small flat color="grey" @click="sortBy('title')">By Title</v-btn>
-    <v-btn class="btn" small flat color="grey" @click="sortBy('author')">By Author</v-btn>
-    <v-btn class="btn" small flat color="grey" @click="sortBy('genre')">By Genre</v-btn>
-    <v-btn class="btn" small flat color="grey" @click="sortBy('difficulty')">By Difficulty</v-btn>
-  </v-layout>
-  <book-card v-for="book in this.books" v-bind:key="book.id" v-bind:book="book"/>  
+<div>
+    <div class='buttons'>
+    <v-layout row class="mb-3">
+      <v-btn class="btn"  @click="sortBy('title')">By Title</v-btn>
+      <v-btn class="btn"  @click="sortBy('author')">By Author</v-btn>
+      <v-btn class="btn"  @click="sortBy('genre')">By Genre</v-btn>
+      <v-btn class="btn"  @click="sortBy('difficulty')">By Difficulty</v-btn>
+    </v-layout >
+    </div>
+  
+  <div class="book-shelf">
+    <book-card v-for="book in this.books" v-bind:key="book.id" v-bind:book="book"/>  
+  </div>
 </div>
 </template>
 
@@ -43,6 +48,12 @@ export default {
 </script>
 
 <style>
+.buttons{
+  display:flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 55px;
+}
 .book-shelf {
     display:flex;
     justify-content: space-evenly;

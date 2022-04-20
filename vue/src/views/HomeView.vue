@@ -6,24 +6,16 @@
         </div>
 </div>
 
-
-
 </template>
 
 <script>
-// import AppHeader from "./components/Appheader.vue"
 
 
 export default {
   name: "home",
-  components: {
-      
+  components: {   
   },
-  // computed: {
-  // iconUrl () {
-  //   return require('../assets/mellowAsset19.jpg')
-  //   // The path could be '../assets/img.png', etc., which depends on where your vue file is
-  // }
+  
 
   
 };
