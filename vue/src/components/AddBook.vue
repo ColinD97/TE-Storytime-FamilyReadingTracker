@@ -64,7 +64,7 @@
                 </div>
             </div>
               <div class="form-footer">
-                <button class="btn" type="submit" v-on:click="addBook" @click="checkISBNstr('isbn')">
+                <button class="btn" type="submit" v-on:click="addBook">
                 Add Book
                 </button>
                   <!-- <div class="custom-select" style="width:350px;" id='dropdown'>
@@ -100,12 +100,18 @@ export default {
         difficulty: "",
         genre: "",
       },
-      assignToUser: ""
+      assignToUser: "",
+      isbnErrors: false,
+      isbnErrorMsg: 'ISBN needs to be a 13 digit number.',
       
     };
   },
   methods: {
     addBook() {
+      if (this.book.isbn != (/([0-9]){13}/g)) {
+        this.isbnErrors = true;
+        this.isbnErrorMsg = 'ISBN needs to be a 13 digit number.';
+      } else {
       console.log('add book'+ this.book)
       BookService
       // Assign to family ID
@@ -123,15 +129,9 @@ export default {
             this.$router.push({path: '/'});
           }
         })
-    },
-    
-  },
-//     isbnStrLengthCheck() {
-//       if (this.book.isbn != /([0-9]){13}/g) {
-
-//       }
-     
-// },
+      }
+    }
+  }
 }
 
 
