@@ -35,7 +35,7 @@ export default {
 
     methods: {
     sortBy(property){
-      this.books.sort((a,b) => a[property] < b[property] ? -1 : 1)
+      this.books.sort((a,b) => a[property].toLowerCase() < b[property].toLowerCase() ? -1 : 1);
     }
   },
 
