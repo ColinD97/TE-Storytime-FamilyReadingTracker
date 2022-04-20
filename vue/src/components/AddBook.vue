@@ -1,82 +1,96 @@
 <template>
-  <div>
-    <form class="form-add-book">
-      <h1 class="form-header">Add A Book To Family Collection</h1>
-      <div class="form-body">
-        <!-- Title and Author -->
-        <div class="horizontal-group">
-          <div class="form-group left">
-            <label for="title" class="label-title">Book Title</label>
-            <input
-              type="text"
-              id="title"
-              class="form-input"
-              placeholder=""
-              v-model="book.title"
-              required
-              autofocus
-            />
-          </div>
-          <div class="form-group right">
-            <label for="author" class="label-title">Author</label>
-            <input
-              type="text"
-              id="author"
-              class="form-input"
-              placeholder=""
-              v-model="book.author"
-              autofocus
-            />
-          </div>
-        </div>
-        <!-- ISBN and Difficulty-->
-        <div class="horizontal-group">
-          <div class="form-group left">
-            <label for="email" class="label-title">ISBN</label>
-            <input
-              type="text"
-              id="isbn"
-              class="form-input"
-              placeholder=""
-              v-model="book.isbn"
-              autofocus
-            />
-          </div>
-          <div class="form-group right">
-            <label for="difficulty" class="label-title">Difficulty</label>
-            <select
-              class="drop-down"
-              name="difficulty"
-              id="difficulty"
-              v-model="book.difficulty"
-              autofocus
-            >
-              <option disabled hidden value="">Pick Difficulty</option>
-              <option selected value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="form-footer">
-        <button class="btn" type="submit" v-on:click="addBook">Add Book</button>
-        <!-- <div class="custom-select" style="width:350px;" id='dropdown'>
-                    <label for="custom-select">Assign book to:</label>
-                    <select 
-                    class="drop-down"
-                    v-model= "assignToUser" 
-                    style="width:150px;" 
+    
+<div>
+
+  <form class="form-add-book">
+    <h1 class="form-header">Add A Book To Family Collection</h1>
+    <div class="form-body">
+            <!-- Title and Author -->
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label for="title" class="label-title">Book Title</label>
+                    <input
+                        type="text"
+                        id="title"
+                        class="form-input"
+                        placeholder=""
+                        v-model="book.title"
+                        required
+                        autofocus
+                    />
+                    </div>
+                <div class="form-group right">
+                  
+                    <label for="author" class="label-title">Author</label>
+                    <input
+                        type="text"
+                        id="author"
+                        class="form-input"
+                        placeholder=""
+                        v-model="book.author"
+                        autofocus
+                    />
+                    </div>
+            </div>
+            <!-- ISBN and Difficulty-->
+            <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="email" class="label-title">ISBN</label>
+                        <input
+                            type="text"
+                            id="isbn"
+                            class="form-input"
+                            placeholder=""
+                            v-model="book.isbn"
+                            autofocus
+                        />
+                    </div>
+                    <div class="form-group right">
+                      <div class="split-form-one-group-right">
+                      <label for="difficulty" id="genre" class="label-title">Genre</label>
+                    <select
+                        class="drop-down"
+                        name="genre"
+                        id="genre"
+                        v-model="book.genre"
+                        autofocus
                     >
-                      <option disabled hidden value="">Children:</option>
-                      <option v-for="user in familyUsers" v-bind:key="user.index" :value="user.id">{{user.first_name}}</option>
+                      <option disabled hidden value="">Select</option>
+                      <option selected value="1">Early Reader</option>
+                      <option value="2">Classic</option>
+                      <option value="3">Young Adult</option>
+                      <option value="4">Reference</option>
+                      <option value="5">Non-Fiction</option>
                     </select>
-                  </div>   -->
-      </div>
-    </form>
-  </div>
+                    </div>
+                    <div class="split-form-two-group-right">
+                    <label for="difficulty" id="difficulty" class="label-title">Difficulty</label>
+                    <select
+                        class="drop-down"
+                        name="difficulty"
+                        id="difficulty"
+                        v-model="book.difficulty"
+                        autofocus
+                    >
+                      <option disabled hidden value="">Select</option>
+                      <option selected value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                    </div>
+                    </div>
+                </div>
+            </div>
+              <div class="form-footer">
+                <button class="btn" type="submit" v-on:click="addBook">
+                Add Book
+                </button>
+                  
+                </div> 
+  </form>
+</div>
 </template>
 
 <script>
