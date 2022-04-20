@@ -6,18 +6,31 @@
     <table class="history">
       <thead class="table-header">
         <tr class="header-row">
-          <th class='left-end-top'>Title</th>
+          <th class='left-end-top'>Date</th>
+          <th class='middle'>First Name</th>
+          <th class='middle'>Title</th>
           <th class='middle'>Author</th>
-          <th class='middle'>ISBN</th>
-          <th class='right-end-top'>Difficulty</th>
+          <th class='middle'>Genre</th>
+          <th class='middle'>Format</th>
+          <th class='middle'>Times Read</th>
+          <th class='middle'>Minutes Reading</th>          
+          <th class='middle'>Session Points</th>
+          <th class='right-end-top'>Review</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="log in userLogs" v-bind:key="log.index" class="table-row">
-          <td class='left-end'>{{ log.user_id}}</td>
-          <td class='middle'>{{ log.minutes_read}}</td>
-          <td class='middle'>{{ log.times_read }}</td>
-          <td class='right-end'>{{ log.review}}</td>
+          <td class='left-end'>{{ log.date_logged }}</td>
+          <td class='middle'>{{ log.first_name }}</td>
+          <td class='middle'>{{ log.title }}</td>
+          <td class='middle'>{{ log.author }}</td>
+          <td class='middle'>{{ log.genre }}</td>
+          <td class='middle'>{{ log.format }}</td>
+          <td class='middle'>{{ log.finished_book }}</td>
+          <td class='middle'>{{ log.minutes_read }}</td>
+          
+          <td class='middle'>{{ log.session_points }}</td>
+          <td class='right-end'>{{ log.review }}</td>
         </tr>
       </tbody>
     </table>
