@@ -159,6 +159,9 @@ export default {
       if (this.userBook.times_read === true) {
         this.userBook.times_read = 1;
       }
+      if (this.userBook.user_id === ""){
+          this.userBook.user_id = this.currentUser.id
+      }
       BookService.logReading(this.userBook);
       BookService.getAllBooksByFamily(this.$store.state.user.family_id).then(
         (response) => {
