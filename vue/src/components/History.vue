@@ -13,11 +13,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="book in books" v-bind:key="book.book_id" class="table-row">
-          <td class='left-end'>{{ book.title }}</td>
-          <td class='middle'>{{ book.author }}</td>
-          <td class='middle'>{{ book.isbn }}</td>
-          <td class='right-end'>{{ book.difficulty}}</td>
+        <tr v-for="log in userLogs" v-bind:key="log.index" class="table-row">
+          <td class='left-end'>{{ log.user_id}}</td>
+          <td class='middle'>{{ log.minutes_read}}</td>
+          <td class='middle'>{{ log.times_read }}</td>
+          <td class='right-end'>{{ log.review}}</td>
         </tr>
       </tbody>
     </table>
@@ -32,13 +32,14 @@ export default {
   data() {
     return {
       currentUserId: this.$store.state.user.id,
+      userLogs: [],
       books: [],
     };
   },
   components: {},
   created() {
-    BookService.getAllBooks().then((response) => {
-      this.books = response.data;
+    BookService.getReadingLog(this.currentUserId).then((response) => {
+      this.userLogs = response.data;
     });
   },
 };

@@ -26,7 +26,7 @@ export default {
     },
 
     getReadingLog(userId) {
-        return axios.get('/readinglog/', userId)
+        return axios.get(`/readinglog/${userId}`)
     },
 
 // For UserModal - check w/ Colin to see if he can switch 'id' for 'userId' for
