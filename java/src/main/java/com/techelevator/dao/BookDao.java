@@ -27,4 +27,5 @@ public interface BookDao {
 
     List<UserDetailDTO> getUserDetails(long detail_id);
 
+    List <LogReadingDTO> getReadingLog (long user_id);
 }

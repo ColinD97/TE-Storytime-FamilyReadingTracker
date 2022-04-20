@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.*;
+import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -126,6 +127,20 @@ public class JdbcBookDao implements BookDao{
         }
         return results;
     }
+
+    @Override
+    public List<LogReadingDTO> getReadingLog(long user_id) {
+        String sql = "SELECT * FROM users_books LEFT JOIN users " +
+                "ON users_books.user_id = users.user_id WHERE family_id " +
+                "= (SELECT family_id WHERE users.user_id = ?) ORDER BY date_logged DESC;";
+        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, user_id);
+        List <LogReadingDTO> results = new ArrayList<>();
+        while (resultSet.next()) {
+            results.add(mapRowToLogReading(resultSet));
+        }
+        return results;
+    }
+
     private UserDetailDTO mapRowToUserDetail(SqlRowSet resultSet) {
         UserDetailDTO userDetail = new UserDetailDTO();
         userDetail.setAuthor(resultSet.getString("author"));
