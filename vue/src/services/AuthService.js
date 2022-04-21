@@ -11,12 +11,10 @@ export default {
   },
 
   registerFamilyUser(user, userId) {
-    console.log('axios userId: ' + userId)
     return axios.post(`/parent/dashboard/${userId}`, user)
   },
 
   getFamilyByUserId(userId){
-    console.log('get family by userId: '+userId)
     return axios.get(`/parent/dashboard/${userId}`)
   },
 

@@ -73,8 +73,6 @@ public class JdbcUserDao implements UserDao {
         String password_hash = new BCryptPasswordEncoder().encode(password);
         String ssRole = "ROLE_" + role.toUpperCase();
         //String family_id = "1";
-
-
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
         String id_column = "user_id";
         userCreated = jdbcTemplate.update(con -> {
@@ -109,8 +107,8 @@ public class JdbcUserDao implements UserDao {
     public List<UserDashInfo> getUserDashboardInfoByFamilyId(String familyId) {
         String sql = "SELECT users.user_id, first_name, SUM(times_read) AS books_read, SUM(minutes_read) as total_minutes_read, points_balance " +
                 "FROM users " +
-                "JOIN users_books ON users.user_id = users_books.user_id " +
-                "JOIN book_info ON users_books.book_id = book_info.book_id " +
+                "LEFT JOIN users_books ON users.user_id = users_books.user_id " +
+                "LEFT JOIN book_info ON users_books.book_id = book_info.book_id " +
                 "WHERE users.family_id = ? " +
                 "GROUP BY users.user_id, first_name, points_balance;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
@@ -118,17 +116,10 @@ public class JdbcUserDao implements UserDao {
         while (resultSet.next()) {
             results.add(mapRowToDashUser(resultSet));
             }
-//        sql = "select distinct on (users.user_id) users.user_id, e\n" +
-//                "FROM users \n" +
-//                "JOIN users_books ON users.user_id = users_books.user_id \n" +
-//                "JOIN book_info ON users_books.book_id = book_info.book_id \n" +
-//                "WHERE users.family_id = ? AND current_book = true;";
-//        resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
-//        while (resultSet.next()) {
-//            results.add(mapRowToDashUser(resultSet));
-//        }
         return results;
     }
+
+
     private UserDashInfo mapRowToDashUser(SqlRowSet rs) {
         UserDashInfo userDash = new UserDashInfo();
         userDash.setUser_id(rs.getLong("user_id"));
