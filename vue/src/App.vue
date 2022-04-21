@@ -84,7 +84,6 @@ export default {
   color: #222222;
 }
 .topnav .dropdown {
-  
   overflow: hidden;
 }
 
@@ -186,11 +185,11 @@ body{
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
     box-shadow: 4px rgba(0,0,0,0.10),4px rgba(0,0,0,0.08);
-    width: 1200px;
+    width: 1050px;
 }
 .form-login{
   font-family: 'League Spartan', sans-serif;
-    width: 1200px;
+    width: 850px;
     margin: 30px auto;
     background: linear-gradient(to right, #e9f8fa 0%, #fafafa 50%, #ffffff 99%);
     border-radius: 10px;
@@ -290,14 +289,14 @@ body{
 }
 .horizontal-group .left {
     float: left;
-    width: 54%;
+    width: 55%;
 }
 .horizontal-group .right {
     float: right;
-    width: 46%;
+    width: 44%;
 }
 .split-form-one-group-right{
-  float:left;
+  float:right;
   width: 50%; 
 }
 .split-form-two-group-right{
@@ -311,7 +310,7 @@ body{
   padding-left: 0;
 }
 .split-form-two-group-left{
-  float: right;
+  float: left;
   width: 50%;
   margin: 0%;
 }

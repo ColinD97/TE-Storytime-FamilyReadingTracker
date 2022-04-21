@@ -86,7 +86,7 @@ import BookService from "@/services/BookService";
 }
 .modal {
   text-align: left;
-  background-color: #d9f5dd;
+  background-color: rgb(217, 245, 221, 0.9);
   height: 770px;
   width: 1200px;
   margin-top: 1%;
@@ -122,13 +122,13 @@ import BookService from "@/services/BookService";
 }
 .modal-parent tr:nth-child(even){background-color: #ffffff;}
 
-.modal-parent tr:hover {background-color: #d1e6d6}
+.modal-parent tr:hover {background-color: rgba(18, 108, 124, 0.466)}
 
 .modal-parent th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #126c7c;
+  background-color: rgb(18, 108, 124, 0.9);
   color: #f2f7f3;
 }
 #header{

@@ -79,11 +79,11 @@ export default {
 }
 .parent td,
 .parent th {
-  border: 1px solid #f3f7f4;
+  border: 1px solid rgba(243, 247, 244, 0.8);
   padding: 8px;
 }
 .parent tr:nth-child(even) {
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255, 0.8);
 }
 .parent tr:hover {
   background-color: #d1e6d6;
@@ -92,7 +92,7 @@ export default {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #126c7c;
+  background-color: rgb(18, 108, 124);
   color: #f2f7f3;
 }
 .left-end {

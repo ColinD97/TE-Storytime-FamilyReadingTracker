@@ -214,10 +214,10 @@ option{
 }
 #minutesread {
   margin-top: 16px;
-  width: 170px;
+  width: 115px;
 }
 #assignedbooks {
-  width: 210px;
+  width: 190px;
 }
 #bookformat {
   width: 140px;
@@ -225,11 +225,11 @@ option{
   width: 170px;
 }
 #genre{
-  width: 140px;
-  margin-right: 30px;
+  width: 90px;
+  margin-right: 0px;
 }
 #difficulty{
-  width: 140px;
+  width: 90px;
 }
 .label-kid{
   margin-top: 1px;
