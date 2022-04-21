@@ -57,7 +57,6 @@ import BookService from "@/services/BookService";
     }, 
   },
   created() {
-    console.log('create happyday ', this.userDetail_id)
     BookService.getUserDetail(this.userDetail_id).then(response => {
       this.childData = response.data
     })

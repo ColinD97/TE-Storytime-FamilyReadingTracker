@@ -144,6 +144,13 @@ public class JdbcBookDao implements BookDao{
         while (resultSet.next()) {
             results.add(mapRowToUserHistory(resultSet));
         }
+//        SQL for getting title of book last logged:
+//        select distinct on (users.user_id) users.user_id, first_name, title, date_logged
+//        FROM users
+//        LEFT JOIN users_books ON users.user_id = users_books.user_id
+//        LEFT JOIN book_info ON users_books.book_id = book_info.book_id
+//        where users.family_id = '2'
+//        order by users.user_id, date_logged desc
         return results;
     }
 

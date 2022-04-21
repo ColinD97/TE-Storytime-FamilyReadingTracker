@@ -91,8 +91,6 @@ created() {
     AuthService.getFamilyByUserId(this.currentUserId).then(response => {
           this.familyUsersAll = response.data;
       })
-    // BookService.getReadinglog()
-    console.log('create getDashboardInfo')
     AuthService.getDashboardInfo(this.$store.state.user.family_id).then(response => {
       this.familyUsers = response.data
     })
