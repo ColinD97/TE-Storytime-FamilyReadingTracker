@@ -61,7 +61,7 @@
                 id="childreadingreview"
                 name="ChildReadingReview"
                 rows= "7"
-                cols="48"
+                cols="45"
                 v-model="userBook.review"
               /><br />
             </div>
@@ -234,7 +234,7 @@ option{
 .label-kid{
   margin-top: 1px;
   margin-bottom: 1px;
-  text-align:center; 
+  text-align:left; 
   font-size:42px; 
   text-transform:uppercase; 
   color:#222; 
