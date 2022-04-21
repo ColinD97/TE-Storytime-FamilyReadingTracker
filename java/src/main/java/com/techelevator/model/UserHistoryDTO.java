@@ -8,6 +8,7 @@ public class UserHistoryDTO {
     private String title;
     private String author;
     private String genre;
+    private int difficulty;
     private String format;
     private int minutes_read;
     private String finished_book;
@@ -53,6 +54,14 @@ public class UserHistoryDTO {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
     }
 
     public String getFormat() {

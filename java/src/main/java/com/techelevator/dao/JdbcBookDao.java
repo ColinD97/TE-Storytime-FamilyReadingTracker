@@ -135,7 +135,7 @@ public class JdbcBookDao implements BookDao{
 //        String sql = "SELECT * FROM users_books LEFT JOIN users " +
 //                "ON users_books.user_id = users.user_id WHERE family_id " +
 //                "= (SELECT family_id WHERE users.user_id = ?) ORDER BY date_logged DESC;";
-        String sql = "SELECT users.user_id, first_name, title, author, genre, reading_format, minutes_read, times_read as finished_book, review, session_points, date_logged \n" +
+        String sql = "SELECT users.user_id, first_name, title, author, genre, difficulty, reading_format, minutes_read, times_read as finished_book, review, session_points, date_logged \n" +
                 "FROM users_books LEFT JOIN users ON users_books.user_id = users.user_id \n" +
                 "JOIN book_info ON users_books.book_id = book_info.book_id \n" +
                 "WHERE family_id= (SELECT family_id FROM users WHERE users.user_id = ?) ORDER BY date_logged DESC;";
@@ -154,6 +154,7 @@ public class JdbcBookDao implements BookDao{
         history.setTitle(resultSet.getString("title"));
         history.setAuthor(resultSet.getString("author"));
         history.setGenre(resultSet.getString("genre"));
+        history.setDifficulty(resultSet.getInt("difficulty"));
         history.setFormat(resultSet.getString("reading_format"));
         history.setMinutes_read(resultSet.getInt("minutes_read"));
         history.setFinished_book(resultSet.getString("finished_book"));
