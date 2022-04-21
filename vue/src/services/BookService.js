@@ -35,11 +35,6 @@ export default {
         return axios.get(`/user/dashboard/detail/${id}`)
     }
 
-    
-
-
-
-
 
 
 }

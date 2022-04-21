@@ -129,7 +129,7 @@ public class JdbcUserDao implements UserDao {
                 "LEFT JOIN book_info ON users_books.book_id = book_info.book_id \n" +
                 "WHERE users.family_id = ? \n" +
                 "GROUP BY users.user_id, first_name, points_balance \n" +
-                "ORDER BY users.first_name;";
+                "ORDER BY users.user_id;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
         List<UserDashInfo> resultsA = new ArrayList<>();
         while (resultSet.next()) {
@@ -147,7 +147,8 @@ public class JdbcUserDao implements UserDao {
             resultsB.add(maptRowToDashUserTitle(resultSet));
         }
         for (int i = 0; i < resultsA.size(); i++) {
-            resultsA.get(i).setCurrent_book(resultsB.get(i).getCurrent_book());
+            resultsA.get(i).setCurrent_book(
+                    resultsB.get(i).getCurrent_book());
         }
 
         return resultsA;

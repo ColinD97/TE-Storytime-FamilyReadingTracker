@@ -219,8 +219,7 @@ body{
     font-size: 36px;
     font-family: 'League Spartan', sans-serif;
     color: #313131;
-    text-shadow: 1px 4px 6px #9dc0c0, 0 0 0 rgb(51, 53, 53), 1px 1px 1px #2a656d;
-    
+    text-shadow: 1px 4px 6px #9dc0c0, 0 0 0 rgb(51, 53, 53), 1px 1px 1px #2a656d;  
 }
 /*---------------------------------------*/
 /* Form Body */
