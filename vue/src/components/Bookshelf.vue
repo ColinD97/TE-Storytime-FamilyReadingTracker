@@ -35,14 +35,16 @@ export default {
 
     methods: {
     sortBy(property){
-      this.books.sort((a,b) => a[property].toLowerCase() < b[property].toLowerCase() ? -1 : 1);
+      this.books.sort((a,b) => a[property].toString().toLowerCase() < b[property].toString().toLowerCase() ? -1 : 1);
     }
   },
 
   created() {
     BookService.getBooks(this.currentFamilyId).then((response) => {
       this.books = response.data;
+      this.sortBy('title')
     });
+    
   },
 };
 </script>

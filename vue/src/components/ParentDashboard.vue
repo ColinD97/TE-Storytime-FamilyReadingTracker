@@ -20,7 +20,7 @@
                 <td class='left-end'>{{user.first_name}}</td>
                 <td class='middle'>{{user.books_read}}</td>
                 <td class='middle'> {{user.total_minutes_read}}</td>
-                <td class='right-end'>still need</td>
+                <td class='right-end'>{{user.current_book}}</td>
                 <!-- <td class='right-end'>{{user.points_balance}}</td> -->
               </tr>
             </table> 

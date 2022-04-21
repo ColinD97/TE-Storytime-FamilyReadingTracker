@@ -44,7 +44,7 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public List <Book> getBooksByUserId(int id) {
-        String sql = "SELECT DISTINCT book_info.book_id, title, author, isbn, difficulty " +
+        String sql = "SELECT DISTINCT book_info.book_id, title, author, isbn, difficulty, genre " +
                 "FROM book_info JOIN users_books ON users_books.book_id = book_info.book_id " +
                 "JOIN users ON users_books.user_id = users.user_id WHERE family_id " +
                 "= (SELECT family_id FROM users WHERE user_id = ?);";
@@ -81,7 +81,7 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public List<LogReadingDTO> getUserBooks(long id) {
-        String sql = "SELECT * FROM users_books WHERE user_id = ?;";
+        String sql = "SELECT * FROM users_books WHERE user_id = ? ORDER BY title;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, id);
         List <LogReadingDTO> results = new ArrayList<>();
         while (resultSet.next()) {
@@ -92,7 +92,7 @@ public class JdbcBookDao implements BookDao{
 
     @Override
     public List<LogReadingDTO> getFamilyUserBooks(int id) {
-        String sql = "SELECT * FROM users_books WHERE family_id = ?;";
+        String sql = "SELECT * FROM users_books WHERE family_id = ? ORDER BY title;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, id);
         List <LogReadingDTO> results = new ArrayList<>();
         while (resultSet.next()) {
@@ -203,6 +203,7 @@ public class JdbcBookDao implements BookDao{
         book.setAuthor(resultSet.getString("author"));
         book.setIsbn(resultSet.getString("isbn"));
         book.setDifficulty(resultSet.getInt("difficulty"));
+        book.setGenre(resultSet.getString("genre"));
         return book;
     }
 

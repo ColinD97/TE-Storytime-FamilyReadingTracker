@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.techelevator.model.UserDashInfo;
+import com.techelevator.model.UserDashInfoTitle;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -94,7 +95,7 @@ public class JdbcUserDao implements UserDao {
 
     @Override
     public List<User> getUsersByFamilyId(String familyId) {
-        String sql = "SELECT * FROM users WHERE family_id = ?;";
+        String sql = "SELECT * FROM users WHERE family_id = ? ORDER BY first_name;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
         List <User> results = new ArrayList<>();
         while (resultSet.next()) {
@@ -103,20 +104,60 @@ public class JdbcUserDao implements UserDao {
         return results;
     }
 
+//    @Override
+//    public List<UserDashInfo> getUserDashboardInfoByFamilyId(String familyId) {
+//        String sql = "SELECT users.user_id, users.first_name, SUM(times_read) AS books_read, SUM(minutes_read) as total_minutes_read, points_balance\n" +
+//                "FROM users \n" +
+//                "LEFT JOIN users_books ON users.user_id = users_books.user_id \n" +
+//                "LEFT JOIN book_info ON users_books.book_id = book_info.book_id \n" +
+//                "WHERE users.family_id = ? \n" +
+//                "GROUP BY users.user_id, first_name, points_balance \n" +
+//                "ORDER BY users.first_name;";
+//        SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
+//        List<UserDashInfo> results = new ArrayList<>();
+//        while (resultSet.next()) {
+//            results.add(mapRowToDashUser(resultSet));
+//            }
+//        return results;
+//    }
+
     @Override
     public List<UserDashInfo> getUserDashboardInfoByFamilyId(String familyId) {
-        String sql = "SELECT users.user_id, first_name, SUM(times_read) AS books_read, SUM(minutes_read) as total_minutes_read, points_balance " +
-                "FROM users " +
-                "LEFT JOIN users_books ON users.user_id = users_books.user_id " +
-                "LEFT JOIN book_info ON users_books.book_id = book_info.book_id " +
-                "WHERE users.family_id = ? " +
-                "GROUP BY users.user_id, first_name, points_balance;";
+        String sql = "SELECT users.user_id, users.first_name, SUM(times_read) AS books_read, SUM(minutes_read) as total_minutes_read, points_balance\n" +
+                "FROM users \n" +
+                "LEFT JOIN users_books ON users.user_id = users_books.user_id \n" +
+                "LEFT JOIN book_info ON users_books.book_id = book_info.book_id \n" +
+                "WHERE users.family_id = ? \n" +
+                "GROUP BY users.user_id, first_name, points_balance \n" +
+                "ORDER BY users.first_name;";
         SqlRowSet resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
-        List<UserDashInfo> results = new ArrayList<>();
+        List<UserDashInfo> resultsA = new ArrayList<>();
         while (resultSet.next()) {
-            results.add(mapRowToDashUser(resultSet));
-            }
-        return results;
+            resultsA.add(mapRowToDashUser(resultSet));
+        }
+        sql = "select distinct on (users.user_id) users.user_id, title AS current_book \n" +
+                "FROM users \n" +
+                "LEFT JOIN users_books ON users.user_id = users_books.user_id \n" +
+                "LEFT JOIN book_info ON users_books.book_id = book_info.book_id \n" +
+                "where users.family_id = ? \n" +
+                "order by users.user_id, date_logged desc;";
+        resultSet = jdbcTemplate.queryForRowSet(sql, familyId);
+        List<UserDashInfoTitle> resultsB = new ArrayList<>();
+        while (resultSet.next()) {
+            resultsB.add(maptRowToDashUserTitle(resultSet));
+        }
+        for (int i = 0; i < resultsA.size(); i++) {
+            resultsA.get(i).setCurrent_book(resultsB.get(i).getCurrent_book());
+        }
+
+        return resultsA;
+    }
+
+    private UserDashInfoTitle maptRowToDashUserTitle(SqlRowSet rs) {
+        UserDashInfoTitle userTitle = new UserDashInfoTitle();
+        userTitle.setUser_id(rs.getLong("user_id"));
+        userTitle.setCurrent_book(rs.getString("current_book"));
+        return userTitle;
     }
 
 
@@ -127,7 +168,7 @@ public class JdbcUserDao implements UserDao {
         userDash.setBooks_read(rs.getInt("books_read"));
         userDash.setTotal_minutes_read(rs.getInt("total_minutes_read"));
         userDash.setPoints_balance(rs.getInt("points_balance"));
-//        userDash.setCurrent_book(rs.getString("title"));
+        //userDash.setCurrent_book(rs.getString("current_book"));
         return userDash;
 
     }
