@@ -12,6 +12,7 @@
           <th class='middle'>Author</th>
           <th class='middle'>Genre</th>
           <th class='middle'>Format</th>
+          <th class='middle'>Difficulty</th>
           <th class='middle'>Minutes Reading</th>  
           <th class='middle'>Book Finished</th>                     
           <th class='right-end-top'>Review</th>
@@ -25,6 +26,7 @@
           <td class='middle'>{{ log.author }}</td>
           <td class='middle'>{{ log.genre }}</td>
           <td class='middle'>{{ log.format }}</td>
+          <td class='middle'>{{ log.difficulty }}</td>
           <td class='middle'>{{ log.minutes_read }}</td>
           <td class='middle'>{{ log.finished_book }}</td>          
           <td class='right-end'>{{ log.review }}</td>
