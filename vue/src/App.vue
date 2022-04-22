@@ -66,7 +66,7 @@ export default {
 /*---------------------------------------*/
 .home-right{
   padding: 11px 20px;
-  padding-left: 930px;
+  padding-left: 955px;
 }
 .topnav {
     display: flex;
