@@ -61,7 +61,7 @@
                 id="childreadingreview"
                 name="ChildReadingReview"
                 rows= "7"
-                cols="45"
+                cols="40"
                 v-model="userBook.review"
               /><br />
             </div>
@@ -209,20 +209,20 @@ option{
   padding: 1px 3px 6px;
 }
 #readers {
-  width: 165px;
+  width: 140px;
   margin-bottom: 15px;
 }
 #minutesread {
   margin-top: 16px;
-  width: 115px;
+  width: 80px;
+  margin-left: 5px;
 }
 #assignedbooks {
-  width: 190px;
+  width: 140px;
 }
 #bookformat {
   width: 140px;
   margin-top: 16px;
-  width: 170px;
 }
 #genre{
   width: 90px;

@@ -29,7 +29,7 @@
         <img src="@/assets/Dashboard.png" class="grid-item-2" />
       </div>
       <div class="right-side">
-        <reading-log v-bind:familyUsers="familyUsersAll" />
+        <reading-log class="reading-log" v-bind:familyUsers="familyUsersAll" />
         <add-book v-bind:familyUsers="familyUsersAll" />
       </div>
     </div>
@@ -73,42 +73,6 @@ export default {
 </script>
 
 <style>
-.box {
-  display: flex;
-  justify-content: space-around;
-}
-.parent td,
-.parent th {
-  border: 1px solid rgba(243, 247, 244, 0.8);
-  padding: 8px;
-}
-.parent tr:nth-child(even) {
-  background-color: rgb(255, 255, 255, 0.8);
-}
-.parent tr:hover {
-  background-color: #d1e6d6;
-}
-.parent th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: rgb(18, 108, 124);
-  color: #f2f7f3;
-}
-.left-end {
-  border-radius: 8px 3px 3px 8px;
-}
-.middle {
-  border-radius: 3px 3px 3px 3px;
-}
-.right-end {
-  border-radius: 3px 8px 8px 3px;
-}
-.right-end-top {
-  border-radius: 3px 8px 5px 3px;
-}
-.left-end-top {
-  border-radius: 8px 3px 3px 5px;
-}
+
 
 </style>

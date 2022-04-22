@@ -1,23 +1,26 @@
 <template>
 <div id="app">
-
-     <div class="topnav" id="myTopnav">
+  <div class="home-left">
+    <div class="topnav" id="myTopnav">
       <router-link class='container' v-bind:to="{ name: 'home' }">HOME </router-link>
       <router-link class='container' v-bind:to="{ name: 'dashboard', params: {userId: currentUserId}}">DASHBOARD</router-link> 
       <router-link class='container' v-bind:to="{ name: 'bookshelf', params: {userId: currentUserId}}">BOOKSHELF</router-link> 
       <router-link class='container' v-bind:to="{ name: 'reading-history'}">READING-HISTORY</router-link> 
-      
-        <div class="dropdown" id="push">
-          <button class="dropbtn">GO TO:
-            <i class="fa fa-caret-down"></i>
-          </button>
-            <div class="dropdown-content">
-              <router-link  v-bind:to="{ name: 'register' }">REGISTER</router-link>  
-              <router-link  v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">LOGOUT</router-link> 
-              <router-link  v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">LOGIN</router-link> 
-            </div>
-        </div>
+    <div class="dropdown">
+      <button class="dropbtn">GO TO:
+        <i class="fa fa-caret-down"></i>
+      </button>
+    <div class="dropdown-content">
+      <router-link  v-bind:to="{ name: 'register' }">REGISTER</router-link>  
+      <router-link  v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">LOGOUT</router-link> 
+      <router-link  v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">LOGIN</router-link> 
+    </div>
+    </div>
+      <div class="home-right">
+        <img src="@/assets/story_time.png" />
       </div>
+    </div>
+</div>
     <router-view />
 </div>
 </template>
@@ -48,8 +51,9 @@ export default {
 
 
 <style >
+
 /*---------------------------------------*/
-/* Reset */
+/* */
 /*---------------------------------------*/
 
 /*---------------------------------------*/
@@ -60,10 +64,13 @@ export default {
 /*---------------------------------------*/
 /* Top Banner */
 /*---------------------------------------*/
+.home-right{
+  padding: 11px 20px;
+  padding-left: 930px;
+}
 .topnav {
     display: flex;
 }
-    
 .push {
     margin-left: auto;
     justify-content: flex-end;
@@ -233,7 +240,7 @@ body{
     height: 110px;
 }
 .form-reading-log .form-body{
-  margin: 10px;
+    margin: 10px;
     height: 150px;
 }
 .form-body {
@@ -288,11 +295,11 @@ body{
 }
 .horizontal-group .left {
     float: left;
-    width: 55%;
+    width: 53%;
 }
 .horizontal-group .right {
     float: right;
-    width: 44%;
+    width: 47%;
 }
 .split-form-one-group-right{
   float:right;
@@ -304,13 +311,13 @@ body{
 }
 .split-form-one-group-left{
   float:left;
-  width: 50%; 
+  width: 45%; 
   margin-left: 0;
   padding-left: 0;
 }
 .split-form-two-group-left{
   float: left;
-  width: 50%;
+  width: 55%;
   margin: 0%;
 }
 .btn-body {
