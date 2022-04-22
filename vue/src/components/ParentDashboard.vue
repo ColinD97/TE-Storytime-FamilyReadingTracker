@@ -43,9 +43,8 @@ import UserModal from './UserModal.vue'
 
 export default {
   components: { AddBook, RegistrationFormChild, ReadingLog, UserModal  },
-// create + data (empty group of users that I will fill with this return request)
   name: 'parent-dashboard-userID',  
-  // Reg Note:  If I need to do a PROP, it's here
+ 
   data() {
     return {
 
@@ -62,9 +61,6 @@ export default {
     currentUserId: function(){
       return this.$store.state.user.id
     }, 
-    // logForUserId(){
-    //   user_id: 
-    //   }
   },
   methods: {
     goToRegisterChild(){
@@ -75,13 +71,6 @@ export default {
        this.selectedUserDetailName = name
        this.showModal = true
     }
-
-
-    // getReadingLog(logForUserId){
-    //   BookService.getReadingLog(logForUserId).then(response => {
-    //     this.userData = response.data
-    //   })
-    // }
   },
 
 created() {
@@ -108,20 +97,20 @@ created() {
   justify-content: center;
 }
 .parent td, .parent th {
-  border: 1px solid rgba(243, 247, 244, 0.6);
-  padding: 8px;
-  
+  border: 1px solid hsla(0, 0%, 100%, 0.952);
+  padding: 8px;  
+  background-color: rgba(249, 252, 250, 0.493)
 }
 .parent tr:nth-child(even){
-  background-color: rgba(255, 255, 255, 0.6);}
+  background-color: rgb(208,227,214, 0.7) ;}
 
-.parent tr:hover {background-color: #d1e6d6}
+.parent tr:hover {background-color: #e5f7e8}
 
 .parent th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: rgba(18, 108, 124, 0.4);
+  background-color: rgba(17, 99, 114, 0.719);
   color: #f2f7f3;
 }
 .left-end{
