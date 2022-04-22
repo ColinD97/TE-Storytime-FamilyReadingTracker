@@ -1,18 +1,13 @@
 <template>
   
-
   <div class="child-register">    
     <form class="form-register" @submit.prevent="register">
     <div>
       <h1 class="form-header">New Family Member Registration:</h1>
-      
     </div>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
     </div>
-    
-  
-
   <div class="form-body">
             <!-- Firstname and Lastname -->
             <div class="horizontal-group">
@@ -71,29 +66,29 @@
                 </div>
             </div>
                 <div class="horizontal-group">
-                        <div class="form-group left">
-                            <label for="password" class="label-title">Password *</label>
-                            <input
-                                type="password"
-                                id="password"
-                                class="form-password"
-                                placeholder="Password"
-                                v-model="user.password"
-                                required
-                            />
-                            <input
-                                type="password"
-                                id="confirmPassword"
-                                class="form-password"
-                                placeholder="Confirm Password"
-                                v-model="user.confirmPassword"
-                                required
-                            />
-                        </div>
-                        <div class="form-group right">
-                          <input type="checkbox" class="isParent" name="isParent" value="isParent">
-                          <label for="isParent">Add as additional parent? </label>
-                        </div>
+                  <div class="form-group left">
+                      <label for="password" class="label-title">Password *</label>
+                      <input
+                          type="password"
+                          id="password"
+                          class="form-password"
+                          placeholder="Password"
+                          v-model="user.password"
+                          required
+                      />
+                      <input
+                          type="password"
+                          id="confirmPassword"
+                          class="form-password"
+                          placeholder="Confirm Password"
+                          v-model="user.confirmPassword"
+                          required
+                      />
+                  </div>
+                  <div class="form-group right">
+                    <input type="checkbox" class="isParent" name="isParent" value="isParent">
+                    <label for="isParent">Add as additional parent? </label>
+                  </div>
                 </div>
   </div>
         <div class="form-footer">

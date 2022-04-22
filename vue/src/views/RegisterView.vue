@@ -7,11 +7,10 @@
     <div class="photo">
       <img src="@/assets/tiger.png" />
     </div>
-    <div>
+  <div>
     <registration-form />
-    </div>
-
-    </div>
+  </div>
+  </div>
   </div>
 </template>
 
@@ -29,6 +28,4 @@ export default {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-
-
 </style>

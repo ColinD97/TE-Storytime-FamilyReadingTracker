@@ -1,7 +1,6 @@
 <template>
     
 <div>
-
   <form class="form-add-book">
     <h1 class="form-header">Add A Book To Family Collection</h1>
     <div class="form-body">
@@ -20,7 +19,6 @@
                     />
                     </div>
                 <div class="form-group right">
-                  
                     <label for="author" class="label-title">Author</label>
                     <input
                         type="text"
@@ -86,8 +84,7 @@
               <div class="form-footer">
                 <button class="btn" type="submit" v-on:click="addBook">
                 Add Book
-                </button>
-                  
+                </button>  
                 </div> 
   </form>
 </div>
@@ -100,7 +97,6 @@ import BookService from '@/services/BookService.js';
 export default {
   name: 'add-book',
   props: ['familyUsers'],  
-  // 1. this.book.userID not from here, get from property entering into the form
   data() {
     return {
       book: {
@@ -117,30 +113,7 @@ export default {
     };
   },
   methods: {
-    // addBook() {
-    //   if (this.book.isbn !== (/([0-9]){13}/g)) {
-    //     this.isbnErrors = true;
-    //     this.isbnErrorMsg = 'ISBN needs to be a 13 digit number.';
-    //   } else {
-    //   console.log('add book'+ this.book)
-    //   BookService
-    //   // Assign to family ID
-    //     .addBook(this.assignToUser, this.book)
-    //     .then(response => {
-    //       if (response.status === 201) {              
-    //           this.book = {
-    //             title: '',
-    //             author: '',
-    //             isbn: '',
-    //             difficulty: '',
-    //             genre: '',       
-    //           },
-    //         alert('AddBook successful!  Hurray for our side!'),
-    //         this.$router.push({path: '/'});
-    //       }
-    //     })
-    //   }
-    // }
+    
     addBook() {
       BookService.addBook(this.assignToUser, this.book)
       .then(response => {

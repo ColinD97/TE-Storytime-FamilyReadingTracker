@@ -1,8 +1,6 @@
 <template>
 <div>
   <div class="register">
-    
-  
   <form class="form-register" @submit.prevent="register">
     <h1 class="form-header">New Member Registration:</h1>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">

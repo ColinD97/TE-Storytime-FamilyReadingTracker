@@ -59,7 +59,6 @@
 
 <script>
 import authService from "../services/AuthService";
-// import AppHeader from "./components/Appheader.vue";
 
 export default {
   name: "login",

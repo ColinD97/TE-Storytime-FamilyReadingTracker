@@ -7,7 +7,6 @@
         </div>
         <table class="modal-parent">
             <label for="Children"></label>
-
               <tr class='modal-table-header'>
                 <th class='left-end-top' id='header'>Title</th>
                 <th class='middle' id='header'>Author</th>
@@ -16,7 +15,6 @@
                 <th class='right-end-top' id='header'>Times Read</th>
                 <th class='right-end-top' id='header'>Date</th>
               </tr>
-
               <tr v-for="booklog in childData" :key="booklog.index">  
                 <td class='left-end'>{{booklog.title}}</td> 
                 <td class='middle'>{{booklog.author}}</td>
@@ -24,14 +22,12 @@
                 <td class='right-end'>{{booklog.minutes_per_book}}</td>
                 <td class='right-end'>{{booklog.times_read_total}}</td>
                 <td class='right-end'>{{booklog.last_read}}</td>
-
               </tr>
             </table> 
       </div>
       <div class="close" @click="$emit('close-modal')">
         <img class="close-img" src="src\assets\booklog.png" alt="" />
       </div>
-      
     </div>
   </transition>
   
@@ -47,7 +43,6 @@ import BookService from "@/services/BookService";
     return {
 
       childData: [] ,
-      // showModal: false,
 
     }
   },

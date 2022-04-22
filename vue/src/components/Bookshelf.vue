@@ -8,7 +8,6 @@
       <button class="btn"  @click="sortBy('difficulty')">By Difficulty</button>
     </div >
     </div>
-  
   <div class="book-shelf">
     <book-card v-for="book in this.books" v-bind:key="book.id" v-bind:book="book"/>  
   </div>

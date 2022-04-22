@@ -80,7 +80,6 @@
                   v-model="userBook.minutes_read"
                 />
               </div>
-
               <div class="split-form-two-group-left">
                 <label for="BookFormat" class="label-title">Format</label>
                 <select

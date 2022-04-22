@@ -15,7 +15,6 @@ import Bookshelf from '../components/Bookshelf.vue'
 export default {
   components: { Bookshelf },
     name: 'bookshelf-view',
-    
 }
 </script>
 
